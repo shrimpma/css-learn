@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {margin:0;
+            padding: 0;
+        }
+        body{
+            min-width: 700px;
+        }
+        .container{
+            padding: 0 220px 0 200px;
+        }
+
+
+        .header,.footer{
+            float:left;
+            width: 100%;
+            background: #ddd;
+            line-height: 40px;
+            text-align: center;
+
+
+        }
+        .left,.middle,.right{
+            position: relative;
+            float:left;
+            min-height: 300px;
+        }
+
+        .middle{
+            width: 100%;
+            background: #1a5acd;
+        }
+
+        .left {
+            width:200px;
+            background:#f00;
+            margin-left:-100%;
+            /* margin-left 这个是关键，会导致div 上升 */
+            left:-200px;
+        }
+
+        .right{
+            width:220px;
+            background:#30a457;
+            margin-left:-220px;
+            right:-220px;
+        }
+
+
+
+       
+        
+
+    
+    </style>
+</head>
+<body>
+    <div class="header">页面头部</div>
+
+    <div class="container">
+        <div class="middle"> 
+            <h1>middle</h1>
+            页面中间</div>
+        <div class="left">
+            <h1>left </h1>
+            页面左侧
+            
+        </div>
+        <div class="right">
+            <h1>right</h1>
+            页面右侧</div>
+    </div>
+
+    <div class="footer">页面底部</div>
+
+
+</body>
+</html>

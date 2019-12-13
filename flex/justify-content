@@ -19,6 +19,10 @@ align-items
 
 
     组合使用 justyify-content  &  align-items 
+    例如：
+    flex-direction:column;
+    justify-content:flex-end;
+        justify-content 变成垂直方向
 
 
 
@@ -33,7 +37,10 @@ flex-direction
         row  row-reverse  相反的
         column  column-reverse 相反的
 
+    flex-direction & justify-content 配合使用
+    Help the frogs find their lilypads using flex-direction and justify-content.
 
+    
 
 
 

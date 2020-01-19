@@ -4,6 +4,8 @@ const prev = document.querySelector('#prev');
 
 const intervalTime  = 5000;
 
+const  autoSlide  = true;
+
 const nextSlide = () =>{
     const current = document.querySelector('.current');
     current.classList.remove('current');
@@ -39,3 +41,6 @@ prev.addEventListener('click',e =>{
     prevSlide();
 });
 
+if(autoSlide){
+    sliderInterval = setInterval(nextSlide,intervalTime);
+}

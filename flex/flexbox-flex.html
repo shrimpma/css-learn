@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex css </title>
+    <style>
+    
+    #flex-container {
+        display: flex;
+        flex-direction: row;
+        border:1px solid #000;
+      }
+      
+      #flex-container > .flex-item {
+        flex: auto;
+      }
+      
+      #flex-container > .raw-item {
+        width: 5rem;
+        border:1px solid red ;
+      }
+    </style>
+</head>
+<body>
+    
+      <div id="flex-container">
+        <div class="flex-item" id="flex">Flex box (click to toggle raw box)
+
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci odio impedit, ipsum totam officia nisi debitis, explicabo exercitationem quia assumenda corrupti dignissimos voluptate voluptas at, tempore repudiandae eum cupiditate officiis.
+
+            
+        </div>
+        <div class="raw-item" id="raw">Raw box</div>
+      </div>
+</body>
+</html>

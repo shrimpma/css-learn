@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <script>
+
+javascript:(function(){
+
+    // url lik https://amazingbeautyhairextensions5.myshopify.com/admin/bulk?resource_name=Product&app_context=&edit=metafields.global.out-stock-msg%3Astring&show=&return_to=%2Fadmin%2Fproducts&metafield_titles=&metafield_options=&ids=4440415502408
+      var the_data = window.location.href;
+      if(the_data.indexOf('products/') == -1 ){
+            alert('please click  after open  product page ');return;
+      }
+
+      var base_url = 'https://amazingbeautyhairextensions5.myshopify.com/admin/bulk?resource_name=Product&app_context=&edit=metafields.global.out-stock-msg%3Astring&show=&return_to=%2Fadmin%2Fproducts&metafield_titles=&metafield_options=&ids='
+
+      var parts = the_data.split('/');
+      var variants_if = the_data.indexOf('/variants');
+
+      console.log(variants_if);
+      if(variants_if == -1 ){
+        var product_id = parts[parts.length-1];
+      }else{
+        var product_id = parts[parts.length-3];
+      }
+
+      var final_url = base_url + product_id;
+      window.location.href = final_url;
+
+})();
+    
+
+      </script>
+</body>
+</html>

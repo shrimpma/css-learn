@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript variable </title>
+</head>
+
+<body>
+    <div class="output" style="min-height: 125px;">
+
+        <ul>
+            <li>Happy Birthday!</li>
+            <li>Merry Christmas my love</li>
+            <li>A happy Christmas to all the family</li>
+            <li>You're all I want for Christmas</li>
+            <li>Get well soon</li>
+        </ul>
+
+
+    </div>
+
+    <script>
+
+        let  doms = document.querySelectorAll('li');
+
+        let len = doms.length;
+        for(let i =0 ;i<len;i++){
+            if(doms[i].innerHTML.indexOf('Christmas') !== -1){
+                console.log(doms[i].innerHTML);
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

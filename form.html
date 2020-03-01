@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>form  test</title>
+    <script src="lib/jquery.js"></script>
 </head>
 <body>
-    <form id="myForm" action="" method="post">
-        用户名：<input type="text" name="username" id="username">
-        密码 <input type="text" name="password">
-        <input type="submit" value="submit">
-    </form>
+   <span id="test"  data-variant ="-3"></span>
 </body>
 </html>
 <script>
-    var myForm = document.querySelector("#myForm");
-    myForm.addEventListener('submit',onsubmit);
-    var username = document.querySelector("#username");
-    function onsubmit(e){
-        e.preventDefault();
-        console.log(username.value );
+    $(document).ready(function(){
+
+            var v = $("#test").attr('data-variant');
+            console.log(v);
+
+            var v_int = parseInt(v);
+
+            console.log('=======',v_int);
+
+            if(v_int <= 0 ){
+
+                console.log('1111111,',v_int);
+
+            }
 
 
 
-    }
+    });
 </script>

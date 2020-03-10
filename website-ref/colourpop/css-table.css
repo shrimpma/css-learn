@@ -81,3 +81,27 @@ label{
     }
 
 }
+
+section {
+    width: 100%;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+  }
+
+  section.nopadding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+section.nospacing {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+@media (min-width: 1281px){
+section {
+    padding: 0px 60px;
+    margin-bottom: 60px;
+}
+}

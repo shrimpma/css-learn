@@ -1,0 +1,31 @@
+//
+window.monetateQ = window.monetateQ || [];
+var today = new Date();
+var isAuth = window.User.AUTHENTICATED;
+var isPremierAcc = window.User.IS_PREMIER_ACCOUNT;
+
+if(isAuth){
+  if(isPremierAcc){
+    //check was expired
+    var wasExpired = localStorage.getItem('premier-expired');
+    if(wasExpired == 'true'){
+      localStorage.setItem('premier-expired','false');
+      window.monetateQ.push(["trackEvent",["mark_premier_renewed"]]);      
+    }
+    
+    //save expiry in localstorage
+    var expiryDateMsg = window.User.PREMIER_PRODUCT_MSG;
+    var expiryDate = expiryDateMsg.split('until')[1].trim();
+    expiryDate = new Date(expiryDate.split(' ')[0]+" "+expiryDate.split(' ')[1].replace(',','')+" "+expiryDate.split(' ')[2]);
+    localStorage.setItem('premier-expiry-date',expiryDate);
+    window.monetateQ.push(["trackEvent",["mark_premier_expiry_date"]]); 
+
+  }else{
+    //check expiry in localstorage
+    var expiryDate = localStorage.getItem('premier-expiry-date');
+    if(expiryDate != null){
+      localStorage.setItem('premier-expired','true');
+      window.monetateQ.push(["trackEvent",["mark_premier_expired"]]);      
+    } 
+  }
+}

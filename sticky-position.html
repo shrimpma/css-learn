@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .vertical-scroll-snap {
+            overflow-y: scroll;
+            -ms-scroll-snap-type: y mandatory;
+            scroll-snap-type: y mandatory;
+            max-height: 100vh;
+        }
+
+        .stacking-slide {
+            scroll-snap-align: start;
+            height: 100vh;
+            width: 100%;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+
+        .stacking-slide:nth-last-child(1) {
+            height: 100vh;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        .stacking-slide {
+            padding: 3rem;
+            box-shadow: 0 0px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .stacking-slide:nth-child(0) {
+            background-color: #ffc2e0;
+        }
+
+        .stacking-slide:nth-child(1) {
+            background-color: #ffc2c2;
+        }
+
+        .stacking-slide:nth-child(2) {
+            background-color: #ffe0c2;
+        }
+
+        .stacking-slide:nth-child(3) {
+            background-color: #ffffc2;
+        }
+
+        .stacking-slide:nth-child(4) {
+            background-color: #e0ffc2;
+        }
+
+        .stacking-slide:nth-child(5) {
+            background-color: #c2ffc2;
+        }
+
+        .stacking-slide:nth-child(6) {
+            background-color: #c2ffe0;
+        }
+
+        .stacking-slide:nth-child(7) {
+            background-color: #c2ffff;
+        }
+
+        .stacking-slide:nth-child(8) {
+            background-color: #c2e0ff;
+        }
+
+        .stacking-slide:nth-child(9) {
+            background-color: #c2c2ff;
+        }
+
+        .stacking-slide:nth-child(10) {
+            background-color: #e0c2ff;
+        }
+
+        View SCSS Code Resources
+    </style>
+</head>
+
+<body>
+
+    <div class="vertical-scroll-snap">
+        <section class="stacking-slide">
+            <h2>Section 1</h2>
+        </section>
+        <section class="stacking-slide">
+            <h2>Section 2</h2>
+        </section>
+        <section class="stacking-slide">
+            <h2>Section 3</h2>
+        </section>
+        <section class="stacking-slide">
+            <h2>Section 4</h2>
+        </section>
+        <section class="stacking-slide">
+            <h2>Section 5</h2>
+        </section>
+    </div>
+
+</body>
+
+</html>

@@ -37,7 +37,7 @@ a {
     display: inline-block;
     vertical-align: top;
     position: relative;
-    display: table;
+    font-size:0px;
 }
 
 .product__listing .product__listing-content {

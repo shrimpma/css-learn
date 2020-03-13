@@ -1,0 +1,47 @@
+function addPercentageOff(){
+
+  $('.product-pricing').each(function(){
+
+    if($(this).find('span').length > 1 && $(this).find('.product-sales-price--percent').length < 1){
+      var salePrice = $(this).find('.product-sales-price').html();
+      var intSalePrice = salePrice.split('£')[1];
+      //intSalePrice = intSalePrice.replace('.00','');
+      intSalePrice = parseFloat(intSalePrice);
+
+      var regPrice = $(this).find('.product-standard-price').html();
+      var intRegP = regPrice.split('£')[1];
+      //intRegP = intRegP.replace('.00','');
+      intRegP = parseFloat(intRegP);
+
+      var percentageOff = (((intRegP - intSalePrice)/intRegP)*100).toFixed(5);
+      percentageOff = percentageOff.toString().split('.')[0];
+      $(this).find('.product-sales-price').append('<span class="product-sales-price--percent">('+percentageOff+'% OFF)</span>');
+      $(this).find('.product-sales-price').css('color','#f00');
+    }
+  });
+
+  if($('#QuickViewDialog').length > 0){
+    if($('#QuickViewDialog .product-price').find('span').length > 1 && $('.product-sales-price--prcnt').length < 1){
+      var salePrice = $('#QuickViewDialog .product-price').find('.price-sales').html();
+      var intSalePrice = salePrice.split('£')[1];
+      //intSalePrice = intSalePrice.replace('.00','');
+      intSalePrice = parseFloat(intSalePrice);
+
+      var regPrice = $('#QuickViewDialog .product-price').find('.price-standard').html();
+      var intRegP = regPrice.split('£')[1];
+      //intRegP = intRegP.replace('.00','');
+      intRegP = parseFloat(intRegP);
+
+      var percentageOff = (((intRegP - intSalePrice)/intRegP)*100).toFixed(5);
+      percentageOff = percentageOff.toString().split('.')[0];
+      $('#QuickViewDialog .product-price').find('.price-sales').append('<span class="product-sales-price--prcnt"> ('+percentageOff+'% OFF)</span>');
+      $('#QuickViewDialog .product-price').find('.price-sales').css('color','#f00');
+    }
+  }
+
+}
+  
+addPercentageOff();
+$(window).ajaxStop(function(){
+  addPercentageOff();
+});

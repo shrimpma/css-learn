@@ -1,0 +1,13 @@
+'use strict';
+
+if ('serviceWorker' in navigator) {
+    document.addEventListener('DOMContentLoaded', () => {
+        navigator.serviceWorker.getRegistrations().then(
+            function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                }
+            }
+        );
+    });
+}

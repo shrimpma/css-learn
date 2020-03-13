@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ul demo </title>
+
+    <style>
+        body {
+            font-size: 14px;
+            color: #000;
+        }
+
+        .refinement {
+            color: #000;
+            position: relative;
+            padding: 0 0 5px;
+            line-height: 1;
+        }
+
+        .js-refinement-size {
+
+            opacity: 1;
+            background: #fff;
+            border: 1px solid #000;
+            width: 265px;
+            padding: 10px;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            right: auto;
+            z-index: 10;
+            margin-top: -1px;
+            transition: all 300ms ease;
+        }
+
+        ul {
+            list-style: none;
+            column-count: 2;
+        }
+
+        .refinement-link::before {
+    display: inline-block;
+    content: "";
+    margin: 0 10px 0 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    vertical-align: middle;
+}
+
+.refinement ul.swatches li {
+    display: block;
+    position: relative;
+    font-size: 12px;
+    margin: 0 0 15px;
+}
+
+.selected .refinement-link::after {
+    content: "";
+    background: #000;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    margin: -6px 0 0 4px;
+    top: 50%;
+    left: 0;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="refinement js-refinement size" data-refinementid="size">
+        <input id="refinement-item-size" class="js-refinement-item-checkbox" type="checkbox">
+        <h3 class="refinement-head js-refinement-head">
+            <label class="refinement-head-label" for="refinement-item-size">
+                <span class="refinement-head-text">
+                    UK Size
+                </span>
+                <i class="refinement-head-icon icon-menu-arrow"></i>
+            </label>
+        </h3>
+        <div class="js-refinement-size refinement-dropdown">
+            <ul class="clearfix swatches size scrollable">
+                <li class="swatches-item size scrollable selected" data-value="4">
+                    <span class="refinement-link js-refinement-element   "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=4" title="Refine by UK Size: 4">
+                        4
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="6">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=6" title="Refine by UK Size: 6">
+                        6
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="8">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=8" title="Refine by UK Size: 8">
+                        8
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="10">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=10" title="Refine by UK Size: 10">
+                        10
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="12">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=12" title="Refine by UK Size: 12">
+                        12
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="14">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=14" title="Refine by UK Size: 14">
+                        14
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="16">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=16" title="Refine by UK Size: 16">
+                        16
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="18">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=18" title="Refine by UK Size: 18">
+                        18
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="20">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=20" title="Refine by UK Size: 20">
+                        20
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="22">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=22" title="Refine by UK Size: 22">
+                        22
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="24">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=24" title="Refine by UK Size: 24">
+                        24
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="26">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=26" title="Refine by UK Size: 26">
+                        26
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="28">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=28" title="Refine by UK Size: 28">
+                        28
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="16-18">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=16-18"
+                        title="Refine by UK Size: 16-18">
+                        16-18
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="20-22">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=20-22"
+                        title="Refine by UK Size: 20-22">
+                        20-22
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="XS">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=XS" title="Refine by UK Size: XS">
+                        XS
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="S">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=S" title="Refine by UK Size: S">
+                        S
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="M">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=M" title="Refine by UK Size: M">
+                        M
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="L">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=L" title="Refine by UK Size: L">
+                        L
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="XL">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=XL" title="Refine by UK Size: XL">
+                        XL
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="S/M">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=S%2FM"
+                        title="Refine by UK Size: S/M">
+                        S/M
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="M/L">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=M%2FL"
+                        title="Refine by UK Size: M/L">
+                        M/L
+                    </span>
+                </li>
+                <li class="swatches-item size scrollable" data-value="One Size">
+                    <span class="refinement-link js-refinement-element "
+                        data-url="?prefn1=size&amp;srule=We%20Recommend&amp;prefv1=One%20Size"
+                        title="Refine by UK Size: One Size">
+                        One Size
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../lib/jquery.js"></script>
+    <script>
+
+        
+            $(document).ready(function(){
+                function swatch_item_click(ele){
+                    $(ele).addClass('');
+
+                }
+
+                $('.swatches-item').bind('click',swatch_item_click);
+
+
+            });
+
+
+    </script>
+</body>
+
+</html>

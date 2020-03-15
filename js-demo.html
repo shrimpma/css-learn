@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jd demo </title>
+    <style>
+        #main {
+            width: 1200px;
+            padding: 25px 30px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main"></div>
+    <script>
+
+        function write(content) {
+            let ele = document.createElement('p');
+            ele.innerHTML = content;
+            let dom = document.getElementById('#main');
+            dom.appendChild(ele);
+
+        }
+
+        function log(the_log) {
+
+            console.log(the_log);
+        }
+        var Vehicle = function () {
+            this.price = 1000;
+        };
+
+        var v = new Vehicle();
+
+        log(v);
+
+
+        function the_name(){
+            return '姓名:' + this.name;
+        }
+
+        var A = {
+            name:'zhangsan',
+            describe:the_name
+        };
+
+        var B = {
+            name:'lisi',
+            describe:the_name
+        };
+
+        log(A.describe() + B.describe());
+        
+
+
+
+
+    </script>
+
+</body>
+
+</html>

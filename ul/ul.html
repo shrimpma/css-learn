@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ul demo </title>
     <link rel="stylesheet" href="filter.css">
+    <link rel="preload" href="icons.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body>
@@ -627,91 +628,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="refinement js-refinement price" data-refinementid="price">
-                <input id="refinement-item-price" class="js-refinement-item-checkbox" type="checkbox">
-                <h3 class="refinement-head js-refinement-head">
-                    <label class="refinement-head-label" for="refinement-item-price">
-                        <span class="refinement-head-text">
-                            Price
-                        </span>
-                        <i class="refinement-head-icon icon-menu-arrow"></i>
-                    </label>
-                </h3>
-                <div class="js-refinement-price refinement-dropdown">
-                    <ul class="clearfix swatches swatches-price">
-                        <li class="swatches-item swatches-price" data-value="0000000000">
-                            <span class="refinement-link js-refinement-element refinement-link-radio"
-                                data-url="?pmax=5.00&amp;pmin=0.00" title="Refine by Price: under £5" data-from="0"
-                                data-to="5">
-                                under £5
-                            </span>
-                        </li>
-                        <li class="swatches-item swatches-price" data-value="0000000005">
-                            <span class="refinement-link js-refinement-element refinement-link-radio"
-                                data-url="?pmax=15.00&amp;pmin=5.00" title="Refine by Price: £5 - £15" data-from="5"
-                                data-to="15">
-                                £5 - £15
-                            </span>
-                        </li>
-                        <li class="swatches-item swatches-price" data-value="0000000015">
-                            <span class="refinement-link js-refinement-element refinement-link-radio"
-                                data-url="?pmax=30.00&amp;pmin=15.00" title="Refine by Price: £15 - £30" data-from="15"
-                                data-to="30">
-                                £15 - £30
-                            </span>
-                        </li>
-                        <li class="swatches-item swatches-price" data-value="0000000030">
-                            <span class="refinement-link js-refinement-element refinement-link-radio"
-                                data-url="?pmax=50.00&amp;pmin=30.00" title="Refine by Price: £30 - £50" data-from="30"
-                                data-to="50">
-                                £30 - £50
-                            </span>
-                        </li>
-                        <li class="swatches-item swatches-price" data-value="0000000050">
-                            <span class="refinement-link js-refinement-element refinement-link-radio"
-                                data-url="?pmax=100.00&amp;pmin=50.00" title="Refine by Price: £50 and up"
-                                data-from="50" data-to="100">
-                                £50 and up
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="price-range-wrapper">
-                    <div class="price-range-items">
-                        <div class="price-range-item">
-                            <div class="price-range-item-inner">
-                                <span class="price-range-label">
-                                    From
-                                    £
-                                </span>
-                                <input class="price-range-input price-range-price-from" type="text"
-                                    pattern="[0-9]+([,.][0-9]{0,2})?">
-                            </div>
-                        </div>
-                        <div class="price-range-item price-range-item-last">
-                            <div class="price-range-item-inner">
-                                <span class="price-range-label">
-                                    to
-                                    £
-                                </span>
-                                <input class="price-range-input price-range-price-to" type="text"
-                                    pattern="[0-9]+([,.][0-9]{0,2})?">
-                            </div>
-                        </div>
-                    </div>
-                    <button style="width: 100%" type="submit" id="submitPriceRefine"
-                        data-ref="https://www.boohoo.com/womens/dresses">Apply</button>
-                </div>
-                <div class="js-refinement-actions-mobile is-mobile">
-                    <button class="js-button-clear">
-                        Clear
-                    </button>
-                    <button class="js-button-done">
-                        Done
-                    </button>
-                </div>
-            </div>
+            
             <div class="refinement js-refinement occasion" data-refinementid="occasion">
                 <input id="refinement-item-occasion" class="js-refinement-item-checkbox" type="checkbox">
                 <h3 class="refinement-head js-refinement-head">
@@ -907,9 +824,6 @@
                     </ul>
                 </div>
             </div>
-            <script>
-                window.refinementsData = { "refinementDefinitions": [{ "attributeID": "sortRule", "displayClass": "sort-by scrollable", "refinementValues": [{ "v": "We Recommend", "displayClass": "selected", "dv": "We Recommend", "linkClass": "refinement-link-radio" }, { "v": "price-high-to-low", "displayClass": "", "dv": "Price (High to Low)", "linkClass": "refinement-link-radio" }, { "v": "price-low-to-high", "displayClass": "", "dv": "Price (Low to High)", "linkClass": "refinement-link-radio" }, { "v": "newest-in", "displayClass": "", "dv": "Newest In", "linkClass": "refinement-link-radio" }, { "v": "most-popular", "displayClass": "", "dv": "Most Popular", "linkClass": "refinement-link-radio" }] }, { "displayName": "UK Size", "displayClass": "size scrollable", "attributeID": "size", "refinementValues": [{ "v": "4", "dv": "4", "sid": "swatch-4", "h": "?prefn1=size&prefv1=4" }, { "v": "6", "dv": "6", "sid": "swatch-6", "h": "?prefn1=size&prefv1=6" }, { "v": "8", "dv": "8", "sid": "swatch-8", "h": "?prefn1=size&prefv1=8" }, { "v": "10", "dv": "10", "sid": "swatch-10", "h": "?prefn1=size&prefv1=10" }, { "v": "12", "dv": "12", "sid": "swatch-12", "h": "?prefn1=size&prefv1=12" }, { "v": "14", "dv": "14", "sid": "swatch-14", "h": "?prefn1=size&prefv1=14" }, { "v": "16", "dv": "16", "sid": "swatch-16", "h": "?prefn1=size&prefv1=16" }, { "v": "18", "dv": "18", "sid": "swatch-18", "h": "?prefn1=size&prefv1=18" }, { "v": "20", "dv": "20", "sid": "swatch-20", "h": "?prefn1=size&prefv1=20" }, { "v": "22", "dv": "22", "sid": "swatch-22", "h": "?prefn1=size&prefv1=22" }, { "v": "24", "dv": "24", "sid": "swatch-24", "h": "?prefn1=size&prefv1=24" }, { "v": "26", "dv": "26", "sid": "swatch-26", "h": "?prefn1=size&prefv1=26" }, { "v": "28", "dv": "28", "sid": "swatch-28", "h": "?prefn1=size&prefv1=28" }, { "v": "16-18", "dv": "16-18", "sid": "swatch-16-18", "h": "?prefn1=size&prefv1=16-18" }, { "v": "20-22", "dv": "20-22", "sid": "swatch-20-22", "h": "?prefn1=size&prefv1=20-22" }, { "v": "24-26", "dv": "24-26", "sid": "swatch-24-26", "h": "?prefn1=size&prefv1=24-26" }, { "v": "XS", "dv": "XS", "sid": "swatch-xs", "h": "?prefn1=size&prefv1=XS" }, { "v": "S", "dv": "S", "sid": "swatch-s", "h": "?prefn1=size&prefv1=S" }, { "v": "M", "dv": "M", "sid": "swatch-m", "h": "?prefn1=size&prefv1=M" }, { "v": "L", "dv": "L", "sid": "swatch-l", "h": "?prefn1=size&prefv1=L" }, { "v": "XL", "dv": "XL", "sid": "swatch-xl", "h": "?prefn1=size&prefv1=XL" }, { "v": "XXXL", "dv": "XXXL", "sid": "swatch-xxxl", "h": "?prefn1=size&prefv1=XXXL" }, { "v": "S/M", "dv": "S/M", "sid": "swatch-s_m", "h": "?prefn1=size&prefv1=S%2FM" }, { "v": "M/L", "dv": "M/L", "sid": "swatch-m_l", "h": "?prefn1=size&prefv1=M%2FL" }, { "v": "One Size", "dv": "One Size", "sid": "swatch-one_size", "h": "?prefn1=size&prefv1=One%20Size" }], "isAttributeRefinement": true }, { "displayName": "Style", "displayClass": "swatches-style scrollable", "attributeID": "style", "refinementValues": [{ "v": "Bandeau & Bralets", "dv": "Bandeau & Bralets", "sid": "swatch-bandeau___bralets", "h": "?prefn1=style&prefv1=Bandeau%20%26%20Bralets" }, { "v": "Bardot & Off The Shoulder", "dv": "Bardot & Off The Shoulder", "sid": "swatch-bardot___off_the_shoulder", "h": "?prefn1=style&prefv1=Bardot%20%26%20Off%20The%20Shoulder" }, { "v": "Beach Cover Ups", "dv": "Beach Cover Ups", "sid": "swatch-beach_cover_ups", "h": "?prefn1=style&prefv1=Beach%20Cover%20Ups" }, { "v": "Beach Dresses", "dv": "Beach Dresses", "sid": "swatch-beach_dresses", "h": "?prefn1=style&prefv1=Beach%20Dresses" }, { "v": "Beachwear", "dv": "Beachwear", "sid": "swatch-beachwear", "h": "?prefn1=style&prefv1=Beachwear" }, { "v": "Blazer Dresses", "dv": "Blazer Dresses", "sid": "swatch-blazer_dresses", "h": "?prefn1=style&prefv1=Blazer%20Dresses" }, { "v": "Bodycon Dresses", "dv": "Bodycon Dresses", "sid": "swatch-bodycon_dresses", "h": "?prefn1=style&prefv1=Bodycon%20Dresses" }, { "v": "Camisoles", "dv": "Camisoles", "sid": "swatch-camisoles", "h": "?prefn1=style&prefv1=Camisoles" }, { "v": "Co-ordinates", "dv": "Co-ordinates", "sid": "swatch-co-ordinates", "h": "?prefn1=style&prefv1=Co-ordinates" }, { "v": "Crop Tops", "dv": "Crop Tops", "sid": "swatch-crop_tops", "h": "?prefn1=style&prefv1=Crop%20Tops" }, { "v": "Denim Dresses", "dv": "Denim Dresses", "sid": "swatch-denim_dresses", "h": "?prefn1=style&prefv1=Denim%20Dresses" }, { "v": "Dresses", "dv": "Dresses", "sid": "swatch-dresses", "h": "?prefn1=style&prefv1=Dresses" }, { "v": "Hoodies", "dv": "Hoodies", "sid": "swatch-hoodies", "h": "?prefn1=style&prefv1=Hoodies" }, { "v": "Jumper Dresses", "dv": "Jumper Dresses", "sid": "swatch-jumper_dresses", "h": "?prefn1=style&prefv1=Jumper%20Dresses" }, { "v": "Jumpers", "dv": "Jumpers", "sid": "swatch-jumpers", "h": "?prefn1=style&prefv1=Jumpers" }, { "v": "Jumpsuits", "dv": "Jumpsuits", "sid": "swatch-jumpsuits", "h": "?prefn1=style&prefv1=Jumpsuits" }, { "v": "Knitted Dresses", "dv": "Knitted Dresses", "sid": "swatch-knitted_dresses", "h": "?prefn1=style&prefv1=Knitted%20Dresses" }, { "v": "Maxi", "dv": "Maxi", "sid": "swatch-maxi", "h": "?prefn1=style&prefv1=Maxi" }, { "v": "Maxi Dresses", "dv": "Maxi Dresses", "sid": "swatch-maxi_dresses", "h": "?prefn1=style&prefv1=Maxi%20Dresses" }, { "v": "Midi", "dv": "Midi", "sid": "swatch-midi", "h": "?prefn1=style&prefv1=Midi" }, { "v": "Midi Dresses", "dv": "Midi Dresses", "sid": "swatch-midi_dresses", "h": "?prefn1=style&prefv1=Midi%20Dresses" }, { "v": "Mini", "dv": "Mini", "sid": "swatch-mini", "h": "?prefn1=style&prefv1=Mini" }, { "v": "Mini Dresses", "dv": "Mini Dresses", "sid": "swatch-mini_dresses", "h": "?prefn1=style&prefv1=Mini%20Dresses" }, { "v": "Other", "dv": "Other", "sid": "swatch-other", "h": "?prefn1=style&prefv1=Other" }, { "v": "T-Shirt Dresses", "dv": "T-Shirt Dresses", "sid": "swatch-t-shirt_dresses", "h": "?prefn1=style&prefv1=T-Shirt%20Dresses" }, { "v": "Peplum Tops", "dv": "Peplum Tops", "sid": "swatch-peplum_tops", "h": "?prefn1=style&prefv1=Peplum%20Tops" }, { "v": "Pinafore Dresses", "dv": "Pinafore Dresses", "sid": "swatch-pinafore_dresses", "h": "?prefn1=style&prefv1=Pinafore%20Dresses" }, { "v": "Prom Dresses", "dv": "Prom Dresses", "sid": "swatch-prom_dresses", "h": "?prefn1=style&prefv1=Prom%20Dresses" }, { "v": "Shift Dresses", "dv": "Shift Dresses", "sid": "swatch-shift_dresses", "h": "?prefn1=style&prefv1=Shift%20Dresses" }, { "v": "Shirt Dresses", "dv": "Shirt Dresses", "sid": "swatch-shirt_dresses", "h": "?prefn1=style&prefv1=Shirt%20Dresses" }, { "v": "Shirts & Blouses", "dv": "Shirts & Blouses", "sid": "swatch-shirts___blouses", "h": "?prefn1=style&prefv1=Shirts%20%26%20Blouses" }, { "v": "Skater", "dv": "Skater", "sid": "swatch-skater", "h": "?prefn1=style&prefv1=Skater" }, { "v": "Skater Dresses", "dv": "Skater Dresses", "sid": "swatch-skater_dresses", "h": "?prefn1=style&prefv1=Skater%20Dresses" }, { "v": "Skater Fit", "dv": "Skater Fit", "sid": "swatch-skater_fit", "h": "?prefn1=style&prefv1=Skater%20Fit" }, { "v": "Slips", "dv": "Slips", "sid": "swatch-slips", "h": "?prefn1=style&prefv1=Slips" }, { "v": "Smock Dresses", "dv": "Smock Dresses", "sid": "swatch-smock_dresses", "h": "?prefn1=style&prefv1=Smock%20Dresses" }, { "v": "Smock Tops", "dv": "Smock Tops", "sid": "swatch-smock_tops", "h": "?prefn1=style&prefv1=Smock%20Tops" }, { "v": "Sweatshirt Dresses", "dv": "Sweatshirt Dresses", "sid": "swatch-sweatshirt_dresses", "h": "?prefn1=style&prefv1=Sweatshirt%20Dresses" }, { "v": "Swing Dresses", "dv": "Swing Dresses", "sid": "swatch-swing_dresses", "h": "?prefn1=style&prefv1=Swing%20Dresses" }, { "v": "Tops", "dv": "Tops", "sid": "swatch-tops", "h": "?prefn1=style&prefv1=Tops" }, { "v": "Trousers", "dv": "Trousers", "sid": "swatch-trousers", "h": "?prefn1=style&prefv1=Trousers" }, { "v": "Tunic Dresses", "dv": "Tunic Dresses", "sid": "swatch-tunic_dresses", "h": "?prefn1=style&prefv1=Tunic%20Dresses" }, { "v": "Wide Leg", "dv": "Wide Leg", "sid": "swatch-wide_leg", "h": "?prefn1=style&prefv1=Wide%20Leg" }, { "v": "Wrap Dresses", "dv": "Wrap Dresses", "sid": "swatch-wrap_dresses", "h": "?prefn1=style&prefv1=Wrap%20Dresses" }], "isAttributeRefinement": true }, { "displayName": "Colour", "displayClass": "swatches-color scrollable", "attributeID": "color", "refinementValues": [{ "v": "Beige", "dv": "Beige", "sid": "swatch-beige", "h": "?prefn1=color&prefv1=Beige" }, { "v": "Black", "dv": "Black", "sid": "swatch-black", "h": "?prefn1=color&prefv1=Black" }, { "v": "Blue", "dv": "Blue", "sid": "swatch-blue", "h": "?prefn1=color&prefv1=Blue" }, { "v": "Brown", "dv": "Brown", "sid": "swatch-brown", "h": "?prefn1=color&prefv1=Brown" }, { "v": "Gold", "dv": "Gold", "sid": "swatch-gold", "h": "?prefn1=color&prefv1=Gold" }, { "v": "Green", "dv": "Green", "sid": "swatch-green", "h": "?prefn1=color&prefv1=Green" }, { "v": "Grey", "dv": "Grey", "sid": "swatch-grey", "h": "?prefn1=color&prefv1=Grey" }, { "v": "Khaki", "dv": "Khaki", "sid": "swatch-khaki", "h": "?prefn1=color&prefv1=Khaki" }, { "v": "Metallics", "dv": "Metallics", "sid": "swatch-metallics", "h": "?prefn1=color&prefv1=Metallics" }, { "v": "Multi", "dv": "Multi", "sid": "swatch-multi", "h": "?prefn1=color&prefv1=Multi" }, { "v": "Navy", "dv": "Navy", "sid": "swatch-navy", "h": "?prefn1=color&prefv1=Navy" }, { "v": "Neon", "dv": "Neon", "sid": "swatch-neon", "h": "?prefn1=color&prefv1=Neon" }, { "v": "Nude", "dv": "Nude", "sid": "swatch-nude", "h": "?prefn1=color&prefv1=Nude" }, { "v": "Orange", "dv": "Orange", "sid": "swatch-orange", "h": "?prefn1=color&prefv1=Orange" }, { "v": "Pink", "dv": "Pink", "sid": "swatch-pink", "h": "?prefn1=color&prefv1=Pink" }, { "v": "Purple", "dv": "Purple", "sid": "swatch-purple", "h": "?prefn1=color&prefv1=Purple" }, { "v": "Red", "dv": "Red", "sid": "swatch-red", "h": "?prefn1=color&prefv1=Red" }, { "v": "Silver", "dv": "Silver", "sid": "swatch-silver", "h": "?prefn1=color&prefv1=Silver" }, { "v": "White", "dv": "White", "sid": "swatch-white", "h": "?prefn1=color&prefv1=White" }, { "v": "Yellow", "dv": "Yellow", "sid": "swatch-yellow", "h": "?prefn1=color&prefv1=Yellow" }], "isAttributeRefinement": true }, { "displayName": "Price", "displayClass": "swatches-price", "attributeID": "price", "refinementValues": [{ "v": "0000000000", "dv": "under £5", "sid": "swatch-_0_-__5", "linkClass": "refinement-link-radio", "valueFrom": 0, "valueTo": 5, "h": "?pmax=5.00&pmin=0.00" }, { "v": "0000000005", "dv": "£5 - £15", "sid": "swatch-_5_-__15", "linkClass": "refinement-link-radio", "valueFrom": 5, "valueTo": 15, "h": "?pmax=15.00&pmin=5.00" }, { "v": "0000000015", "dv": "£15 - £30", "sid": "swatch-_15_-__30", "linkClass": "refinement-link-radio", "valueFrom": 15, "valueTo": 30, "h": "?pmax=30.00&pmin=15.00" }, { "v": "0000000030", "dv": "£30 - £50", "sid": "swatch-_30_-__50", "linkClass": "refinement-link-radio", "valueFrom": 30, "valueTo": 50, "h": "?pmax=50.00&pmin=30.00" }, { "v": "0000000050", "dv": "£50 and up", "sid": "swatch-_100__", "linkClass": "refinement-link-radio", "valueFrom": 50, "valueTo": 100, "h": "?pmax=100.00&pmin=50.00" }], "isPriceRefinement": true, "priceMin": null, "priceMax": null }, { "displayName": "Occasion", "displayClass": "swatches-occasion scrollable", "attributeID": "occasion", "refinementValues": [{ "v": "Athleisure", "dv": "Athleisure", "sid": "swatch-athleisure", "h": "?prefn1=occasion&prefv1=Athleisure" }, { "v": "Beachwear", "dv": "Beachwear", "sid": "swatch-beachwear", "h": "?prefn1=occasion&prefv1=Beachwear" }, { "v": "Casual", "dv": "Casual", "sid": "swatch-casual", "h": "?prefn1=occasion&prefv1=Casual" }, { "v": "Christmas", "dv": "Christmas", "sid": "swatch-christmas", "h": "?prefn1=occasion&prefv1=Christmas" }, { "v": "Core", "dv": "Core", "sid": "swatch-core", "h": "?prefn1=occasion&prefv1=Core" }, { "v": "Festival", "dv": "Festival", "sid": "swatch-festival", "h": "?prefn1=occasion&prefv1=Festival" }, { "v": "Going Out", "dv": "Going Out", "sid": "swatch-going_out", "h": "?prefn1=occasion&prefv1=Going%20Out" }, { "v": "Halloween", "dv": "Halloween", "sid": "swatch-halloween", "h": "?prefn1=occasion&prefv1=Halloween" }, { "v": "Smart Casual", "dv": "Smart Casual", "sid": "swatch-smart_casual", "h": "?prefn1=occasion&prefv1=Smart%20Casual" }, { "v": "Novelty", "dv": "Novelty", "sid": "swatch-novelty", "h": "?prefn1=occasion&prefv1=Novelty" }, { "v": "Occasion", "dv": "Occasion", "sid": "swatch-occasion", "h": "?prefn1=occasion&prefv1=Occasion" }, { "v": "Valentines", "dv": "Valentines", "sid": "swatch-valentines", "h": "?prefn1=occasion&prefv1=Valentines" }, { "v": "Workwear", "dv": "Workwear", "sid": "swatch-workwear", "h": "?prefn1=occasion&prefv1=Workwear" }], "isAttributeRefinement": true }, { "displayName": "Brands", "displayClass": "swatches-boohooBrand scrollable", "attributeID": "boohooBrand", "refinementValues": [{ "v": "boohoo", "dv": "boohoo", "sid": "swatch-boohoo", "h": "?prefn1=boohooBrand&prefv1=boohoo" }, { "v": "boohoo Basics", "dv": "boohoo Basics", "sid": "swatch-boohoo_basics", "h": "?prefn1=boohooBrand&prefv1=boohoo%20Basics" }, { "v": "boohoo Blue", "dv": "boohoo Blue", "sid": "swatch-boohoo_blue", "h": "?prefn1=boohooBrand&prefv1=boohoo%20Blue" }, { "v": "boohoo Boutique", "dv": "boohoo Boutique", "sid": "swatch-boohoo_boutique", "h": "?prefn1=boohooBrand&prefv1=boohoo%20Boutique" }, { "v": "boohoo Fit", "dv": "boohoo Fit", "sid": "swatch-boohoo_fit", "h": "?prefn1=boohooBrand&prefv1=boohoo%20Fit" }, { "v": "boohoo Maternity", "dv": "boohoo Maternity", "sid": "swatch-boohoo_maternity", "h": "?prefn1=boohooBrand&prefv1=boohoo%20Maternity" }, { "v": "boohoo Night", "dv": "boohoo Night", "sid": "swatch-boohoo_night", "h": "?prefn1=boohooBrand&prefv1=boohoo%20Night" }, { "v": "boohoo Petite", "dv": "boohoo Petite", "sid": "swatch-boohoo_petite", "h": "?prefn1=boohooBrand&prefv1=boohoo%20Petite" }, { "v": "boohoo Plus", "dv": "boohoo Plus", "sid": "swatch-boohoo_plus", "h": "?prefn1=boohooBrand&prefv1=boohoo%20Plus" }, { "v": "boohoo Premium", "dv": "boohoo Premium", "sid": "swatch-boohoo_premium", "h": "?prefn1=boohooBrand&prefv1=boohoo%20Premium" }, { "v": "boohoo Tall", "dv": "boohoo Tall", "sid": "swatch-boohoo_tall", "h": "?prefn1=boohooBrand&prefv1=boohoo%20Tall" }, { "v": "Collection", "dv": "Collection", "sid": "swatch-collection", "h": "?prefn1=boohooBrand&prefv1=Collection" }], "isAttributeRefinement": true }] };
-            </script>
             <div class="is-mobile">
                 <script type="text/template" id="js-refinement-mobile-template">
             <div class="m-refinement-header">
@@ -1204,13 +1118,14 @@
 
 
         $(document).ready(function () {
-            function swatch_item_click(ele) {
-                $(ele).addClass('');
 
-            }
 
-            $('.swatches-item').bind('click', swatch_item_click);
+            $('.js-refinement-item-checkbox').bind('click',function(){
+                   
+                    $("input[type='checkbox']").prop("checked",false);
+                    $(this).prop('checked',true);
 
+            });
 
         });
 

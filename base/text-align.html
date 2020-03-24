@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-align 水平居中</title>
+    <style>
+        div{
+            width: 500px;
+            background-color: #eee;
+            font-size: 25px;
+            text-align: center;
+            line-height: 10;
+        }
+        #sub{
+            width:15px;
+            height:15px;
+            background-color: red;
+        }
+
+        label{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+  <!-- text-align 能让文本、行家元素 图片元素水平居中，块级元素不行  -->
+  <!-- 是相对于父级元素居中的  -->
+      <div>
+            this is the text <label>the label </label>
+            <p>this is anohter line height </p>
+            <img src="women.jpg" alt="">
+            <div id="sub"></div>
+      </div>
+    
+</body>
+</html>

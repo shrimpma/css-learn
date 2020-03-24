@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 后代 选择器 </title>
+
+    <style>
+        body{
+            max-width: 1600px;
+            margin: 0px auto;
+            text-align: center;
+        }
+        div{
+            border:1px solid #000;
+        }
+        /* 空格表示 后代元素,其下的元素 ，子子孙孙   不论是儿子元素还是孙子元素 */
+        .common  h3 {
+            color:green;
+        }
+
+        /* 直接子元素 */
+        .vip >  h3{
+            color:gold;
+            font-size: 600;
+        }
+        h3.special i:nth-child(1) {
+            color:pink
+        }
+
+        /* 权重 */
+        /* 标签 < 类选择器  <  id 选择器 < !important   */
+        h3.special i:nth-child(2){
+            color:gold !important;
+        }
+
+        .now_friend {
+            color:red;
+        }
+        label{
+            font-weight: 400;
+        }
+
+#now_grilfriend{
+    color:green;
+}
+.label_style{
+    font-weight: 900;
+}
+    </style>
+</head>
+<body>
+    <label class="label_style" for=""> the label</label>
+    <div class="common">
+        <h1>老刘</h1>
+        <h2>班主任</h2>
+        <h3 class="special">学生1
+            <i>前任女友</i>
+            <i id="now_grilfriend" class="now_friend">现任女友</i>
+        </h3>
+        <h3>学生2</h3>
+        <h3>学生3</h3>
+        <h3>学生4</h3>
+        <h3>学生5</h3>
+        <h3>学生6</h3>
+        <div>
+            <h3>sub h3</h3>
+        </div>
+    </div>
+
+    <div class="vip">
+        <h1>导游</h1>
+        <h2>语音导游</h2>
+        <h3>土豪</h3>
+        <h3>暴发户</h3>
+        <h3>官员</h3>
+        <h3>律师</h3>
+        <h3>官二代</h3>
+        <h3>省长 </h3>
+
+    </div>
+</body>
+</html>

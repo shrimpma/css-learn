@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>form  test</title>
+    <title>form test</title>
     <script src="lib/jquery.js"></script>
 </head>
+
 <body>
-   <span id="test"  data-variant ="-3"></span>
+
+    <a href="" id="pagecontent">pagecontent</a>
+    <div class="sidebar__collection-filter" data-filter-name="color__"> <input style="display: none;"
+            id="refinement-item" class="js-refinement-item-checkbox" type="checkbox"> <label class="toggle">Color<span
+                class="right icon-down-arrow"></span></label>
+        <ul class="toggle_list" style="display: block;">
+            <div class="filter-all-tags color-filter--true">
+                <li test1="" class="selected"> <label data-option-filter=""><input type="checkbox" value="black"
+                            name="color__black" id="color__Black" class="styled-checkbox" style="borde"
+                           >
+                        Black</label></li>
+                <li test1="" class=""> <label data-option-filter=""><input type="checkbox" value="brown"
+                            name="color__brown" id="color__Brown" class="styled-checkbox" style="borde">
+                        Brown</label></li>
+                <li test1="" class="selected"> <label data-option-filter=""><input type="checkbox" value="blonde"
+                            name="color__blonde" id="color__Blonde" class="styled-checkbox" style="borde">
+                        Blonde</label></li>
+                <li test1="" class=""> <label data-option-filter=""><input type="checkbox" value="highlights"
+                            name="color__highlights" id="color__Highlights" class="styled-checkbox" style="borde">
+                        Highlights</label></li>
+                <li test1="" class="selected"> <label data-option-filter=""><input type="checkbox" value="balayage"
+                            name="color__balayage" id="color__Balayage" class="styled-checkbox" style="borde"
+                           >
+                        Balayage</label></li>
+            </div>
+        </ul>
+    </div>
 </body>
+
 </html>
 <script>
-    $(document).ready(function(){
-
-            var v = $("#test").attr('data-variant');
-            console.log(v);
-
-            var v_int = parseInt(v);
-
-            console.log('=======',v_int);
-
-            if(v_int <= 0 ){
-
-                console.log('1111111,',v_int);
-
-            }
 
 
+    $('body').on('change', '[data-option-filter] input', function () {
 
-    });
+        $(this).parent('.filter-all-tags > [data-option-filter] input').attr('checked',false);
+        $(this).attr('checked',true);
+
+        $("html, body").animate({
+            scrollTop: ($('#pagecontent').offset().top)
+        }, 500);
+    })
+
 </script>

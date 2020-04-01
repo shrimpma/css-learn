@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>float</title>
+
+    <!-- 当使用float 时候，脱离的标准流，父元素如果没有高度，导致上下重叠，
+        main 没有高度的话，header  footer 会重叠
+        解决办法：
+    1. 给父元素设置高度
+    2. 使用overflow:hidden; 
+       副作用： 导致隐藏 
+
+    3.给父元素设置 clearfix ,推荐的做法
+    main.wrap:after {
+    content: '';
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+
+
+    -->
+
+
     <style>
         *{
             padding:0px;
             margin:0px;
             box-sizing: border-box;
         }
+        
         .one{
             width:100px;
             height: 100px;
@@ -29,11 +50,42 @@
             float:left;
            
         }
+
+        main{
+            max-width: 800px;
+            border:1px solid green;
+            height: 500px;
+            margin:0px auto;
+        }
+
+        main.wrap:after {
+            content: '';
+            clear: both;
+            display: block;
+            visibility: hidden;
+        }
+        header{
+            background-color:#eee;
+            height: 200px;
+        }
+
+        footer{
+            background-color: #ddd;
+            height: 400px;
+        }
     </style>
 </head>
 <body>
-    <div class="one"></div>
-    <div class="two"></div>
-    <div class="three"></div>
+    <header>
+        heaser 
+    </header>
+    <main class="wrap">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+
+    </main>
+  
+    <footer>footer</footer>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css content </title>
+    
+    <!-- css content 能够实现计数功能
+        1. counter-reset: name
+        2.
+            content:"内容";  //使用函数 counter() or counters()
+            counter-increment: counter-reset name:
+
+          
+    
+    
+    
+    -->
+
+
+
+    <style>
+        
+.reset { 
+  padding-left: 20px; 
+  counter-reset: wangxiaoer;
+}
+.counter:before { 
+  content: counters(wangxiaoer, '.') ; 
+  counter-increment: wangxiaoer;
+}
+
+body{
+    counter-reset: html-part;
+}
+
+.part::before{
+    
+    counter-increment: html-part;
+    content:"section " counter(html-part) ". " ;
+}
+        
+    </style>
+</head>
+<body>
+    <div class="reset">
+        <div class="counter">我是王小二
+            <div class="reset">
+                <div class="counter">我是王小二的大儿子</div>
+                <div class="counter">我是王小二的二儿子
+                    <div class="reset">
+                        <div class="counter">我是王小二的二儿子的大孙子</div>
+                        <div class="counter">我是王小二的二儿子的二孙子</div>
+                        <div class="counter">我是王小二的二儿子的小孙子</div>
+                    </div>
+                </div>
+                <div class="counter">我是王小二的三儿子</div>
+            </div>
+        </div>
+        <div class="counter">我是王小三</div>
+        <div class="counter">我是王小四
+            <div class="reset">
+                <div class="counter">我是王小四的大儿子</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <h1 class="part">html </h1>
+        <h1 class="part">css</h1>
+        <h1 class="part">javascript </h1>
+
+    </div>
+</body>
+</html>

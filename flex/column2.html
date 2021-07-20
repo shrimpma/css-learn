@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 每行显示2个</title>
+
+    <style>
+         body{
+             width:500px;
+             margin:0px auto;
+             border:1px solid green;
+             margin-top: 10px;
+
+         }
+         .product-info__sla-line{
+             display: flex;
+             flex-flow:row  wrap;
+         }
+
+         .product-info__sla{
+             flex:0 0 50%;
+         }
+
+
+    </style>
+</head>
+<body>
+    
+<div class="product-info__sla-line">
+    <div class="product-info__sla">
+      <svg width="24" height="24" title="Delivery Truck Clock" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+        <path d="M5.709 1.5a5 5 0 0 0 0 10 5 5 0 0 0 0-10m2 6h-2V4m11 9.5h3.8a1 1 0 0 1 .942.664l1.785 5a1 1 0 0 1-.946 1.336h-1.167m-10 0h5.6l-.009-9a1 1 0 0 0-1-1h-4m-6.005 3v6a1 1 0 0 0 1 1H8.3m1.409-1a1.5 1.5 0 0 0 0 3 1.5 1.5 0 0 0 0-3m10 0a1.5 1.5 0 0 0 0 3 1.5 1.5 0 0 0 0-3m-19-4l3 .005m-1.5 1.995l1.5.005m-.5 1.995l.5.005m18.5-3.005h-5.5m.011 4h1.582"></path>
+      </svg>
+      Ships fast
+    </div>
+    <div class="product-info__sla product-info__sla--easy-returns">
+      <a href="/pages/return-policy" target="_blank" rel="noopener">
+        <svg width="24" height="24" title="Synchronize Arrows" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+          <path d="M.714 10.353l2.787 4.15 3.205-3.838m16.58 3.99l-2.785-4.152-3.207 3.839m3.17-3.802a8.622 8.622 0 0 1-6.51 9.729 8.493 8.493 0 0 1-7.931-2.224m-2.518-3.566a8.853 8.853 0 0 1 6.538-10.753 8.493 8.493 0 0 1 8.324 2.642"></path>
+        </svg>
+        Easy returns
+      </a>
+    </div>
+    <div class="product-info__sla" data-quadpay-element="">
+      <svg width="24" height="24" title="Quadpay Logo" fill="currentColor" aria-hidden="true" focusable="false" role="presentation">
+        <path d="M23.809 16.487a.432.432 0 0 1-.343.697h-2.328l.002 3.95a.434.434 0 0 1-.68.356l-2.277-1.563a.432.432 0 0 1-.188-.356v-2.387h-4.438c-.56-.025-.684-.032-.708-.034C8.944 16.778 6 13.53 6 9.592 6 5.406 9.396 2 13.57 2c3.998 0 7.317 3.132 7.557 7.132.002.034.004.885.006 2.554a.433.433 0 0 1-.433.432h-2.273a.433.433 0 0 1-.433-.432v-2.47l-.004-.076c-.107-1.131-.416-2.178-1.265-2.946a4.61 4.61 0 0 0-3.101-1.195C11.085 5 9.02 7.051 9.02 9.574a4.57 4.57 0 0 0 4.123 4.55h8.613c.134 0 .26.062.342.167l1.711 2.196z"></path>
+      </svg>
+      Pay later with Quadpay
+    </div>
+
+    <div class="product-info__sla">
+      <svg width="24" height="24" title="Message Bubbles" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+        <path d="M9.5 16.5c0 4.288 5 7.5 9.5 5.5l4 1.5-1.5-3a4.994 4.994 0 0 0 2-4c0-3.154-3.134-6-7-6s-7 2.846-7 6zm7.9-8a5.822 5.822 0 0 0 .1-1c0-3.866-3.8-7-8.5-7S.5 3.634.5 7.5a6.434 6.434 0 0 0 2.517 4.97L1 16l4.939-1.976a9.993 9.993 0 0 0 1.561.361"></path>
+      </svg>
+      24/7 Customer service
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem  size </title>
+    <style>
+
+
+html {
+    font-size: 16px;
+}
+
+.parent{
+    font-size: 14px;
+}
+.demo1{
+    font-size:1em;
+}
+
+.demo2{
+    font-size: 1rem;
+}
+
+body{
+    font-size: 15px;
+}
+
+/*
+ em 相对于最近的父类元素
+
+ rem 相当于根元素 即 html  
+
+*/
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="parent">
+            <div class="demo1">this is em text</div>
+            <div class="demo2">this is em text</div>
+
+    </div>
+
+</body>
+</html>

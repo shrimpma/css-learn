@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin html </title>
+    <style>
+        html,body{
+            font-size:18px;
+        }
+        .father{
+            height:100px;
+            background:red;
+            
+        }
+        .son {
+            /* width:200px; */
+            /* margin-right:80px; */
+          height:80px;
+          margin-bottom: 100px;
+          background:green;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="father">
+    ffather element 
+    <div class="son">
+        the son element 
+    </div>
+</div>
+
+    <div class="demo" style="display: none;">
+    	          
+        <div class="container">
+            <div id="colLeft" class="column-left">
+                <h4>正方观点</h4>
+                <p>观点1</p>
+            <p>观点2</p><p>观点3</p><p>观点4</p><p>观点5</p><p>观点6</p><p>观点7</p><p>观点8</p><p>观点9</p></div>
+            <div id="colRight" class="column-right">
+                <h4>反方观点</h4>
+            <p>观点1</p><p>观点2</p><p>观点3</p><p>观点4</p><p>观点5</p><p>观点6</p><p>观点7</p></div>
+        </div>
+        <div class="container">
+            <p class="half">
+                <input type="button" id="leftMore" value="更多正方观点">
+            </p>
+            <p class="half">
+                <input type="button" id="rightMore" value="更多反方观点">
+            </p>
+        </div>
+    </div>
+<script src="../lib/jquery.js"></script>
+<script>
+
+var $ = function (id) {
+    return document.getElementById(id);
+};
+// 分栏元素
+var colLeft = $('colLeft'), colRight = $('colRight');
+// 按钮元素
+var leftMore = $('leftMore'), rightMore = $('rightMore');
+
+// 序号
+var indexLeft = 1, indexRight = 0;
+
+if (colLeft && colRight && leftMore && rightMore) {
+    leftMore.onclick = function () {
+        indexLeft = indexLeft + 1;
+        colLeft.insertAdjacentHTML('beforeend', '<p>观点'+ indexLeft +'</p>');
+    };
+    rightMore.onclick = function () {
+        indexRight = indexRight + 1;
+        colRight.insertAdjacentHTML('beforeend', '<p>观点'+ indexRight +'</p>');
+    };
+}
+</script>
+</body>
+
+</html>

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>form test</title>
-    <script src="lib/jquery.js"></script>
+        
+    <link href="https://cdn.shopify.com/s/files/1/0066/0052/t/171/assets/theme.min.css?v=6763744902067176675" rel="stylesheet" type="text/css" media="all">
+    
+
 </head>
 
 <body>
@@ -40,17 +43,3 @@
 </body>
 
 </html>
-<script>
-
-
-    $('body').on('change', '[data-option-filter] input', function () {
-
-        $(this).parent('.filter-all-tags > [data-option-filter] input').attr('checked',false);
-        $(this).attr('checked',true);
-
-        $("html, body").animate({
-            scrollTop: ($('#pagecontent').offset().top)
-        }, 500);
-    })
-
-</script>

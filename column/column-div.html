@@ -17,13 +17,25 @@
             width: 100%;
             margin: 0 auto;
             /* background-color: #ddd; */
-            border: 1px solid #ddd;
+            /* border: 1px solid #ddd; */
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #000;
+            font-weight: bold;
+            text-align: left;
         }
 
         .o-layout--small {
             margin-left: -15px;
         }
 
+        /* 父级元素  font-size:0 
+        
+          子元素： display:inline-block
+                width: 25% or  50%
+        */
         .o-layout {
             display: block;
             margin: 0;
@@ -37,8 +49,6 @@
             padding-left: 15px;
         }
 
-    
-
         .o-layout__item {
             box-sizing: border-box;
             display: inline-block;
@@ -49,7 +59,7 @@
         }
 
         div.u-1\/2 {
-            width: 50%;
+            width: 50% !important;
 
         }
 
@@ -58,6 +68,12 @@
                 width: 25% !important;
             }
         }
+
+        img {
+    max-width: 100%;
+    font-style: italic;
+    vertical-align: middle;
+}
     </style>
 </head>
 
@@ -66,26 +82,574 @@
 
         <div class="o-layout o-layout--small">
             <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">
-                <h1>the product title </h1>
-                <p>product title </p>
-                <p>product desc info here ===================</p>
+
+
+
+
+                <a href="/collections/frontal-lace-wig/products/180-density-frontal-lace-wig-pre-plucked" class="product-link"
+                    title="180% Density Frontal Lace Wig Glueless Pre Plucked">
+                    <div class="product product--center">
+
+                        <div class="product__media u-bg-brand">
+                            <div class="product__img-wrapper">
+
+
+                                <!--div class="hot">
+                
+                     <img style="position: relative;top: -7px; width: 90%;right: -5px;" src="https://cdn.shopify.com/s/files/1/2465/8681/files/home-sale.jpg?4995">
+                          </div-->
+                                <img src="//cdn.shopify.com/s/files/1/2465/8681/products/4x13-wig-zj-3_380x.jpg?v=1628588661"
+                                    data-src="//cdn.shopify.com/s/files/1/2465/8681/products/4x13-wig-zj-3_380x.jpg?v=1628588661"
+                                    alt="180% Density Frontal Lace Wig Glueless Pre Plucked" class="product__img lazyloaded">
+                            </div>
+
+
+                            <!--div class="product__label label">
+                    <p class="product__label-text label__text">On Sale</p>
+                </div-->
+                            <div class="hot">
+                                <img style="position: relative;top: -7px; width: 90%;right: -5px;"
+                                    src="https://cdn.shopify.com/s/files/1/2465/8681/files/home-sale.jpg?4995">
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="product__details">
+                            <h3 class="product__title h4">180% Density Frontal Lace Wig Glueless Pre Plucked</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div style="" class="jdgm-widget jdgm-preview-badge jdgm-preview-badge--with-link jdgm--done-setup"
+                                data-id="1611598921818" data-template="collection" data-auto-install="false">
+                                <div style="display:none" class="jdgm-prev-badge" data-average-rating="4.96" data-number-of-reviews="241"
+                                    data-number-of-questions="0"> <span class="jdgm-prev-badge__stars" data-score="4.96" tabindex="0"
+                                        aria-label="4.96 stars" role="button"> <span class="jdgm-star jdgm--on"></span><span
+                                            class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span
+                                            class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span> </span> <span
+                                        class="jdgm-prev-badge__text">241 reviews</span> </div>
+                            </div>
+
+
+
+
+                            <p class="product__price h5">
+                                <!-- snippet/product-price.liquid -->
+
+
+
+
+                                <span class="product__price-price"><span class="money">$179.90</span></span>
+                                <strike class="product__price-cross"><span class="money">$449.75</span></strike>
+
+
+
+
+
+                            </p>
+                        </div>
+                        <!--span class="shopify-product-reviews-badge" data-id="1611598921818"></span-->
+
+                    </div>
+                </a>
+                <style>
+                    .hot {
+                        background: transparent;
+                        display: inline-block;
+                        text-align: center;
+                        border-radius: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 9;
+                        width: 33px;
+                        height: 33px;
+                    }
+
+                    .hot>span {
+                        color: #fff;
+                        font-size: 13px;
+                        display: block;
+                        line-height: 20px;
+                        margin-top: 2px;
+                    }
+
+                    .hot>i {
+                        color: #fff;
+                        font-size: 11px;
+                        display: block;
+                        line-height: 10px;
+                        font-style: inherit;
+                    }
+                </style>
+
+                <script>
+
+                    $(function () {
+
+
+                        var num = $(".product__price-price").text().substring(1);
+                        var nums = $(".product__price-cross").text().substring(1);
+                        var number = 100 - num / nums * 100;
+                        $(".hot .num").text(number);
+                        //   console.log(num);
+                    })
+
+                </script>
+
+
 
             </div>
-            <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">the content</div>
-            <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">the content</div>
+            <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">
+
+
+
+
+                <a href="/collections/frontal-lace-wig/products/180-density-frontal-lace-wig-pre-plucked" class="product-link"
+                    title="180% Density Frontal Lace Wig Glueless Pre Plucked">
+                    <div class="product product--center">
+
+                        <div class="product__media u-bg-brand">
+                            <div class="product__img-wrapper">
+
+
+                                <!--div class="hot">
+                
+                     <img style="position: relative;top: -7px; width: 90%;right: -5px;" src="https://cdn.shopify.com/s/files/1/2465/8681/files/home-sale.jpg?4995">
+                          </div-->
+                                <img src="//cdn.shopify.com/s/files/1/2465/8681/products/u-part-bob-wig-n2_380x.jpg?v=1595570097"
+                                    data-src="//cdn.shopify.com/s/files/1/2465/8681/products/4x13-wig-zj-3_380x.jpg?v=1628588661"
+                                    alt="180% Density Frontal Lace Wig Glueless Pre Plucked" class="product__img lazyloaded">
+                            </div>
+
+
+                            <!--div class="product__label label">
+                    <p class="product__label-text label__text">On Sale</p>
+                </div-->
+                            <div class="hot">
+                                <img style="position: relative;top: -7px; width: 90%;right: -5px;"
+                                    src="https://cdn.shopify.com/s/files/1/2465/8681/files/home-sale.jpg?4995">
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="product__details">
+                            <h3 class="product__title h4">180% Density Frontal Lace Wig Glueless Pre Plucked</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div style="" class="jdgm-widget jdgm-preview-badge jdgm-preview-badge--with-link jdgm--done-setup"
+                                data-id="1611598921818" data-template="collection" data-auto-install="false">
+                                <div style="display:none" class="jdgm-prev-badge" data-average-rating="4.96" data-number-of-reviews="241"
+                                    data-number-of-questions="0"> <span class="jdgm-prev-badge__stars" data-score="4.96" tabindex="0"
+                                        aria-label="4.96 stars" role="button"> <span class="jdgm-star jdgm--on"></span><span
+                                            class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span
+                                            class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span> </span> <span
+                                        class="jdgm-prev-badge__text">241 reviews</span> </div>
+                            </div>
+
+
+
+
+                            <p class="product__price h5">
+                                <!-- snippet/product-price.liquid -->
+
+
+
+
+                                <span class="product__price-price"><span class="money">$179.90</span></span>
+                                <strike class="product__price-cross"><span class="money">$449.75</span></strike>
+
+
+
+
+
+                            </p>
+                        </div>
+                        <!--span class="shopify-product-reviews-badge" data-id="1611598921818"></span-->
+
+                    </div>
+                </a>
+                <style>
+                    .hot {
+                        background: transparent;
+                        display: inline-block;
+                        text-align: center;
+                        border-radius: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 9;
+                        width: 33px;
+                        height: 33px;
+                    }
+
+                    .hot>span {
+                        color: #fff;
+                        font-size: 13px;
+                        display: block;
+                        line-height: 20px;
+                        margin-top: 2px;
+                    }
+
+                    .hot>i {
+                        color: #fff;
+                        font-size: 11px;
+                        display: block;
+                        line-height: 10px;
+                        font-style: inherit;
+                    }
+                </style>
+
+                <script>
+
+                    $(function () {
+
+
+                        var num = $(".product__price-price").text().substring(1);
+                        var nums = $(".product__price-cross").text().substring(1);
+                        var number = 100 - num / nums * 100;
+                        $(".hot .num").text(number);
+                        //   console.log(num);
+                    })
+
+                </script>
+
+
+            </div>
+            <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">
+
+
+
+
+                <a href="/collections/frontal-lace-wig/products/180-density-frontal-lace-wig-pre-plucked" class="product-link"
+                    title="180% Density Frontal Lace Wig Glueless Pre Plucked">
+                    <div class="product product--center">
+
+                        <div class="product__media u-bg-brand">
+                            <div class="product__img-wrapper">
+
+
+                                <!--div class="hot">
+                
+                     <img style="position: relative;top: -7px; width: 90%;right: -5px;" src="https://cdn.shopify.com/s/files/1/2465/8681/files/home-sale.jpg?4995">
+                          </div-->
+                                <img src="//cdn.shopify.com/s/files/1/2465/8681/products/4x13-wig-zj-3_380x.jpg?v=1628588661"
+                                    data-src="//cdn.shopify.com/s/files/1/2465/8681/products/4x13-wig-zj-3_380x.jpg?v=1628588661"
+                                    alt="180% Density Frontal Lace Wig Glueless Pre Plucked" class="product__img lazyloaded">
+                            </div>
+
+
+                            <!--div class="product__label label">
+                    <p class="product__label-text label__text">On Sale</p>
+                </div-->
+                            <div class="hot">
+                                <img style="position: relative;top: -7px; width: 90%;right: -5px;"
+                                    src="https://cdn.shopify.com/s/files/1/2465/8681/files/home-sale.jpg?4995">
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="product__details">
+                            <h3 class="product__title h4">180% Density Frontal Lace Wig Glueless Pre Plucked</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div style="" class="jdgm-widget jdgm-preview-badge jdgm-preview-badge--with-link jdgm--done-setup"
+                                data-id="1611598921818" data-template="collection" data-auto-install="false">
+                                <div style="display:none" class="jdgm-prev-badge" data-average-rating="4.96" data-number-of-reviews="241"
+                                    data-number-of-questions="0"> <span class="jdgm-prev-badge__stars" data-score="4.96" tabindex="0"
+                                        aria-label="4.96 stars" role="button"> <span class="jdgm-star jdgm--on"></span><span
+                                            class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span
+                                            class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span> </span> <span
+                                        class="jdgm-prev-badge__text">241 reviews</span> </div>
+                            </div>
+
+
+
+
+                            <p class="product__price h5">
+                                <!-- snippet/product-price.liquid -->
+
+
+
+
+                                <span class="product__price-price"><span class="money">$179.90</span></span>
+                                <strike class="product__price-cross"><span class="money">$449.75</span></strike>
+
+
+
+
+
+                            </p>
+                        </div>
+                        <!--span class="shopify-product-reviews-badge" data-id="1611598921818"></span-->
+
+                    </div>
+                </a>
+                <style>
+                    .hot {
+                        background: transparent;
+                        display: inline-block;
+                        text-align: center;
+                        border-radius: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 9;
+                        width: 33px;
+                        height: 33px;
+                    }
+
+                    .hot>span {
+                        color: #fff;
+                        font-size: 13px;
+                        display: block;
+                        line-height: 20px;
+                        margin-top: 2px;
+                    }
+
+                    .hot>i {
+                        color: #fff;
+                        font-size: 11px;
+                        display: block;
+                        line-height: 10px;
+                        font-style: inherit;
+                    }
+                </style>
+
+                <script>
+
+                    $(function () {
+
+
+                        var num = $(".product__price-price").text().substring(1);
+                        var nums = $(".product__price-cross").text().substring(1);
+                        var number = 100 - num / nums * 100;
+                        $(".hot .num").text(number);
+                        //   console.log(num);
+                    })
+
+                </script>
+
+
+            </div>
+            <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">
+
+
+
+
+                <a href="/collections/frontal-lace-wig/products/180-density-frontal-lace-wig-pre-plucked" class="product-link"
+                    title="180% Density Frontal Lace Wig Glueless Pre Plucked">
+                    <div class="product product--center">
+
+                        <div class="product__media u-bg-brand">
+                            <div class="product__img-wrapper">
+
+
+                                <!--div class="hot">
+                
+                     <img style="position: relative;top: -7px; width: 90%;right: -5px;" src="https://cdn.shopify.com/s/files/1/2465/8681/files/home-sale.jpg?4995">
+                          </div-->
+                                <img src="//cdn.shopify.com/s/files/1/2465/8681/products/4x13-wig-zj-3_380x.jpg?v=1628588661"
+                                    data-src="//cdn.shopify.com/s/files/1/2465/8681/products/4x13-wig-zj-3_380x.jpg?v=1628588661"
+                                    alt="180% Density Frontal Lace Wig Glueless Pre Plucked" class="product__img lazyloaded">
+                            </div>
+
+
+                            <!--div class="product__label label">
+                    <p class="product__label-text label__text">On Sale</p>
+                </div-->
+                            <div class="hot">
+                                <img style="position: relative;top: -7px; width: 90%;right: -5px;"
+                                    src="https://cdn.shopify.com/s/files/1/2465/8681/files/home-sale.jpg?4995">
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="product__details">
+                            <h3 class="product__title h4">180% Density Frontal Lace Wig Glueless Pre Plucked</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div style="" class="jdgm-widget jdgm-preview-badge jdgm-preview-badge--with-link jdgm--done-setup"
+                                data-id="1611598921818" data-template="collection" data-auto-install="false">
+                                <div style="display:none" class="jdgm-prev-badge" data-average-rating="4.96" data-number-of-reviews="241"
+                                    data-number-of-questions="0"> <span class="jdgm-prev-badge__stars" data-score="4.96" tabindex="0"
+                                        aria-label="4.96 stars" role="button"> <span class="jdgm-star jdgm--on"></span><span
+                                            class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span
+                                            class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span> </span> <span
+                                        class="jdgm-prev-badge__text">241 reviews</span> </div>
+                            </div>
+
+
+
+
+                            <p class="product__price h5">
+                                <!-- snippet/product-price.liquid -->
+
+
+
+
+                                <span class="product__price-price"><span class="money">$179.90</span></span>
+                                <strike class="product__price-cross"><span class="money">$449.75</span></strike>
+
+
+
+
+
+                            </p>
+                        </div>
+                        <!--span class="shopify-product-reviews-badge" data-id="1611598921818"></span-->
+
+                    </div>
+                </a>
+                <style>
+                    .hot {
+                        background: transparent;
+                        display: inline-block;
+                        text-align: center;
+                        border-radius: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 9;
+                        width: 33px;
+                        height: 33px;
+                    }
+
+                    .hot>span {
+                        color: #fff;
+                        font-size: 13px;
+                        display: block;
+                        line-height: 20px;
+                        margin-top: 2px;
+                    }
+
+                    .hot>i {
+                        color: #fff;
+                        font-size: 11px;
+                        display: block;
+                        line-height: 10px;
+                        font-style: inherit;
+                    }
+                </style>
+
+                <script>
+
+                    $(function () {
+
+
+                        var num = $(".product__price-price").text().substring(1);
+                        var nums = $(".product__price-cross").text().substring(1);
+                        var number = 100 - num / nums * 100;
+                        $(".hot .num").text(number);
+                        //   console.log(num);
+                    })
+
+                </script>
+
+
+            </div>
             <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">
                 <h1>the product title </h1>
                 <p>product title </p>
                 <p>product desc info here ===================</p>
             </div>
-            <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">the content</div>
             <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">
                 <h1>the product title </h1>
                 <p>product title </p>
                 <p>product desc info here ===================</p>
             </div>
-            <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">the content</div>
-            <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">the content</div>
+            <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">
+                <h1>the product title </h1>
+                <p>product title </p>
+                <p>product desc info here ===================</p>
+            </div>
+            <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">
+                <h1>the product title </h1>
+                <p>product title </p>
+                <p>product desc info here ===================</p>
+            </div>
 
             <div class="o-layout__item u-1/2 u-1/3@tab u-1/4@desk">
                 <h1>the product title </h1>

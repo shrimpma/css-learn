@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+目的： listing 容器中 每行显示4个div 元素
+参考网站： https://colourpop.com/collections/best-sellers
+备注： listting 容器 不能使用 font-size:0px;
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 4 column | 每行显示 4个div </title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .listing {
+            background-color: #fff;
+            font-size: 16px;
+            border: 1px solid green;
+            margin:0px auto;
+            max-width: 1600px;
+        }
+
+        .item {
+            float: left;
+            padding: 15px 25px;
+            margin: 0 20px;
+            width: calc((100% - (92px * 4)) * 1/4);
+            border: 1px solid red;
+            background-color: #eee;
+            min-height: 90px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="listing">
+
+    <div class="item">item here</div>
+    <div class="item">item here </div>
+    <div class="item">item here</div>
+    <div class="item">item here</div>
+
+    <div class="item">item here </div>
+    <div class="item">item here</div>
+    <div class="item">item here </div>
+    <div class="item">item here </div>
+
+    <div class="item"> item here </div>
+    <div class="item">item here </div>
+    <div class="item">item here </div>
+    <div class="item">item here</div>
+
+</div>
+
+</body>
+
+</html>

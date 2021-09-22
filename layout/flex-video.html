@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>column video </title>
+    <style>
+        div {
+            width: 1260px;
+            box-sizing: border-box;
+        }
+
+        
+
+
+        .video-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 770px){
+                        .video-wrapper {
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+
+        }
+
+
+        span.youtube {
+    display: inline-block;
+    background-color: #000;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    padding-top: 55%;
+}
+
+@media screen and (min-width: 770px){
+     span.youtube {
+        width: calc((100%/3) - 12px);
+        padding-top: 18%;
+   }
+
+}
+
+ span.youtube {
+    margin: 0 10px 10px 0;
+}
+
+ img  {
+    max-width: 100%;
+    line-height: 0;
+}
+
+span.youtube iframe, span.youtube img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h2> Still not sure on length? <span>Check out our helpful length guide videos to compare</span></h2>
+        <p class="video-wrapper"><span class="youtube" data-id="lgjQ1Qtic1w"><img src="https://i.ytimg.com/vi/lgjQ1Qtic1w/0.jpg"><span
+                    class="play"></span></span><span class="youtube" data-id="BYuDCai1814"><img src="https://i.ytimg.com/vi/BYuDCai1814/0.jpg"><span
+                    class="play"></span></span><span class="youtube" data-id="CAXVF_5A4IY"><img src="https://i.ytimg.com/vi/CAXVF_5A4IY/0.jpg"><span
+                    class="play"></span></span></p>
+    </div>
+</body>
+
+</html>

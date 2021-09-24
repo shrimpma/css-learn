@@ -1,0 +1,1547 @@
+{% comment %}
+** Product - default view **
+- Product template
+{% endcomment %}
+
+<a name="pagecontent" id="pagecontent"></a>
+<div class="container main content product-name--{{ product.handle }}">
+  <div class="sixteen columns">
+    {% if collection.previous_product or collection.next_product or section.settings.product_breadcrumb %}
+      <div class="clearfix breadcrumb-collection">
+        {% if collection.previous_product or collection.next_product %}
+          <div class="nav_arrows breadcrumb_text">
+            {% if collection.previous_product %}
+              <a href="{{ collection.previous_product }}" title="{{ 'products.general.previous_product_html' | t }}" class="breadcrumb_link"><span class="icon-left-arrow"> {{ 'products.general.previous_product_html' | t }}</span></a>
+            {% endif %}
+            {% if collection.previous_product and collection.next_product %}<span class="breadcrumb-divider"> | </span>{% endif %}
+
+            {% if collection.next_product %}
+              <a href="{{collection.next_product}}" title="{{ 'products.general.next_product_html' | t }}" class="breadcrumb_link">{{ 'products.general.next_product_html' | t }} <span class="icon-right-arrow"></span></a>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.product_breadcrumb %}
+          <div class="breadcrumb_text" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item" class="breadcrumb_link">
+                <span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span>
+              </a>
+              <meta itemprop="position" content="1" />
+            </span>
+            <span class="breadcrumb-divider">/</span>
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              {% if collection %}
+                <a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="item" class="breadcrumb_link">
+                  <span itemprop="name">{{ collection.title }}</span>
+                  <meta itemprop="position" content="2" />
+                  </a>
+              {% else %}
+                <a href="/collections/all" title="{{ collections.all.title }}" itemprop="item" class="breadcrumb_link">
+                  <span itemprop="name">{{ collections.all.title }}</span>
+                  <meta itemprop="position" content="2" />
+                  </a>
+              {% endif %}
+            </span>
+            <span class="breadcrumb-divider">/</span>
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a href="{{ product.url }}" itemprop="item" class="breadcrumb_link">
+                <span itemprop="name">{{ product.title }}</span>
+                <meta itemprop="position" content="3" />
+              </a>
+            </span>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% comment %}Check to see if sidebar should be enabled{% endcomment %}
+  {% if section.blocks.size > 0 %}
+    {% assign sidebar = true %}
+  {% else %}
+    {% assign sidebar = false %}
+  {% endif %}
+  <div class="product clearfix">
+    {% if sidebar %}
+      {% include 'sidebar' %}
+      <div class="twelve columns medium-down--one-whole sidebar--{{ sidebar }}">
+    {% else %}
+      <div class="sixteen columns">
+    {% endif %}
+
+    <div  class="product-{{ product.id }}"
+          data-free-text="{{ settings.free_price_text }}"
+        >
+        
+          
+      <div class="section product_section clearfix js-product_section {% if section.settings.product_images_position == 'right' %}align_right--images{% endif %}" itemscope itemtype="http://schema.org/Product" data-rv-handle="{{ product.handle }}">
+
+        <div class="nine columns medium-down--one-whole {% if section.settings.product_images_position == 'left' %}alpha{% else %}omega{% endif %}">
+        
+          {% include 'product-images' %}
+
+        {%- comment -%} show how to apply video{%- endcomment -%}
+        {% assign applyVideo ='' %}
+        {% assign applyVideoConfig ='' %}
+        {% for cat in product.collections %}
+            {% assign applyVideoTmp = cat.metafields.global.apply-video %}
+            {% if cat.handle == 'remy-tape-in-hair-extensions' and applyVideoTmp != blank  %}
+                {% assign applyVideoConfig = applyVideoTmp %} 
+            {% endif %}
+            {% if cat.handle == 'curly-clip-in-hair-extensions' and applyVideoTmp != blank  %}
+                {% assign applyVideoConfig = applyVideoTmp %} 
+            {% endif %}
+            {% if cat.handle == 'full-head-clip-in-hair-extensions' and applyVideoTmp != blank  %}
+                {% assign applyVideoConfig = applyVideoTmp %} 
+            {% endif %}
+            {% if cat.handle == 'halo-hair-extensions' and applyVideoTmp != blank  %}
+                {% assign applyVideoConfig = applyVideoTmp %} 
+            {% endif %}     
+        {% endfor %}
+        
+        {% if applyVideoConfig contains '#split#' %} 
+              {% assign applyVideoArr = applyVideoConfig | split: '#split#' %}
+              {% assign coverImg = applyVideoArr[0] %}
+              {% assign applyVideo = applyVideoArr[1] %}
+        {% else %}
+             {% assign applyVideo = '' %}
+        {% endif %}
+        
+        {% if applyVideo != blank %}
+        <span class="apply-video-desktop apply-video ">  
+            <img src="{{coverImg}}" alt="how to apply {{product.title}}" > 
+            <span class="play"></span> 
+        </span> 
+        {% endif %}
+
+        {%- comment -%} end  show how to apply video{%- endcomment -%}
+
+
+        </div>
+
+        <div class="seven columns medium-down--one-whole  {% if section.settings.product_images_position == 'left' %}omega{% else %}alpha{% endif %}">
+
+          {% assign collection_handles = product.collections | map: 'handle' %}
+          {% assign variant = product.selected_or_first_available_variant %}
+
+          {% if product.available %}
+            {% if settings.sale_banner_enabled and product.compare_at_price_max > product.price %}
+              <div class="sale_banner_product">{{ 'collections.general.sale' | t }}</div>
+            {% endif %}
+          {% endif %}
+          {% if collection_handles contains 'new' %}
+            <div class="new_banner_product">{{ 'collections.general.new' | t }}</div>
+          {% endif %}
+          {% if collection_handles contains 'pre-order' %}
+            <div class="preorder_banner_product">{{ 'collections.general.pre_order' | t }}</div>
+          {% endif %}
+
+           {% if section.settings.display_vendor %}
+            <p class="vendor">
+              <span itemprop="brand" class="vendor">{{ product.vendor | link_to_vendor }}</span>
+            </p>
+          {% endif %}
+
+          {% if variant.sku != blank and section.settings.display_sku %}
+            <p class="sku">
+              <span itemprop="sku">{{ variant.sku }}</span>
+            </p>
+          {% endif %}
+          <h1 class="product_name" itemprop="name">{{ product.title }}</h1>
+          <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" style="display: inline-block;">{{ product.metafields.stamped.badge }}</span>
+
+          <div class="feature_divider"></div>
+
+          {% assign product_tags = product.tags | join: ' ' %}
+          {% if product_tags contains 'meta-size-chart-' %}
+            {% for tag in product.tags %}
+              {% if tag contains 'meta-size-chart-' %}
+                <a href="#size-chart{{product.id}}" class="size_chart" data-remodal-target="size-chart{{product.id}}" data-no-instant>{{ 'products.product.size_chart' | t }} <span class="icon-right-arrow"></span></a>
+                {% include 'popup-size-chart', product_id: product.id %}
+              {% endif %}
+            {% endfor %}
+          {% elsif settings.size_chart != blank %}
+            <a href="#size-chart" class="size_chart" data-remodal-target="size-chart" data-no-instant>{{ 'products.product.size_chart' | t }} <span class="icon-right-arrow"></span></a>
+          {% endif %}
+
+
+          {% if collection_handles contains 'coming-soon' %}
+            <p class="modal_price">{{ 'collections.general.coming_soon' | t }}</p>
+          {% else %}
+            <p class="modal_price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+              <meta itemprop="seller" content="{{ shop.name | escape }}" />
+              <link itemprop="availability" href="http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}">
+              <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition"/>
+
+              <span class="sold_out">{% if variant.available == false %}{{ 'products.product.sold_out' | t }}{% endif %}</span>
+              <span itemprop="price" content="{{ variant.price | money_without_currency | remove: "," }}" class="{% if variant.compare_at_price > variant.price %}sale{% endif %}">
+                <span class="current_price {% if product.available == false %}hidden{% endif %}">
+                  {% if variant.price > 0 %}
+                    <span class="money">{{ variant.price | money }}</span>
+                  {% else %}
+                    {{ settings.free_price_text }}
+                  {% endif %}
+                </span>
+              </span>
+              <span class="was_price">
+                {% if variant.price < variant.compare_at_price and variant.available %}
+                  <span class="money">{{ variant.compare_at_price | money }}</span>
+                {% endif %}
+              </span>
+
+              {% if section.settings.display_savings %}
+                <span class="sale savings">
+                  {% if variant.price < variant.compare_at_price and variant.available %}
+                    {{ 'products.product.savings' | t }}  {{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price }}% (<span class="money">{{ variant.compare_at_price | minus: variant.price | money }}</span>)
+                  {% endif %}
+                </span>
+              {% endif %}
+            </p>
+
+            {% include 'product-notify-me' %}
+          {% endif %}
+
+          {% if section.settings.product_description_position == "top" %}
+            {% if product.description != blank %}
+             <div class="description" itemprop="description">
+               {{ product.description | split: '<!-- split -->' | first }}
+             </div>
+           {% endif %}
+          {% endif %}
+
+          {% comment %} judge product have discount info by collection id   {% endcomment %}
+            {% assign show_discount_info = false %}
+            {% assign discount_rate  = 0 %}
+            {% assign discount_code = nil  %}
+            {% assign discount_type ="common" %}
+            {% assign discount_msg = nil  %}
+            {% assign discount_msg_without_code = 'Discount Will Be Applied Automatically When Checkout' %}
+
+            {% assign config_collection_id_one = collections[section.settings.collection_one].id  %}
+            {% assign config_collection_id_two = collections[section.settings.collection_two].id  %}
+            {% assign config_collection_id_three = collections[section.settings.collection_three].id %}
+            {% assign config_collection_id_four = collections[section.settings.collection_four].id %}
+            {% assign config_collection_id_five = collections[section.settings.collection_five].id %}
+       
+            {% assign buy_x_get_y_tip = 'buy x get y tips ' %}
+          
+            {% for collection in product.collections %}
+            
+                {% if collection.id == config_collection_id_one  %}
+                  {% assign discount_type ="special" %}
+                  {% assign show_discount_info = true %}
+                  {% assign discount_msg = discount_msg_without_code %}
+                  {% assign discount_rate_first  = section.settings.collection_one_discount_rate_first %}
+                  {% assign discount_code_first = section.settings.collection_one_discount_code_first  %}
+                  {% assign discount_rate_second  = section.settings.collection_one_discount_rate_second %}
+                  {% assign discount_code_second = section.settings.collection_one_discount_code_second  %}
+                  {% assign discount_rate_third  = section.settings.collection_one_discount_rate_third %}
+                  {% assign discount_code_third = section.settings.collection_one_discount_code_third  %}
+                  {% assign discount_rate_fourth  = section.settings.collection_one_discount_rate_fourth %}
+                  {% assign discount_code_fourth = section.settings.collection_one_discount_code_fourth  %}
+                {% endif %}
+
+              {% if collection.id == config_collection_id_two  %}
+                {% assign discount_type ="special" %}
+                {% assign show_discount_info = true %}
+                {% assign discount_msg = discount_msg_without_code %}
+                {% assign discount_rate_first  = section.settings.collection_two_discount_rate_first %}
+                {% assign discount_code_first = section.settings.collection_two_discount_code_first  %}
+                {% assign discount_rate_second  = section.settings.collection_two_discount_rate_second %}
+                {% assign discount_code_second = section.settings.collection_two_discount_code_second  %}
+                {% assign discount_rate_third  = section.settings.collection_two_discount_rate_third %}
+                {% assign discount_code_third = section.settings.collection_two_discount_code_third  %}
+                {% assign discount_rate_fourth  = section.settings.collection_two_discount_rate_fourth %}
+                {% assign discount_code_fourth = section.settings.collection_two_discount_code_fourth  %}
+
+              {% endif %}
+
+              {% if collection.id == config_collection_id_three  %}
+                {% assign discount_type ="special" %}
+                {% assign show_discount_info = true %}
+                {% assign discount_msg = discount_msg_without_code %}
+                {% assign discount_rate_first  = section.settings.collection_three_discount_rate_first %}
+                {% assign discount_code_first = section.settings.collection_three_discount_code_first  %}
+                {% assign discount_rate_second  = section.settings.collection_three_discount_rate_second %}
+                {% assign discount_code_second = section.settings.collection_three_discount_code_second  %}
+                {% assign discount_rate_third  = section.settings.collection_three_discount_rate_third %}
+                {% assign discount_code_third = section.settings.collection_three_discount_code_third  %}
+                {% assign discount_rate_fourth  = section.settings.collection_three_discount_rate_fourth %}
+                {% assign discount_code_fourth = section.settings.collection_three_discount_code_fourth  %}
+              {% endif %}
+
+              {% if collection.id == config_collection_id_four  %}
+              {% assign discount_type ="special" %}
+              {% assign show_discount_info = true %}
+              {% assign discount_msg = discount_msg_without_code %}
+              {% assign discount_rate_first  = section.settings.collection_four_discount_rate_first %}
+              {% assign discount_code_first = section.settings.collection_four_discount_code_first  %}
+              {% assign discount_rate_second  = section.settings.collection_four_discount_rate_second %}
+              {% assign discount_code_second = section.settings.collection_four_discount_code_second  %}
+              {% assign discount_rate_third  = section.settings.collection_four_discount_rate_third %}
+              {% assign discount_code_third = section.settings.collection_four_discount_code_third  %}
+              {% assign discount_rate_fourth  = section.settings.collection_four_discount_rate_fourth %}
+              {% assign discount_code_fourth = section.settings.collection_four_discount_code_fourth  %}
+
+
+            {% endif %}
+            {% if collection.id == config_collection_id_five  %}
+              {% assign discount_type ="special" %}
+              {% assign show_discount_info = true %}
+              {% assign discount_msg = discount_msg_without_code %}
+              {% assign discount_rate_first  = section.settings.collection_five_discount_rate_first %}
+              {% assign discount_code_first = section.settings.collection_five_discount_code_first  %}
+              {% assign discount_rate_second  = section.settings.collection_five_discount_rate_second %}
+              {% assign discount_code_second = section.settings.collection_five_discount_code_second  %}
+              {% assign discount_rate_third  = section.settings.collection_five_discount_rate_third %}
+              {% assign discount_code_third = section.settings.collection_five_discount_code_third  %}
+              {% assign discount_rate_fourth  = section.settings.collection_five_discount_rate_fourth %}
+              {% assign discount_code_fourth = section.settings.collection_five_discount_code_fourth  %}
+              
+            {% endif %}
+
+            {% endfor %}
+            {% comment %} common discount config    {% endcomment %} 
+            {% if show_discount_info == false and  section.settings.show_discount_coupon==true %}
+              {% assign discount_type ="common" %}
+                {% assign show_discount_info = true %}
+                {% assign discount_rate_first  = section.settings.common_discount_rate_one %}
+                {% assign discount_code_first = section.settings.common_discount_code_one  %}
+                {% assign discount_rate_second  = section.settings.common_discount_rate_two %}
+                {% assign discount_code_second = section.settings.common_discount_code_two  %}
+                {% assign discount_rate_third  = section.settings.common_discount_rate_three %}
+                {% assign discount_code_third = section.settings.common_discount_code_three  %}
+             
+                {% assign discount_rate_fourth  = section.settings.common_discount_rate_four %}
+                {% assign discount_code_fourth = section.settings.common_discount_code_four  %}
+                <!-- common discount logic -->
+            {% endif %}
+          
+          <!-- check if have flash sale  -->
+          {% include 'flash-sale',flash_positon:1,the_collection:product.collections %}
+          <!-- check if have flash sale  --> 
+          
+          {% assign collectionPromotion = '' %}
+          {% for cat  in product.collections %}
+                {% if cat.handle contains 'clearance-'  and cat.metafields.global.promotion != blank %}
+                    {% assign collectionPromotion = cat.metafields.global.promotion %}
+                {% endif %}
+          {% endfor %}
+          {% if collectionPromotion != blank  %}
+                {% assign show_discount_info = true %}
+          {% endif %}
+
+         
+
+          {% if show_discount_info ==true  and  have_flash_sale == false  %}
+          
+
+          {% if collectionPromotion != blank  %}
+             {% assign promotionInfo = collectionPromotion | split: '#split#' |  last %}
+             <ol class="product-promotion">
+                 <li>{{promotionInfo}}</li>
+             </ol>
+          {% else %}
+            <ol class="product-promotion" data-tmp-discount-type="{{ discount_type }} ">
+              {% if discount_rate_first.size > 0  %}
+                <li>
+                  <b style="font-size: small;"><span><img alt="" src="https://cdn.shopify.com/s/files/1/1967/5707/files/littemoney_5ece8d90-6d63-4e5a-b5a2-ce5eb59c0285.png?22683"> </span><span style="color: #ff0000;"><span style="background-color: #ffff00;"><span style="background-color: #ffffff;">{{discount_rate_first}}</span></span>
+                </span></span><span style="color: #ff0000; background-color: #ffff00;"><span style="color: #000000; background-color: #ffffff;"> , {% if discount_code_first.size > 0 %}<b>Code：<span style="color: #ff0000; background-color: #ffff00;">{{discount_code_first}}</span></b>{% endif %}
+                    </span>
+                    </span>
+                    </b>
+                    {% if discount_code_first.size == 0 and discount_msg   %}<span style="font-size:0.8em">{{discount_msg}}</span> {% endif %}
+                </li>
+              {% endif %}
+              {% if discount_rate_second.size > 0  %}
+                <li><span style="font-size: small;"><strong>   </strong></span><b style="font-size: small;"><span><img alt="" src="https://cdn.shopify.com/s/files/1/1967/5707/files/littemoney_5ece8d90-6d63-4e5a-b5a2-ce5eb59c0285.png?22683"> </span><span style="color: #ff0000;"><span style="background-color: #ffff00;"><span style="background-color: #ffffff;">{{discount_rate_second}}</span></span>
+                </span></span><span style="color: #ff0000; background-color: #ffff00;"><span style="color: #000000; background-color: #ffffff;"> , {%if discount_code_second.size > 0  %}<b>Code：<span style="color: #ff0000; background-color: #ffff00;">{{discount_code_second}}</span></b>{% endif %}
+                    </span>
+                    </span>
+                    </b>
+                    {% if discount_msg and discount_code_second.size ==0    %}<span style="font-size:0.8em">{{discount_msg}}</span> {% endif %}
+                </li>
+              {% endif %}
+              {% if discount_rate_third.size > 0  %}
+                  <li><span style="font-size: small;"><strong>   </strong></span><b style="font-size: small;"><span><img alt="" src="https://cdn.shopify.com/s/files/1/1967/5707/files/littemoney_5ece8d90-6d63-4e5a-b5a2-ce5eb59c0285.png?22683"> </span><span style="color: #ff0000;"><span style="background-color: #ffff00;"><span style="background-color: #ffffff;">{{discount_rate_third}}</span></span>
+                  </span></span><span style="color: #ff0000; background-color: #ffff00;"><span style="color: #000000; background-color: #ffffff;"> ,{% if discount_code_third.size > 0 %} <b>Code：<span style="color: #ff0000; background-color: #ffff00;">{{discount_code_third}}</span></b> {% endif %}
+                      </span>
+                      </span>
+                      </b>
+                      {% if discount_code_third.size == 0 and discount_msg   %}<span style="font-size:0.8em">{{discount_msg}}</span> {% endif %}
+                </li>
+              {% endif %}
+              {% if discount_rate_fourth.size > 0  %}
+                <li><span style="font-size: small;"><strong>   </strong></span><b style="font-size: small;"><span><img alt="" src="https://cdn.shopify.com/s/files/1/1967/5707/files/littemoney_5ece8d90-6d63-4e5a-b5a2-ce5eb59c0285.png?22683"> </span><span style="color: #ff0000;"><span style="background-color: #ffff00;"><span style="background-color: #ffffff;">{{discount_rate_fourth}}</span></span>
+                </span></span><span style="color: #ff0000; background-color: #ffff00;"><span style="color: #000000; background-color: #ffffff;"> ,{% if discount_code_fourth.size > 0  %} <b>Code：<span style="color: #ff0000; background-color: #ffff00;">{{discount_code_fourth}}</span></b> {% endif %}
+                    </span>
+                    </span>
+                    </b>
+                  {% if discount_code_fourth.size == 0 and discount_msg   %}<span style="font-size:0.8em">{{discount_msg}}</span> {% endif %}
+                </li>
+             {% endif %}
+            
+             {% assign have_pack = false  %}
+             {% for option in product.options %}
+                {% assign option_low = option |  downcase %}
+                {% if option_low == 'pack' %}
+                      {% assign have_pack = true  %}                  
+                {% endif %}
+
+              
+              {%  endfor %}
+
+             {% if have_pack == true    %}
+               <li> {{buy_x_get_y_tip}} </li>
+             {% endif %}  
+            </ol>
+            {% endif %}
+         {% endif %}
+        
+         
+
+          {% unless collection_handles contains 'coming-soon' %}
+            {% include 'product-form' with 'product' %}
+          {% endunless %}
+        <!-- our service  -->
+        {% include 'our-service' %}
+         <!-- presell info  -->
+         {% assign presell = product.metafields.global.presell %}
+         {% if presell != blank  and presell contains '|' %}
+         {% assign  now =  "now" | date: "%Y/%m/%d %H:%M:%S"  %}
+         {% assign info  = presell | split: '|' %}
+         {% assign  end_date =  info[0] | date: "%Y/%m/%d %H:%M:%S"  %}
+         {% if now <= end_date  %}
+               <span class="tip_title">
+                 Presell:
+               </span>
+               {{info[1]}}
+         {% endif %}
+     {% endif %}
+     
+
+     {%- comment -%}show flash sale countdown {%- endcomment -%}  
+     {% include 'flash-sale',flash_positon:2,the_collection:product.collections %}
+      
+        {%- comment -%} show how to apply video{%- endcomment -%}
+        {% if applyVideo != blank %}
+        <span class="apply-video-mob  apply-video">      
+            <img src="{{coverImg}}" alt="how to apply {{product.title}}" > 
+            <span class="play"></span>
+        </span> 
+        {% endif %}
+
+          {% if section.settings.product_description_position == "bottom" %}
+            {% if product.description != blank %}
+             <div class="description bottom" itemprop="description">
+              {{ product.description | split: '<!-- split -->' | first }}
+             </div>
+            {% endif %}
+          {% endif %}
+
+          {% if section.settings.display_collections or section.settings.display_tags or section.settings.display_type %}
+            <div class="product_links">
+              {% if section.settings.display_collections %}
+                <p>
+                  <span class="label">{{ 'products.product.collections' | t }}:</span>
+                  <span>
+                   {% for col in product.collections %}
+                     <a href="{{ col.url }}" title="{{ col.title }}">{{ col.title }}</a>{% unless forloop.last %},{% endunless %}
+                   {% endfor %}
+                  </span>
+                </p>
+              {% endif %}
+
+              {% if section.settings.display_type %}
+                <p>
+                  <span class="label">{{ 'products.product.product_types' | t }}:</span>
+                  <span>{{ product.type | link_to_type }}</span>
+                </p>
+              {% endif %}
+
+              {% if section.settings.display_tags %}
+                <p>
+                 {% for tag in product.tags %}
+                   {% if forloop.first %}
+                     <span class="label">{{ 'products.product.tags' | t }}:</span>
+                   {% endif %}
+
+                   {% unless tag contains 'meta-' %}
+                     <span>
+                       <a href="/collections/{% if collection %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handle }}" title="{{ 'products.product.products_tagged' | t: tag: tag }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+                       </span>
+                   {% endunless %}
+                 {% endfor %}
+                </p>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <div class="meta">
+            {% if section.settings.display_social_buttons %}
+              {% include "social-buttons" with "product" %}
+            {% endif %}
+          </div>
+          
+        </div>
+      </div>
+
+      
+      {% if product.description contains "<!-- split -->"  %}
+        <br class="clear" />
+
+        {%- comment -%}
+        <style>
+            .video-wrapper{
+                white-space: nowrap;
+    overflow: scroll;
+
+            }
+
+.video-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 770px){
+                        .video-wrapper {
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -ms-flex-wrap: wrap;
+                flex-wrap: nowrap;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+
+        }
+
+
+        span.youtube {
+    display: inline-block;
+    background-color: #000;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    padding-top: 55%;
+}
+
+@media screen and (min-width: 770px){
+     span.youtube {
+        width: calc((100%/3) - 12px);
+        padding-top: 18%;
+   }
+
+}
+
+ span.youtube {
+    margin: 0 10px 10px 0;
+}
+
+ img  {
+    max-width: 100%;
+    line-height: 0;
+}
+
+span.youtube iframe, span.youtube img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+
+span.youtube .play {
+    background-image: url({{'youtube.png' | asset_url }});
+    background-position:0 0;
+    background-repeat: no-repeat;
+    display: block;
+    width: 42px;
+    height: 30px;
+    cursor: pointer;
+    left: 50%;
+    top: 50%;
+    margin-left: -21px;
+    margin-top: -15px;
+    position: absolute;
+}
+
+span.youtube:hover .play{
+    background-position:0px  -32px; 
+}
+
+span.youtube iframe{
+            height: 100%;
+        }
+        </style>
+        {%- endcomment -%}
+        <div class="section clearfix">
+         <h2>see videos  </h2>
+          {% assign   videoHtml =  product.description | split: '<!-- split -->' | last %}
+        {% assign videoHtml  = '<p class="video-wrapper"' %} 
+
+         
+        {% if videoHtml contains '<p class="video-wrapper"' %}
+                {% assign youtubeIds  ='Eq0hBhiRfAw#segment#xGay8Ea9GSk#segment#rWLNo0OZOCM#segment#xGay8Ea9GSk' %}
+                {% assign youtubeIdArr = youtubeIds | split: '#segment#' %}
+                <p class="video-wrapper">
+                    {% for item in youtubeIdArr %}
+                        <span class="youtube" data-id="{{item}}"><img src="https://i.ytimg.com/vi/{{item}}/0.jpg"><span class="play"></span>
+                    </span>
+                    {% endfor %}
+                    {% for item in youtubeIdArr %}
+                    <span class="youtube" data-id="{{item}}"><img src="https://i.ytimg.com/vi/{{item}}/0.jpg"><span class="play"></span>
+                </span>
+                {% endfor %}
+                {% for item in youtubeIdArr %}
+                <span class="youtube" data-id="{{item}}"><img src="https://i.ytimg.com/vi/{{item}}/0.jpg"><span class="play"></span>
+            </span>
+            {% endfor %}
+                </p>
+        {% else %}
+
+         
+            {%- comment -%}
+             <div class="description" ></div>
+          {% assign youtube = 'Eq0hBhiRfAw,xGay8Ea9GSk,rWLNo0OZOCM' %}
+            {% assign youtubeArr = youtube | split: ',' %}
+          {% for youtubeId in youtubeArr %}
+                <span class="youtube" data-id="{{youtubeId}}"><img src="https://i.ytimg.com/vi/{{youtubeId}}/0.jpg">
+                    <span class="play"></span></span>
+                    
+                    {% endfor %}
+
+                    {% for youtubeId in youtubeArr %}
+                <span class="youtube" data-id="{{youtubeId}}"><img src="https://i.ytimg.com/vi/{{youtubeId}}/0.jpg">
+                    <span class="play"></span></span>
+                    
+                    {% endfor %}
+                 {%- endcomment -%}
+           {%- comment -%}    {{ product.description | split: '<!-- split -->' | last }}
+
+           {%- endcomment -%}
+
+
+            
+<!-- split -->
+{%- comment -%} begin youtube video {%- endcomment -%}
+<style>
+    ul.slides img {
+        width:1280px;
+        height:720px;
+    }
+
+    span.youtube-play{
+        position: absolute;
+        top:50%;
+        right:50%;
+      
+        cursor: pointer;
+    }
+
+   div.youtube  iframe{
+        width:100%;
+       height: 190px;
+    }
+
+    @media screen and (min-width:770px) {
+        div.youtube  iframe{
+            height: 663px;
+        }
+    }
+
+    div.youtube{
+        height:auto;
+        position: relative;
+        margin:auto;
+
+    }
+
+</style>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="hidden">
+    <symbol id="youtube-play" version="1.1" viewBox="0 0 68 48">
+        <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path>
+    </symbol>
+</svg>      
+<div class="slider">
+
+{% assign youtubeIds  = 'a_9gZHjxPPc#segment#oPTN00b35W0#segment#UafORUvYPms#segment#BinLqiKc__g#segment#wsrAOriKSxI#segment#V0vm2ty_xKQ#segment#V0vm2ty_xKQ#segment#V0vm2ty_xKQ#segment#V0vm2ty_xKQ#segment# z-ZL1mGXA_w' %}
+
+<ul class="container">
+    {% assign youtubeIdArr = youtubeIds | split: '#segment#' %}
+    {% for yidTmp in youtubeIdArr %}
+        {% assign yid = yidTmp | strip %}
+        <li>
+            <div class="youtube">
+                <img  src="https://img.youtube.com/vi/{{yid}}/maxresdefault.jpg" >
+                <span class="youtube-play" data-id="{{yid}}">
+                    <svg width="50" height="50">
+                        <use xlink:href="#youtube-play"  />
+                    </svg>
+                </span>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+</div>
+
+{%- comment -%} end youtube video {%- endcomment -%}
+         {%- comment -%}  </div>  {%- endcomment -%}
+          {% endif %}
+          
+        </div>
+      {% endif %}  
+    </div>
+
+<script>
+      const product_variants =  {{product.variants | json  }};
+</script>
+<div id="stamped-main-widget" 
+data-widget-style="standard"
+data-product-id="{{ product.id }}" 
+data-name="{{ product.title | escape }}" 
+data-url="{{ shop.url }}{{ product.url }}" 
+data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" 
+data-description="{{ product.description | escape }}" 
+data-product-sku="{{product.handle}}"> 
+{{ product.metafields.stamped.reviews }} 
+</div>
+
+    {% if sidebar %}
+
+            {% if section.settings.display_related_products %}
+              {% include 'include-related-products' %}
+            {% endif %}
+            {% if section.settings.display_recently_viewed %}
+              {% include 'include-recently-viewed' %}
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+
+    {% else %}
+
+          </div>
+        </div>
+      </div>
+
+      {% if section.settings.display_related_products %}
+        {%- comment -%} {% include 'include-related-products' %} {%- endcomment -%}
+      {% endif %}
+      {% if section.settings.display_recently_viewed %}
+        {% include 'include-recently-viewed' %}
+      {% endif %}
+
+    {% endif %}
+
+{%- comment -%} recomand products {%- endcomment -%}
+<div class="container">
+  <div class="related-products__title sixteen columns">
+      <span class="title center">You May Also Like</h4>
+      <div class="feature_divider"></div>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="container related-products--grid "  >
+
+  <div class="sixteen columns equal-columns--outside-trim"  id="product-recommendations"
+  data-base-url="{{ routes.product_recommendations_url }}"
+  data-product-id="{{ product.id }}"
+  data-limit="5" >
+  </div>
+</div>
+{%- comment -%} end recomand products {%- endcomment -%}
+
+{%- comment -%} product size guide {%- endcomment -%}
+
+{% if collection.metafields.global.length_guide != blank  %}
+<div id="product-option-length-modal" class="modal-rte--image-only" style="display: none;">
+  <img class="lazyload" data-src="{{collection.metafields.global.length_guide}}" alt="amazingbeauty hair extensions length guide chart">
+</div>
+{% endif %}
+
+<script type="text/template"  id="apply-video-template">
+    {% if applyVideo != blank %}
+    <video width="100%" height="240"  controls autoplay  muted onclick="ga(\'send\', \'event\', \'product_page\', \'how-to-apply-video\', \'{{collection.title}}\');">
+                <source src="{{applyVideo}}" type="video/mp4">
+                 Your browser does not support the video tag.
+            </video>  
+    {% endif %}
+</script>
+
+{% schema %}
+
+{
+  "name": "Product",
+  "class": "product-template",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product gallery"
+    },
+    {
+      "type": "checkbox",
+      "id": "gallery_arrows",
+      "label": "Show arrows on product gallery",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "activate_zoom",
+      "label": "Magnify product images on hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_product_lightbox",
+      "label": "Enable product gallery popup",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "activate_autoplay",
+      "label": "Enable product gallery slideshow"
+    },
+    {
+      "type": "select",
+      "id": "slideshow_animation",
+      "label": "Gallery transition",
+      "options": [
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        }
+      ],
+      "default": "slide"
+    },
+    {
+      "type": "radio",
+      "id": "product_images_position",
+      "label": "Gallery position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "product_thumbs",
+      "label": "Show product gallery thumbnails",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "thumbnail_position",
+      "label": "Thumbnail position",
+      "default": "bottom-slider",
+      "options": [
+        {
+          "value": "bottom-thumbnails",
+          "label": "Bottom (grid)"
+        },
+        {
+          "value": "bottom-slider",
+          "label": "Bottom (slider)"
+        },
+        {
+          "value": "left-thumbnails",
+          "label": "Left"
+        },
+        {
+          "value": "right-thumbnails",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Product info"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_breadcrumb",
+      "label": "Show breadcrumb links"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_vendor",
+      "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_sku",
+      "label": "Show SKU"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_savings",
+      "label": "Show price savings",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_button",
+      "label": "Show dynamic checkout button",
+      "default": false,
+      "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_collections",
+      "label": "Show collections"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_type",
+      "label": "Show type"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_tags",
+      "label": "Show tags"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_social_buttons",
+      "label": "Show social media share icons",
+      "default": true
+    },
+    {
+      "type": "radio",
+      "id": "product_description_position",
+      "label": "Description position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Above product form"
+        },
+        {
+          "value": "bottom",
+          "label": "Below product form"
+        }
+      ]
+    },
+
+    {
+      "type": "header",
+      "content": "Sold out msg"
+    },
+    {
+      "type": "textarea",
+      "id": "sold_out_msg_product",
+      "label": "info about Continue selling when out of stock"
+    },
+    {
+      "type": "header",
+      "content": "Discount info (common )"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discount_coupon",
+      "label": "Show discount info ",
+      "default": false
+    },
+    {
+      "type":"text",
+      "id": "common_discount_rate_one",
+      "label": "discount rate 1",
+      "info":"for example: 6% "
+    },
+    {
+      "type":"text",
+      "id": "common_discount_code_one",
+      "label": "discount code 1",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "common_discount_rate_two",
+      "label": "discount rate 2",
+      "info":"for example: 6% "
+    },
+    {
+      "type":"text",
+      "id": "common_discount_code_two",
+      "label": "discount code 2",
+      "info":"for exmaple: summer2019"
+    },
+
+    {
+      "type":"text",
+      "id": "common_discount_rate_three",
+      "label": "discount rate 3",
+      "info":"for example: 6% "
+    },
+    {
+      "type":"text",
+      "id": "common_discount_code_three",
+      "label": "discount code 3",
+      "info":"for exmaple: summer2019"
+    },
+
+    {
+      "type":"text",
+      "id": "common_discount_rate_four",
+      "label": "discount rate 4",
+      "info":"for example: 6% "
+    },
+    {
+      "type":"text",
+      "id": "common_discount_code_four",
+      "label": "discount code 4",
+      "info":"for exmaple: summer2019"
+    },
+    
+    {
+      "type": "header",
+      "content": "Discount about collection 1"
+    },
+
+    {
+      "type": "collection",
+      "id": "collection_one",
+      "label": "choose collection"
+   },
+    {
+      "type":"text",
+      "id": "collection_one_discount_rate_first",
+      "label": "discount rate 1",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_one_discount_code_first",
+      "label": "discount code 1",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_one_discount_rate_second",
+      "label": "discount rate 2",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_one_discount_code_second",
+      "label": "discount code 2",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_one_discount_rate_third",
+      "label": "discount rate 3",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_one_discount_code_third",
+      "label": "discount code 3"
+    },
+    {
+      "type":"text",
+      "id": "collection_one_discount_rate_fourth",
+      "label": "discount rate 4"
+    },
+    {
+      "type":"text",
+      "id": "collection_one_discount_code_fourth",
+      "label": "discount code 4"
+    },
+
+    {
+      "type": "header",
+      "content": "Discount about collection 2"
+    },
+    {
+      "type": "collection",
+      "id": "collection_two",
+      "label": "choose collection"
+   },
+    {
+      "type":"text",
+      "id": "collection_two_discount_rate_first",
+      "label": "discount rate 1",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_two_discount_code_first",
+      "label": "discount code 1",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_two_discount_rate_second",
+      "label": "discount rate 2",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_two_discount_code_second",
+      "label": "discount code 2",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_two_discount_rate_third",
+      "label": "discount rate 3",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_two_discount_code_third",
+      "label": "discount code 3",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_two_discount_rate_fourth",
+      "label": "discount rate 4",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_two_discount_code_fourth",
+      "label": "discount code 4",
+      "info":"for exmaple: summer2019"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Discount about collection 3"
+    },
+    {
+      "type": "collection",
+      "id": "collection_three",
+      "label": "choose collection"
+    },
+    
+    {
+      "type":"text",
+      "id": "collection_three_discount_rate_first",
+      "label": "discount rate 1",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_three_discount_code_first",
+      "label": "discount code 1"
+    },
+    {
+      "type":"text",
+      "id": "collection_three_discount_rate_second",
+      "label": "discount rate 2",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_three_discount_code_second",
+      "label": "discount code 2"
+    },
+    {
+      "type":"text",
+      "id": "collection_three_discount_rate_third",
+      "label": "discount rate 3",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_three_discount_code_third",
+      "label": "discount code 3"
+    },
+    {
+      "type":"text",
+      "id": "collection_three_discount_rate_fourth",
+      "label": "discount rate 4",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_three_discount_code_fourth",
+      "label": "discount code 4"
+    },
+
+
+
+    {
+      "type": "header",
+      "content": "Discount about collection 4"
+    },
+    {
+      "type": "collection",
+      "id": "collection_four",
+      "label": "choose collection "
+    },
+    {
+      "type":"text",
+      "id": "collection_four_discount_rate_first",
+      "label": "discount rate 1",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_four_discount_code_first",
+      "label": "discount code 1",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_four_discount_rate_second",
+      "label": "discount rate 2",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_four_discount_code_second",
+      "label": "discount code 2",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_four_discount_rate_third",
+      "label": "discount rate 3",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_four_discount_code_third",
+      "label": "discount code 3",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_four_discount_rate_fourth",
+      "label": "discount rate 4",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_four_discount_code_fourth",
+      "label": "discount code 4",
+      "info":"for exmaple: summer2019"
+    },
+
+    {
+      "type": "header",
+      "content": "Discount about collection 5"
+    },
+    {
+      "type": "collection",
+      "id": "collection_five",
+      "label": "choose collection "
+    },
+    {
+      "type":"text",
+      "id": "collection_five_discount_rate_first",
+      "label": "discount rate 1",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_five_discount_code_first",
+      "label": "discount code 1",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_five_discount_rate_second",
+      "label": "discount rate 2",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_five_discount_code_second",
+      "label": "discount code 2",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_five_discount_rate_third",
+      "label": "discount rate 3",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_five_discount_code_third",
+      "label": "discount code 3",
+      "info":"for exmaple: summer2019"
+    },
+    {
+      "type":"text",
+      "id": "collection_five_discount_rate_fourth",
+      "label": "discount rate 4",
+      "info":"for example: 6%"
+    },
+    {
+      "type":"text",
+      "id": "collection_five_discount_code_fourth",
+      "label": "discount code 4",
+      "info":"for exmaple: summer2019"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Product reviews"
+    },
+    {
+      "type": "paragraph",
+      "content": "Reviews app must be enabled [(?)](https://help.outofthesandbox.com/hc/en-us/articles/360008549274#section2)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_shopify_product_badges",
+      "label": "Display star rating on product",
+      "default": false
+    },
+    {
+      "type": "radio",
+      "id": "review_position",
+      "label": "Reviews position",
+      "default": "next_to_gallery",
+      "options": [
+        {
+          "value": "next_to_gallery",
+          "label": "In product description area"
+        },
+        {
+          "value": "below_gallery",
+          "label": "Below image\/description"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Related products"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_related_products",
+      "label": "Show related products ([?](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115006909487-Related-Products))",
+      "default": true
+    },
+    {
+      "type": "radio",
+      "id": "related_products_style",
+      "label": "Layout",
+      "default": "grid",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "related_products_limit",
+      "label": "Limit products",
+      "min": 3,
+      "max": 50,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "products_per",
+      "label": "Products per row",
+      "min": 3,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Recently viewed products"
+    },
+    {
+      "type": "paragraph",
+      "content": "To test the recently viewed products, view your online store outside of the Editor and visit multiple product pages ([?](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115008765228))"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_recently_viewed",
+      "label": "Show recently viewed products",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "rv_title",
+      "label": "Title",
+      "default": "Recently Viewed Items"
+    },
+    {
+      "type": "radio",
+      "id": "rv_products_style",
+      "label": "Layout",
+      "default": "grid",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "rv_max_display",
+      "label": "Products limit",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "rv_per",
+      "label": "Products per row",
+      "min": 3,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Sidebar"
+    },
+    {
+      "type": "paragraph",
+      "content": "Create a sidebar by adding content blocks."
+    },
+    {
+      "type": "checkbox",
+      "id": "toggle",
+      "label": "Toggle sidebar content",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "filter_by_collection",
+      "name": "Collection list",
+      "limit": 1
+    },
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "custom_menu_linklist",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "Page",
+      "settings": [
+        {
+          "type": "page",
+          "id": "content_page",
+          "label": "Page"
+        }
+      ]
+    },
+    {
+      "type": "recently_viewed",
+      "name": "Recently viewed products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "To test the recently viewed products, view your online store outside of the Editor and visit multiple product pages ([?](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115008765228))"
+        },
+        {
+          "type": "text",
+          "id": "sidebar_rv_title",
+          "label": "Title",
+          "default": "Recently Viewed"
+        },
+        {
+          "type": "range",
+          "id": "sidebar_rv_per",
+          "label": "Products limit",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "filter_by_tag",
+      "name": "Tag list",
+      "limit": 1
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Text area can be used for special announcements or general information.</p>"
+        }
+      ]
+    },
+    {
+      "type": "filter_by_type",
+      "name": "Type list",
+      "limit": 1
+    },
+    {
+      "type": "filter_by_vendor",
+      "name": "Vendor list",
+      "limit": 1
+    }
+  ],
+  "default": {
+    "settings": {
+
+    }
+  }
+}
+{% endschema %}

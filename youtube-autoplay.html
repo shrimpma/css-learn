@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            max-width: 1120px;
+            height:350px;border:1px solid #000;
+            margin:20px auto;
+            text-align: center;
+            white-space: nowrap;
+            display: inline-block;
+            overflow-y: hidden;
+            overflow-x: auto ;
+        }
+        .wrapper button{
+            vertical-align: middle;
+          
+        }
+        .wrapper  iframe{
+            width:100%;
+            height:100%;
+        }
+        .youtube {
+            display: inline-block;
+            width: 300px;
+            margin-right: 15px;
+        }
+        .youtube img{
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <span class="youtube" data-id="lgjQ1Qtic1w">
+            <img src="https://i.ytimg.com/vi/lgjQ1Qtic1w/0.jpg">
+
+            <span class="play">
+                
+            </span>
+        </span>
+
+        <span class="youtube" data-id="BYuDCai1814"><img src="https://i.ytimg.com/vi/BYuDCai1814/0.jpg"><span class="play"></span></span>
+        
+        <span
+            class="youtube" data-id="CAXVF_5A4IY"><img src="https://i.ytimg.com/vi/CAXVF_5A4IY/0.jpg"><span class="play"></span></span>
+            
+            <span
+            class="youtube" data-id="CAXVF_5A4IY"><img src="https://i.ytimg.com/vi/CAXVF_5A4IY/0.jpg"><span class="play"></span></span>
+            
+            <span
+            class="youtube" data-id="CAXVF_5A4IY"><img src="https://i.ytimg.com/vi/CAXVF_5A4IY/0.jpg"><span class="play"></span></span>
+
+            <span
+            class="youtube" data-id="CAXVF_5A4IY"><img src="https://i.ytimg.com/vi/CAXVF_5A4IY/0.jpg"><span class="play"></span></span>
+
+            <span
+            class="youtube" data-id="CAXVF_5A4IY"><img src="https://i.ytimg.com/vi/CAXVF_5A4IY/0.jpg"><span class="play"></span></span>
+    </div>
+    <script src="/lib/jquery.js"></script>
+    <script>
+    $(function(){
+        $('#gen').on('click',function(e){
+                // e.preventDefault();
+                let yid = $(this).data('id');
+            console.log('youtube id',yid);
+            youtubeHtml= '<iframe src="https://www.youtube.com/embed/' 
+            + yid +'?autoplay=1&mute=1" '
+            +' frameborder="0"'
+            +' allow="autoplay" '
+            + ' allowfullscreen></iframe>';
+            $(this).parent().html(youtubeHtml);
+        })
+    })
+</script>
+    
+</body>
+
+</html>

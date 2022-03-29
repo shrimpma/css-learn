@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> page widgets on shopify </title>
+    <style>
+        body {
+          margin-top: 145px;
+          max-width: 1330px;
+          margin:0px auto;
+        }
+        div.image-row {
+          display: flex;
+          flex-direction: row;
+          /* flex-wrap: wrap; */
+        }
+        img {
+          width: 100%;
+        }
+        .image-item {
+          margin: 0 5px 5px 0;
+          width: calc((100% - 10px) / 2);
+        }
+  
+        @media screen and (min-width: 768px) {
+          .image-item {
+            margin: 0 5px 5px 0;
+            width: calc((100% - 20px) / 4);
+          }
+        }
+  
+        * {
+          box-sizing: border-box;
+        }
+  
+        /* banner-title */
+        .banner-title {
+          margin: 20px 0;
+          background-color: #ffd9ea;
+        }
+        .banner-title h2 {
+          margin: 0;
+          padding: 20px 0;
+          text-align: center;
+        }
+  
+        .coupn-title {
+          font-size: 40px;
+          font-weight: 700;
+        }
+  
+        .coupon-box {
+          margin-left: 20px;
+          font-size: 25px;
+        }
+  
+        .coupon-code {
+          margin-left: 10px;
+          display: inline-block;
+          font-size: 22px;
+          padding: 3px 10px;
+          border: 1px solid #000;
+        }
+  
+  
+  
+        /* begin recommand list   */
+  
+        .tab_pro_name{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0 auto 20px;
+        }
+  
+        .tab_pro_name span.tab_name_one {
+      width: 312px;
+      height: 60px;
+      background: #f0f0f0;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 60px;
+      color: #02276d;
+      font-size: 25px;
+      font-weight: 600;
+      font-style: italic;
+      cursor: pointer;
+  }
+     
+  .tab_pro_name span.tab_name_one.active {
+      background: #02276d;
+      color: #fff;
+  }
+  
+  .tuijian_list_one{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+  .prolist_item{
+      position: relative;
+      min-height: 300px;
+      width: 22.5%;
+      margin-bottom: 20px;
+  }
+  
+  .prolist_row{
+       display: flex;
+       justify-content:space-between;
+       align-items: center;
+  }
+  .tuijian_list_wraper{
+      display: none;
+  }
+  .active{
+      display: block;
+  }
+  
+  .img-block{
+      display: block ;
+  }
+  
+  div{
+      margin:0;
+      padding:0;
+  }
+  
+  @media screen and (max-width:796px) {
+      .tuijian_list_wraper{
+          position:absolute;
+      }
+      .tuijian_list_box {
+      margin-left: 4%;
+      overflow-x: auto;
+      position: relative;
+      width: 96%;
+      height: 270px;
+  }
+      .tab_pro_name{
+          width:98%;
+      }
+      .tab_pro_name span.tab_name_one{
+          width:79px;
+          height: 19px;
+          line-height: 19px;
+          font-size:12px;
+          font-weight: 600;
+      }
+  
+      .prolist_item {
+          width: 157px;
+          height: 240px;
+          margin-right: 10px;
+      }
+  
+      .tuijian_list_one{
+      
+          flex-wrap: nowrap;
+     }
+  
+      .tuijian_list_box .prolist_item a.prolist_item-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+      font-size: 10px;
+      line-height: 24px
+  }
+  
+  
+  }
+  .home_page{
+      display:block;
+      text-align: center;
+      background-color: #02276d;
+      font-size: 1.5rem;
+      color:#fff;
+      line-height: 3;
+      text-transform: none;
+      margin:15px auto;
+      width:400px;
+      border-radius: 15px;
+    
+  }
+
+  .promo__btn {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 17px 10px 15px;
+    width: 250px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    transition: .2s;
+    text-transform: uppercase;
+}
+@media screen and (min-width:400px) {
+    .promo__btn {
+        margin-left: 0;
+        text-align: center;
+        width: 290px;
+   }
+}
+
+@media (max-width: 480px){
+  .promo__btn {
+    max-width: 250px;
+ }
+}
+
+  .img-block img {
+      display: block;
+      width: 100%;
+  }
+  
+  a {
+      text-decoration:none;
+  }
+  
+  
+  /* end  recommend list  */
+      </style>
+  </head>
+  <body>
+ 
+
+    <h2>button custom </h2>
+
+    <a href="/" class="promo__btn">button text</a>
+
+    <!-- split  -->
+    <h2>tuijian list</h2>
+    <div class="tab_pro_name">
+      <span class="tab_name_one active" data-category="46">Straight Hair</span>
+      <span class="tab_name_one" data-category="47">Body Wave </span>
+      <span class="tab_name_one" data-category="48">Jerry Curly</span>
+      <span class="tab_name_one" data-category="49">Bob</span>
+    </div>
+    <div class="tuijian_list_box">
+      <div class="tuijian_list_wraper active" id="category-46">
+        <div class="tuijian_list_one">
+          <div class="prolist_item" data-category="46">
+            <a
+              href="https://www.hurela.com/hurela-cheap-straight-u-part-wig-full-machine-wig-soft-silky-straight-wigs-150-density-99j.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_cheap_straight_u_part_wig_full_machine_wig_soft_silky_straight_wigs_150_density_99j0322.jpg"
+                alt=""
+                data-loaded="true"
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Cheap Straight U Part Wig Full Machine Wig Soft Silky
+              Straight Wigs 150% Density #99J</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$18.13</span>
+                <span class="price-box_oldPrice-num">$72.50</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-cheap-straight-u-part-wig-full-machine-wig-soft-silky-straight-wigs-150-density-99j.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-cheap-straight-u-part-wig-full-machine-wig-soft-silky-straight-wigs-150-density-99j.html"
+                  tabindex="0"
+                  >10 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="46">
+            <a
+              href="https://www.hurela.com/hurela-highlight-wig-13x5x0-5-lace-part-wig-straight-human-hair-wig-with-baby-hair-tl412-color.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_tl412_st_11.02.jpg"
+                alt=""
+                data-loaded="true"
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Highlight Wig 13x5x0.5 Lace Part Wig Straight Human Hair
+              Wig With Baby Hair TL412 Color</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$28.44</span>
+                <span class="price-box_oldPrice-num">$158.00</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-highlight-wig-13x5x0-5-lace-part-wig-straight-human-hair-wig-with-baby-hair-tl412-color.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-highlight-wig-13x5x0-5-lace-part-wig-straight-human-hair-wig-with-baby-hair-tl412-color.html"
+                  tabindex="0"
+                  >47 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="46">
+            <a
+              href="https://www.hurela.com/hurela-13x4-lace-part-wigs-human-hair-trendiest-strawberry-blonde-highlight-piano-colored-wigs-straight-hair.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_color8_st_11.18.jpg"
+                alt=""
+                data-loaded="true"
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Straight Hair Trendiest Strawberry Blonde Highlight Piano
+              Colored Lace Wigs</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$22.20</span>
+                <span class="price-box_oldPrice-num">$88.80</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-13x4-lace-part-wigs-human-hair-trendiest-strawberry-blonde-highlight-piano-colored-wigs-straight-hair.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-13x4-lace-part-wigs-human-hair-trendiest-strawberry-blonde-highlight-piano-colored-wigs-straight-hair.html"
+                  tabindex="0"
+                  >41 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="46">
+            <a
+              href="https://www.hurela.com/hurela-pre-plucked-straight-5x5-lace-closure-wigs-human-hair-180-density-natural-color.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/_/_/__plxncsa_ov0_05_a7c_1_.jpg"
+                alt=""
+                data-loaded="true"
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Pre Plucked Straight 5x5 Lace Closure Wigs Human Hair 180%
+              Density Natural Color</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$47.48</span>
+                <span class="price-box_oldPrice-num">$189.90</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-pre-plucked-straight-5x5-lace-closure-wigs-human-hair-180-density-natural-color.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che"></div>
+          </div>
+          <div class="prolist_item" data-category="46">
+            <a
+              href="https://www.hurela.com/hurela-pre-plucked-hd-lace-wigs-human-hair-long-straight-hair-5x5-lace-closure-wigs.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/b/e/beautyforever_pre_plucked_hd_lace_wigs_human_hair_long_straight_hair_5x5_lace_closure_wigs_180_density_1_1_.jpg"
+                alt=""
+                data-loaded="true"
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Pre Plucked HD Lace Wigs Human Hair Long Straight Hair 5x5
+              Lace Closure Wigs</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$45.07</span>
+                <span class="price-box_oldPrice-num">$180.29</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-pre-plucked-hd-lace-wigs-human-hair-long-straight-hair-5x5-lace-closure-wigs.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-pre-plucked-hd-lace-wigs-human-hair-long-straight-hair-5x5-lace-closure-wigs.html"
+                  tabindex="0"
+                  >2 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="46">
+            <a
+              href="https://www.hurela.com/hurela-pre-plucked-613-ombre-blonde-human-hair-straight-13x4-lace-front-wigs.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/a/p/ap_lxcjc65_0h5_4eg_c.png"
+                alt=""
+                data-loaded="true"
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela 13x4 Lace Front Wigs Pre Plucked #613 Blonde Straight
+              Human Hair Wigs</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$34.95</span>
+                <span class="price-box_oldPrice-num">$139.80</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-pre-plucked-613-ombre-blonde-human-hair-straight-13x4-lace-front-wigs.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 96%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-pre-plucked-613-ombre-blonde-human-hair-straight-13x4-lace-front-wigs.html"
+                  tabindex="0"
+                  >23 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="46">
+            <a
+              href="https://www.hurela.com/hurela-lace-front-human-virgin-hair-wigs-10-24-inch-straight-highlight-hair-wig-180-density-tl27.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_13x4_lace_frontal_tl27_st.jpg"
+                alt=""
+                data-loaded="true"
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela 13x4 Lace Front Human Virgin Hair Wigs Straight Highlight
+              Hair Wig</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$35.79</span>
+                <span class="price-box_oldPrice-num">$143.17</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-lace-front-human-virgin-hair-wigs-10-24-inch-straight-highlight-hair-wig-180-density-tl27.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 95%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-lace-front-human-virgin-hair-wigs-10-24-inch-straight-highlight-hair-wig-180-density-tl27.html"
+                  tabindex="0"
+                  >46 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="46">
+            <a
+              href="https://www.hurela.com/hurela-hd-lace-wigs-straight-hairstyles-5x5-lace-closure-wigs-human-hair-180-density-natural-color.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_5x5_hd__lace_w_st.jpg"
+                alt=""
+                data-loaded="true"
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela HD Lace Wigs Straight Hairstyles 5x5 Lace Closure Wigs
+              Human Hair 180% Density Natural Color</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$40.34</span>
+                <span class="price-box_oldPrice-num">$161.35</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-hd-lace-wigs-straight-hairstyles-5x5-lace-closure-wigs-human-hair-180-density-natural-color.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 97%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-hd-lace-wigs-straight-hairstyles-5x5-lace-closure-wigs-human-hair-180-density-natural-color.html"
+                  tabindex="0"
+                  >41 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tuijian_list_wraper " id="category-47">
+        <div class="tuijian_list_one">
+          <div class="prolist_item" data-category="47">
+            <a
+              href="https://www.hurela.com/hurela-body-wave-human-hair-wigs-pre-plucked-4x4-human-hair-lace-wig-150-density.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_4x4lace_part_bodywave_11.02.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Body Wave Human Hair Wigs Pre Plucked 4x4 Human Lace
+              Closure Wig 150% Density</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$28.49</span>
+                <span class="price-box_oldPrice-num">$158.29</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-body-wave-human-hair-wigs-pre-plucked-4x4-human-hair-lace-wig-150-density.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 96%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-body-wave-human-hair-wigs-pre-plucked-4x4-human-hair-lace-wig-150-density.html"
+                  tabindex="0"
+                  >181 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="47">
+            <a
+              href="https://www.hurela.com/hurela-blonde-highlight-piano-colored-wigs-13x4-body-wave-hair-wigs-tl412.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_highlights_hair_lace_part_wig_body_wave_best_human_hair_blend_wig_150_density_9.27_1_.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Blonde Highlight Piano Colored Wigs 13x4 Upgraded Bouncy
+              Body Wave Hair Wigs #TL412</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$39.33</span>
+                <span class="price-box_oldPrice-num">$218.49</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-blonde-highlight-piano-colored-wigs-13x4-body-wave-hair-wigs-tl412.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-blonde-highlight-piano-colored-wigs-13x4-body-wave-hair-wigs-tl412.html"
+                  tabindex="0"
+                  >41 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="47">
+            <a
+              href="https://www.hurela.com/hurela-5x5-hd-lace-wigs-pre-plucked-body-wave-hair-clear-lace-wig-human-hair-180-density-online-sale.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/5/5/55wb_.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela 5x5 HD Lace Wigs Pre Plucked Body Wave Hair Clear Lace Wig
+              Human Hair 180% Density Online Sale</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$45.07</span>
+                <span class="price-box_oldPrice-num">$180.29</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-5x5-hd-lace-wigs-pre-plucked-body-wave-hair-clear-lace-wig-human-hair-180-density-online-sale.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che"></div>
+          </div>
+          <div class="prolist_item" data-category="47">
+            <a
+              href="https://www.hurela.com/hurela-pre-plucked-hd-lace-wigs-body-wave-5x5-lace-closure-wigs-human-hair-180-density-natural-color-420.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/5/x/5x5_hd_lace_closure_wigs_with_baby_hair_1_1_.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela 5x5 HD Pre Plucked Lace Wigs Body Wave Lace Closure Wigs
+              Human Hair 180% Density</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$45.07</span>
+                <span class="price-box_oldPrice-num">$180.29</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-pre-plucked-hd-lace-wigs-body-wave-5x5-lace-closure-wigs-human-hair-180-density-natural-color-420.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che"></div>
+          </div>
+          <div class="prolist_item" data-category="47">
+            <a
+              href="https://www.hurela.com/hurela-orange-ginger-body-wave-lace-part-wig-150-density-wigs-hairline-88j-color.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_ginger_color_bodywave_10.22.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Orange Ginger Body Wave Lace Part Wig 150% Density Wigs
+              Hairline #88J Color</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$22.20</span>
+                <span class="price-box_oldPrice-num">$136.62</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-orange-ginger-body-wave-lace-part-wig-150-density-wigs-hairline-88j-color.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-orange-ginger-body-wave-lace-part-wig-150-density-wigs-hairline-88j-color.html"
+                  tabindex="0"
+                  >17 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="47">
+            <a
+              href="https://www.hurela.com/hurela-highlights-hair-13x5x0-5-t-part-wig-body-wave-best-human-hair-tl412-colored-wigs.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_13x4_straight_honey_blond_ombre_color_highlight_150_lace_front_human_hair_wigs.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Highlights Hair 13X5X0.5 T Part Wig Body Wave Best Human
+              Hair TL412 Colored Wigs</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$29.40</span>
+                <span class="price-box_oldPrice-num">$117.60</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-highlights-hair-13x5x0-5-t-part-wig-body-wave-best-human-hair-tl412-colored-wigs.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-highlights-hair-13x5x0-5-t-part-wig-body-wave-best-human-hair-tl412-colored-wigs.html"
+                  tabindex="0"
+                  >19 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="47">
+            <a
+              href="https://www.hurela.com/hurela-cheap-orange-ginger-13x4-lace-front-wigs-cinnamon-hair-color-body-wave-wigs-with-baby-hair.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_ginger_color_wigs.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Cheap Orange Ginger 13x4 Lace Front Wigs Cinnamon Hair
+              Color Body Wave Wigs With Baby Hair</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$36.32</span>
+                <span class="price-box_oldPrice-num">$201.77</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-cheap-orange-ginger-13x4-lace-front-wigs-cinnamon-hair-color-body-wave-wigs-with-baby-hair.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-cheap-orange-ginger-13x4-lace-front-wigs-cinnamon-hair-color-body-wave-wigs-with-baby-hair.html"
+                  tabindex="0"
+                  >35 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="47">
+            <a
+              href="https://www.hurela.com/hurela-orange-ginger-colored-t-part-wigs-body-wave-13x4-lace-front-wigs-with-baby-hair-150-density.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_gingercolor_88j_bodywave_11.02.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Orange Ginger Colored T Part Wigs Body Wave 13x4 Lace
+              Front Wigs With Baby Hair 150% Density</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$22.83</span>
+                <span class="price-box_oldPrice-num">$126.86</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-orange-ginger-colored-t-part-wigs-body-wave-13x4-lace-front-wigs-with-baby-hair-150-density.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-orange-ginger-colored-t-part-wigs-body-wave-13x4-lace-front-wigs-with-baby-hair-150-density.html"
+                  tabindex="0"
+                  >34 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tuijian_list_wraper " id="category-48">
+        <div class="tuijian_list_one">
+          <div class="prolist_item" data-category="159">
+            <a
+              href="https://www.hurela.com/hurela-jerry-curly-wig-lace-part-wig-natural-color-virgin-human-hair-150-density.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/l/a/lace_part_wig_curly_1_.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Jerry Curly Wig Lace Part Wig Natural Color Virgin Human
+              Hair 150% Density</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$24.45</span>
+                <span class="price-box_oldPrice-num">$97.80</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-jerry-curly-wig-lace-part-wig-natural-color-virgin-human-hair-150-density.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 95%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-jerry-curly-wig-lace-part-wig-natural-color-virgin-human-hair-150-density.html"
+                  tabindex="0"
+                  >135 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="159">
+            <a
+              href="https://www.hurela.com/hurela-right-hand-tied-lace-part-full-jerry-culry-short-wig-glueless-lace-part-human-hair-bob-wigs.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_lace_part_jerry_curly_02.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Right Hand Tied Lace Part Full Jerry Culry Short Wig
+              Glueless Lace Part Human Hair Bob Wigs</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$22.73</span>
+                <span class="price-box_oldPrice-num">$126.28</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-right-hand-tied-lace-part-full-jerry-culry-short-wig-glueless-lace-part-human-hair-bob-wigs.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-right-hand-tied-lace-part-full-jerry-culry-short-wig-glueless-lace-part-human-hair-bob-wigs.html"
+                  tabindex="0"
+                  >26 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="159">
+            <a
+              href="https://www.hurela.com/hurela-jerry-curly-wigs-high-quality-lace-part-human-hair-wigs-with-pre-plucked-natural-hairline.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_giner_30_4x0.75_lace_part_jerry_curly_11.20.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela #Ginger 30 Color Jerry Curly Wigs High Quality Lace Part
+              Wig 13x4 Lace Human Hair Wigs With Pre Plucked Natural Hairline</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$22.34</span>
+                <span class="price-box_oldPrice-num">$89.34</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-jerry-curly-wigs-high-quality-lace-part-human-hair-wigs-with-pre-plucked-natural-hairline.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-jerry-curly-wigs-high-quality-lace-part-human-hair-wigs-with-pre-plucked-natural-hairline.html"
+                  tabindex="0"
+                  >30 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="159">
+            <a
+              href="https://www.hurela.com/hurela-high-quality-precolored-ginger-brown-jerry-curly-13x4-lace-front-human-hair-wigs.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/g/i/ginger__30_curly_wigs.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela High Quality Precolored Ginger Brown Jerry Curly 13x4 Lace
+              Front Human Hair Wigs</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$43.77</span>
+                <span class="price-box_oldPrice-num">$243.14</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-high-quality-precolored-ginger-brown-jerry-curly-13x4-lace-front-human-hair-wigs.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-high-quality-precolored-ginger-brown-jerry-curly-13x4-lace-front-human-hair-wigs.html"
+                  tabindex="0"
+                  >22 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="159">
+            <a
+              href="https://www.hurela.com/hurela-burgundy-colored-jerry-curly-4x0-75-lace-part-human-hair-wig-for-women-pre-plucked-wig.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela-99j-burgundy-deep-curly-lace-front-wigs-for-black-women-red-color-deep-wave-human_.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Burgundy Colored Jerry Curly 4X0.75 Lace Part Human Hair
+              Wig For Women Pre-Plucked Wig</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$23.68</span>
+                <span class="price-box_oldPrice-num">$131.57</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-burgundy-colored-jerry-curly-4x0-75-lace-part-human-hair-wig-for-women-pre-plucked-wig.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-burgundy-colored-jerry-curly-4x0-75-lace-part-human-hair-wig-for-women-pre-plucked-wig.html"
+                  tabindex="0"
+                  >26 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="159">
+            <a
+              href="https://www.hurela.com/hurela-brown-jerry-curly-4x4-t-part-wig-wavy-human-hair-wigs-4-colored-wigs.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurelajerry_curly_4x4_lace_frontal_wig_wavy_human_hair_wigs_4_colored_wigs0305.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Brown Jerry Curly 4x4 T Part Wig Wavy Human Hair Wigs #4
+              Colored Wigs</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$34.18</span>
+                <span class="price-box_oldPrice-num">$136.70</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-brown-jerry-curly-4x4-t-part-wig-wavy-human-hair-wigs-4-colored-wigs.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-brown-jerry-curly-4x4-t-part-wig-wavy-human-hair-wigs-4-colored-wigs.html"
+                  tabindex="0"
+                  >9 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="159">
+            <a
+              href="https://www.hurela.com/hurela-jerry-curly-hair-13x4-hd-lace-wigs-human-hair-wigs-150-density-natural-color.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_curly_lace_front_wigs_human_hair_13x4_hd_lace_wigs_for_women_natural_color12.15.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Jerry Curly Hair 13x4 HD Lace Wigs 5x5 HD Human Hair Wigs
+              180% Density Natural Color</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$47.52</span>
+                <span class="price-box_oldPrice-num">$264.00</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-jerry-curly-hair-13x4-hd-lace-wigs-human-hair-wigs-150-density-natural-color.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-jerry-curly-hair-13x4-hd-lace-wigs-human-hair-wigs-150-density-natural-color.html"
+                  tabindex="0"
+                  >17 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="159">
+            <a
+              href="https://www.hurela.com/hurela-13x4-hd-lace-wigs-jerry-curly-swiss-lace-front-wigs-180-density-natural-color.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_curly_lace_front_wigs_human_hair_13x4_hd_lace_wigs_for_women_natural_color12.15_1.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela 13x4 HD Lace Wigs Jerry Curly Swiss Lace Front Wigs 180%
+              Density Natural Color</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$50.28</span>
+                <span class="price-box_oldPrice-num">$201.10</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-13x4-hd-lace-wigs-jerry-curly-swiss-lace-front-wigs-180-density-natural-color.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tuijian_list_wraper " id="category-49">
+        <div class="tuijian_list_one">
+          <div class="prolist_item" data-category="48">
+            <a
+              href="https://www.hurela.com/hurela-pixie-cut-wig-short-curly-human-hair-wigs-lace-frontal-wig-black-color.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_pixie_cut_hair_11.02.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Pixie Cut Wig Short Curly Human Hair Wigs 13x1 Lace
+              Frontal Wig Black Color</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$13.47</span>
+                <span class="price-box_oldPrice-num">$74.86</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-pixie-cut-wig-short-curly-human-hair-wigs-lace-frontal-wig-black-color.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-pixie-cut-wig-short-curly-human-hair-wigs-lace-frontal-wig-black-color.html"
+                  tabindex="0"
+                  >47 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="48">
+            <a
+              href="https://www.hurela.com/hurela-short-bob-wig-lace-closure-wigs-4x4-bob-wig-remy-straight-brazilian-human-hair-wigs-for-women.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/7/4/748c29a5-99af-4bed-bf2f-1a05e9e7a23c.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Short Bob Wig Lace Closure Wigs 4x4 Bob Wig Remy Straight
+              Brazilian Human Hair Wigs for Women
+            </a>
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$24.40</span>
+                <span class="price-box_oldPrice-num">$97.60</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-short-bob-wig-lace-closure-wigs-4x4-bob-wig-remy-straight-brazilian-human-hair-wigs-for-women.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-short-bob-wig-lace-closure-wigs-4x4-bob-wig-remy-straight-brazilian-human-hair-wigs-for-women.html"
+                  tabindex="0"
+                  >31 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="48">
+            <a
+              href="https://www.hurela.com/hurela-natural-hairline-4x4-lace-closure-wig-short-bob-water-wave-hair-black-wigs-150-density.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_natural_hairline_4x4_lace_closure_wig_short__bob_water_wave_hair_12.16.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Natural Hairline 4x4 Lace Closure Wig Short Bob Water Wave
+              Hair Black Wigs 150% Density</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$27.49</span>
+                <span class="price-box_oldPrice-num">$152.71</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-natural-hairline-4x4-lace-closure-wig-short-bob-water-wave-hair-black-wigs-150-density.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-natural-hairline-4x4-lace-closure-wig-short-bob-water-wave-hair-black-wigs-150-density.html"
+                  tabindex="0"
+                  >29 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="48">
+            <a
+              href="https://www.hurela.com/hurela-13x4-lace-frontal-natural-wave-bob-human-hair-wig-180-density.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_short_bob_bodywave_10.13.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela 13x4 Lace Frontal Natural Wave Bob Human Hair Wig 180%
+              Density</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$38.13</span>
+                <span class="price-box_oldPrice-num">$211.86</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-13x4-lace-frontal-natural-wave-bob-human-hair-wig-180-density.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-13x4-lace-frontal-natural-wave-bob-human-hair-wig-180-density.html"
+                  tabindex="0"
+                  >75 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="48">
+            <a
+              href="https://www.hurela.com/hurela-straight-short-bob-wigs-pre-plucked-lace-front-wig-virgin-human-hair-wig-150-density.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_13x4_bob_wig_10.18.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Straight Short Bob Wigs Pre-Plucked Lace Front Wig Virgin
+              Human Hair Wig 150% Density Same Wig As IAMSHERIKAB</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$27.48</span>
+                <span class="price-box_oldPrice-num">$109.90</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-straight-short-bob-wigs-pre-plucked-lace-front-wig-virgin-human-hair-wig-150-density.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-straight-short-bob-wigs-pre-plucked-lace-front-wig-virgin-human-hair-wig-150-density.html"
+                  tabindex="0"
+                  >62 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="48">
+            <a
+              href="https://www.hurela.com/hurela-high-quality-4x4-lace-closure-bob-wigs-with-baby-hair-short-straight-human-hair-150-density.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_4x4_lace_size_bob_wig_10.18.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela High Quality 4x4 Lace Closure 13x4 Lace Front Bob Wigs
+              With Baby Hair Short Straight Human Hair 150% Density</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$21.01</span>
+                <span class="price-box_oldPrice-num">$116.71</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-high-quality-4x4-lace-closure-bob-wigs-with-baby-hair-short-straight-human-hair-150-density.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-high-quality-4x4-lace-closure-bob-wigs-with-baby-hair-short-straight-human-hair-150-density.html"
+                  tabindex="0"
+                  >42 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="48">
+            <a
+              href="https://www.hurela.com/hurela-orange-ginger-colored-bouncy-curly-wig-with-bangs-machine-made-human-hair-wig-150-density.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_bouncy_curly_88j.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Orange Ginger Colored Bouncy Curly Wig With Bangs Machine
+              Made Human Hair Wig 150% Density</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$14.78</span>
+                <span class="price-box_oldPrice-num">$59.12</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-orange-ginger-colored-bouncy-curly-wig-with-bangs-machine-made-human-hair-wig-150-density.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-orange-ginger-colored-bouncy-curly-wig-with-bangs-machine-made-human-hair-wig-150-density.html"
+                  tabindex="0"
+                  >6 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="prolist_item" data-category="48">
+            <a
+              href="https://www.hurela.com/hurela-right-hand-tied-lace-part-full-jerry-culry-short-wig-glueless-lace-part-human-hair-bob-wigs.html"
+              class="prolist_item-img img-block"
+            >
+              <img
+                class="lozad"
+                src="https://www.hurela.com/media/catalog/product/cache/1/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/h/u/hurela_lace_part_jerry_curly_02.jpg"
+                alt=""
+              />
+            </a>
+            <a class="prolist_item-title"
+              >Hurela Right Hand Tied Lace Part Full Jerry Culry Short Wig
+              Glueless Lace Part Human Hair Bob Wigs</a
+            >
+            <div class="prolist_row">
+              <div class="step_price">
+                <span>Installment Price</span>
+                <span class="in_price">$22.73</span>
+                <span class="price-box_oldPrice-num">$126.28</span>
+              </div>
+              <a
+                href="https://www.hurela.com/hurela-right-hand-tied-lace-part-full-jerry-culry-short-wig-glueless-lace-part-human-hair-bob-wigs.html"
+              >
+                <img
+                  class="gouwuche"
+                  src="https://www.hurela.com/skin/frontend/longqi/pc/images/longqi/returntax/che3.png"
+                  alt="gouwuche"
+                />
+              </a>
+            </div>
+            <div class="rating_che">
+              <div class="prolist_ratings-box flex-row">
+                <div class="rating-star iconfont icon-star">
+                  <div
+                    class="rating-starNum iconfont icon-star"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <a
+                  class="rolist_rating-reviews"
+                  href="https://www.hurela.com/hurela-right-hand-tied-lace-part-full-jerry-culry-short-wig-glueless-lace-part-human-hair-bob-wigs.html"
+                  tabindex="0"
+                  >26 Review(s)</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="/" class="home_page">EXPLORE MORE </a>
+    <!-- split  -->
+
+    
+    <h2>promotion banner</h2>
+    <div class="banner-title">
+      <h2>
+        <span class="coupon-title">Huge Coupon For These Wigs:</span>
+        <span class="coupon-box">Over $101, Get $100 Off </span>
+        <span class="coupon-code">CODE: AP100</span>
+      </h2>
+    </div>
+
+    <h2>image row</h2>
+    <div class="image-row image-row--gutters">
+      <div class="image-item">
+        <div
+          class="image-row__image image-row-9221b9ef-d512-44cc-9dac-e4db3c0ce8d8--1 image-wrap"
+        >
+          <a href="/collections/buy-1-get-1-hair-free">
+            <img
+              class="photoswipe__image js-photoswipe__zoom lazyautosizes lazyloaded"
+              data-index="1"
+              data-photoswipe-src="//cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_1600x1600.jpg?v=1638512930"
+              data-photoswipe-width="500"
+              data-photoswipe-height="120"
+              data-widths="[180, 360, 540, 720, 900, 1080, 1500]"
+              data-aspectratio="4.166666666666667"
+              data-sizes="482"
+              alt=""
+              data-srcset="//cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_180x.jpg?v=1638512930 180w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_360x.jpg?v=1638512930 360w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_540x.jpg?v=1638512930 540w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_720x.jpg?v=1638512930 720w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_900x.jpg?v=1638512930 900w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_1080x.jpg?v=1638512930 1080w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_1500x.jpg?v=1638512930 1500w"
+              sizes="482px"
+              srcset="
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_180x.jpg?v=1638512930   180w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_360x.jpg?v=1638512930   360w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_540x.jpg?v=1638512930   540w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_720x.jpg?v=1638512930   720w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_900x.jpg?v=1638512930   900w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_1080x.jpg?v=1638512930 1080w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-buy-1-get-1-free_1500x.jpg?v=1638512930 1500w
+              "
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="image-item">
+        <div
+          class="image-row__image image-row-9221b9ef-d512-44cc-9dac-e4db3c0ce8d8--2 image-wrap"
+        >
+          <a href="/collections/clearance-sale">
+            <img
+              class="photoswipe__image js-photoswipe__zoom lazyautosizes lazyloaded"
+              data-index="2"
+              data-photoswipe-src="//cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_1600x1600.jpg?v=1638512930"
+              data-photoswipe-width="500"
+              data-photoswipe-height="120"
+              data-widths="[180, 360, 540, 720, 900, 1080]"
+              data-aspectratio="4.166666666666667"
+              data-sizes="auto"
+              alt=""
+              data-srcset="//cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_180x.jpg?v=1638512930 180w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_360x.jpg?v=1638512930 360w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_540x.jpg?v=1638512930 540w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_720x.jpg?v=1638512930 720w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_900x.jpg?v=1638512930 900w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_1080x.jpg?v=1638512930 1080w"
+              sizes="482px"
+              srcset="
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_180x.jpg?v=1638512930   180w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_360x.jpg?v=1638512930   360w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_540x.jpg?v=1638512930   540w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_720x.jpg?v=1638512930   720w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_900x.jpg?v=1638512930   900w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-clearance-sale_1080x.jpg?v=1638512930 1080w
+              "
+            />
+          </a>
+        </div>
+      </div>
+      <div class="image-item">
+        <div
+          class="image-row__image image-row-9221b9ef-d512-44cc-9dac-e4db3c0ce8d8--3 image-wrap">
+          <a href="/collections/flash-sale">
+            <img
+              class="photoswipe__image js-photoswipe__zoom lazyautosizes lazyloaded"
+              data-index="3"
+              data-photoswipe-src="//cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_1600x1600.jpg?v=1638512930"
+              data-photoswipe-width="500"
+              data-photoswipe-height="120"
+              data-widths="[180, 360, 540, 720, 900, 1080]"
+              data-aspectratio="4.166666666666667"
+              data-sizes="auto"
+              alt=""
+              data-srcset="//cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_180x.jpg?v=1638512930 180w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_360x.jpg?v=1638512930 360w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_540x.jpg?v=1638512930 540w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_720x.jpg?v=1638512930 720w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_900x.jpg?v=1638512930 900w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_1080x.jpg?v=1638512930 1080w"
+              sizes="482px"
+              srcset="
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_180x.jpg?v=1638512930   180w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_360x.jpg?v=1638512930   360w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_540x.jpg?v=1638512930   540w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_720x.jpg?v=1638512930   720w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_900x.jpg?v=1638512930   900w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-flash-sale_1080x.jpg?v=1638512930 1080w
+              "
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="image-item">
+        <div
+          class="image-row__image image-row-9221b9ef-d512-44cc-9dac-e4db3c0ce8d8--4"
+        >
+          <a href="/pages/refer-friends-rewards">
+            <img
+              class="photoswipe__image js-photoswipe__zoom lazyautosizes lazyloaded"
+              data-index="4"
+              data-photoswipe-src="//cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_1600x1600.jpg?v=1638512930"
+              data-photoswipe-width="500"
+              data-photoswipe-height="120"
+              data-widths="[180, 360, 540, 720, 900, 1080]"
+              data-aspectratio="4.166666666666667"
+              data-sizes="auto"
+              alt=""
+              data-srcset="//cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_180x.jpg?v=1638512930 180w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_360x.jpg?v=1638512930 360w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_540x.jpg?v=1638512930 540w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_720x.jpg?v=1638512930 720w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_900x.jpg?v=1638512930 900w, //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_1080x.jpg?v=1638512930 1080w"
+              sizes="482px"
+              srcset="
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_180x.jpg?v=1638512930   180w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_360x.jpg?v=1638512930   360w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_540x.jpg?v=1638512930   540w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_720x.jpg?v=1638512930   720w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_900x.jpg?v=1638512930   900w,
+                //cdn.shopify.com/s/files/1/0248/6684/8821/files/ms-hair-promotion-lead-refer-rewards_1080x.jpg?v=1638512930 1080w
+              "
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script>
+$(function(){
+       
+       $( ".tab_name_one" ).bind( "click", function(e) {
+               var categoryId = $(this).data('category');
+               $('.tuijian_list_wraper').hide();
+               
+               $(this).addClass('active').siblings().removeClass('active');
+          
+               $('#category-'+categoryId).show().siblings().hide();
+
+
+
+        });
+
+    })
+    </script>
+    
+  </body>
+</html>

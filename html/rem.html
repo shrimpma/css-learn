@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem width </title>
+    <style>
+        html{
+            font-size: 18px;
+        }
+       .box{
+           width: 10rem;
+           height:160px;
+           background-color: #000;
+       }
+       .text {
+           color:#fff;
+           font-size: 1.5rem;
+       }
+
+       @media screen and (max-width:376px) {
+          html{
+              font-size: 20px;
+          }  
+       }
+
+       .big-font{
+           font-size: 25px;
+       }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+
+        <p class="text">hello rem </p>
+    </div>
+    <script src="rem.js"></script>
+</body>
+</html>

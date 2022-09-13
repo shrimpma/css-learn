@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0 auto;
+            max-width: 1200px;
+
+        }
+        /* 2列布局  */
+        .flex-2-cols {
+            margin:50px auto;
+            
+        display: flex;
+        flex-wrap: wrap;
+   }
+    .flex-2-cols > * {
+        margin-left: 0;
+        margin-bottom: 0;
+        margin-right: 40px;
+        width: calc((100% / 2) - 40px + (40px / 2)); /* + (40px / 2)  ?  */
+        box-sizing: border-box;
+        background: blue;
+   }
+    .flex-2-cols > *:nth-child(n+3) {
+       margin-top: 40px;
+   }
+    .flex-2-cols > *:nth-child(2n) {
+        margin-right: 0;
+   }
+
+/* 5 列布局  */
+
+    .flex-5-cols {
+        display: flex;
+        flex-wrap: wrap;
+   }
+    .flex-5-cols > * {
+        margin-left: 0;
+        margin-bottom: 0;
+        margin-right: 20px;
+        width: calc((100% / 5) - 20px + (20px / 5));
+        box-sizing: border-box;
+        background: #dadada;
+   }
+    .flex-5-cols > *:nth-child(n+6) {
+        margin-top: 20px;
+   }
+    .flex-5-cols > *:nth-child(5n) {
+        margin-right: 0;
+   }
+    .flex-9-cols {
+        display: flex;
+        flex-wrap: wrap;
+   }
+    .flex-9-cols > * {
+        margin-left: 0;
+        margin-bottom: 0;
+        margin-right: 20px;
+        width: calc((100% / 9) - 20px + (20px / 9));
+        box-sizing: border-box;
+   }
+    .flex-9-cols > *:nth-child(n+10) {
+        margin-top: 20px;
+   }
+    .flex-9-cols > *:nth-child(9n) {
+        margin-right: 0;
+   }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-bottom: 30px;
+       
+   }
+    ul li {
+        border-bottom: 1px solid yellowgreen;
+        padding: 30px;
+   }
+  
+    ul li h1 {
+        margin: 0;
+   }
+    </style>
+</head>
+<body>
+    
+    <h1>2 col distribution</h1>
+<ul class="flex-2-cols">
+    <li><h1>1</h1>
+    
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nostrum voluptatibus facere quos deserunt harum quis tenetur, animi accusantium ratione rem excepturi consectetur quisquam dolore inventore ipsam aliquam obcaecati ducimus?</div>
+    </li>
+    <li><h1>2</h1>
+        Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Commodi corporis eligendi
+        enim excepturi laboriosam nesciunt odlor sit
+        amet, consectetur adipisicing elit. Commodi
+        corporis eligendi enim excepturi laboriosam
+        nesciunt odlor sit amectetur adipisicing elit.
+        Commodi corporis eligendi enim excepturi lab
+        oriosam nesciunt odit quae qui quibusdam reru
+        m. Aspernatur atque dicta dolores iure
+    </li>
+    <li><h1>3</h1></li>
+    <li><h1>4</h1></li>
+    <li><h1>5</h1>
+        Lorem ipsum dolor sit amet, consectetur adipi
+        sicing elit. Commodi corporis eligendi enim e
+        xcepturi laboriosam nesciunt odit quae qui q
+        uib consectetur adipisicing elit. Commodi co
+        rporis eligendi enim excepturi laboriosam ne
+        sciunt odit quae qui quib consectetur adipis
+        icing elit. Commodi corporis eligendi enim exc
+        epturi laboriosam nesciunt odit quae qui quibu
+        sdam rerum. Aspernatur atque dicta dolores iur
+        e laudantium nulla omnis quam quisquam.
+    </li>
+    <li><h1>6</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicin
+        g elit. Commodi corporis eligendi enim excepturi l
+        aboriosam nesciunt odit quae qui quibusdam rerum.
+        Aspernatur atque dicta dolores iure
+    </li>
+    <li><h1>7</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicin
+        g elit. Commodi corporis eligendi enim excepturi l
+        aboriosam nesciunt odit quae qui quibusdam rerum.
+        Aspernatur atque dicta dolores iure laudantium nul
+        la omnis quam quisquam.
+    </li>
+    <li><h1>8</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi corporis eligendi enim excepturi laboriosam nesciunt odit quae qui quibusdam rerum. Aspernatur atque dicta dolores iure laudantium nulla omnis quam quisquam.
+    </li>
+</ul>
+
+<h1>5 col distribution</h1>
+<ul class="flex-5-cols">
+    <li><h1>1</h1></li>
+    <li><h1>2</h1>
+        Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Commodi corporis eligendi
+        enim excepturi laboriosam nesciunt odlor sit
+        amet, consectetur adipisicing elit. Commodi
+        corporis eligendi enim excepturi laboriosam
+        nesciunt odlor sit amectetur adipisicing elit.
+        Commodi corporis eligendi enim excepturi lab
+        oriosam nesciunt odit quae qui quibusdam reru
+        m. Aspernatur atque dicta dolores iure
+    </li>
+    <li><h1>3</h1></li>
+    <li><h1>4</h1></li>
+    <li><h1>5</h1>
+        Lorem ipsum dolor sit amet, consectetur adipi
+        sicing elit. Commodi corporis eligendi enim e
+        xcepturi laboriosam nesciunt odit quae qui q
+        uib consectetur adipisicing elit. Commodi co
+        rporis eligendi enim excepturi laboriosam ne
+        sciunt odit quae qui quib consectetur adipis
+        icing elit. Commodi corporis eligendi enim exc
+        epturi laboriosam nesciunt odit quae qui quibu
+        sdam rerum. Aspernatur atque dicta dolores iur
+        e laudantium nulla omnis quam quisquam.
+    </li>
+    <li><h1>6</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicin
+        g elit. Commodi corporis eligendi enim excepturi l
+        aboriosam nesciunt odit quae qui quibusdam rerum.
+        Aspernatur atque dicta dolores iure
+    </li>
+    <li><h1>7</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicin
+        g elit. Commodi corporis eligendi enim excepturi l
+        aboriosam nesciunt odit quae qui quibusdam rerum.
+        Aspernatur atque dicta dolores iure laudantium nul
+        la omnis quam quisquam.
+    </li>
+    <li><h1>8</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi corporis eligendi enim excepturi laboriosam nesciunt odit quae qui quibusdam rerum. Aspernatur atque dicta dolores iure laudantium nulla omnis quam quisquam.
+    </li>
+    <li><h1>9</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi corporis eligendi enim excepturi laboriosam nesciunt odit quae qui quibusdam rerum. Aspernatur atque dicta dolores iure laudantium nulla omnis quam quisquam.
+    </li>
+    <li><h1>10</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi corporis eligendi enim excepturi laboriosam nesciunt odit quae qui quibusdam rerum. Aspernatur atque dicta dolores iure laudantium nulla omnis quam quisquam.
+    </li>
+</ul>
+
+<h1>9 col distribution</h1>
+<ul class="flex-9-cols">
+    <li><h1>1</h1></li>
+    <li><h1>2</h1>
+        Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Commodi corporis eligendi
+        enim excepturi laboriosam nesciunt odlor sit
+        amet, consectetur adipisicing elit. Commodi
+        corporis eligendi enim excepturi laboriosam
+        nesciunt odlor sit amectetur adipisicing elit.
+        Commodi corporis eligendi enim excepturi lab
+        oriosam nesciunt odit quae qui quibusdam reru
+        m. Aspernatur atque dicta dolores iure
+    </li>
+    <li><h1>3</h1></li>
+    <li><h1>4</h1></li>
+    <li><h1>5</h1>
+        Lorem ipsum dolor sit amet, consectetur adipi
+        sicing elit. Commodi corporis eligendi enim e
+        xcepturi laboriosam nesciunt odit quae qui q
+        uib consectetur adipisicing elit. Commodi co
+        rporis eligendi enim excepturi laboriosam ne
+        sciunt odit quae qui quib consectetur adipis
+        icing elit. Commodi corporis eligendi enim exc
+        epturi laboriosam nesciunt odit quae qui quibu
+        sdam rerum. Aspernatur atque dicta dolores iur
+        e laudantium nulla omnis quam quisquam.
+    </li>
+    <li><h1>6</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicin
+        g elit. Commodi corporis eligendi enim excepturi l
+        aboriosam nesciunt odit quae qui quibusdam rerum.
+        Aspernatur atque dicta dolores iure
+    </li>
+    <li><h1>7</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicin
+        g elit. Commodi corporis eligendi enim excepturi l
+        aboriosam nesciunt odit quae qui quibusdam rerum.
+        Aspernatur atque dicta dolores iure laudantium nul
+        la omnis quam quisquam.
+    </li>
+    <li><h1>8</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi corporis eligendi enim excepturi laboriosam nesciunt odit quae qui quibusdam rerum. Aspernatur atque dicta dolores iure laudantium nulla omnis quam quisquam.
+    </li>
+</ul>
+
+</body>
+</html>

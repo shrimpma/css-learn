@@ -1,45 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>form test</title>
-        
-    <link href="https://cdn.shopify.com/s/files/1/0066/0052/t/171/assets/theme.min.css?v=6763744902067176675" rel="stylesheet" type="text/css" media="all">
+
+
+    <title>form </title>
+    <style>
+
+        html{
+            font-size: 62.5%;
+        }
+        input:required {
+            border: 1px solid red;
+          }
+          
+          input:optional {
+            border: 1px solid silver;
+          }
+
+          input:focus{
+            border:1px solid #000;
+          }
+
+          li::before {
+            content: "+";
+            color: blue;
+            cursor: pointer;
+            
+            padding: 10px 10px;
+          }
+          
+          p::first-line{
+            font-weight: 600;
+          }
+
+          p{
+            border:1px solid #ccc;
+            height: 400px;
+            line-height: 1.5;
+            font-size: 1.8rem;
+            padding: 1.5rem 1.5rem ;
+          }
+
+         
+    </style>
+</head>
+<body>
     
 
-</head>
+    <form>
+        <fieldset>
+          <legend>Feedback form</legend>
+          <div>
+            <label for="fname">First name: </label>
+            <input id="fname" name="fname" type="text" required />
+          </div>
+          <div>
+            <label for="lname">Last name: </label>
+            <input id="lname" name="lname" type="text" required />
+          </div>
+          <div>
+            <label for="email">
+              Email address (include if you want a response):
+            </label>
+            <input id="email" name="email" type="email" />
+          </div>
+          <div><button>Submit</button></div>
+        </fieldset>
+      </form>
 
-<body>
+      <div>
 
-    <a href="" id="pagecontent">pagecontent</a>
-    <div class="sidebar__collection-filter" data-filter-name="color__"> <input style="display: none;"
-            id="refinement-item" class="js-refinement-item-checkbox" type="checkbox"> <label class="toggle">Color<span
-                class="right icon-down-arrow"></span></label>
-        <ul class="toggle_list" style="display: block;">
-            <div class="filter-all-tags color-filter--true">
-                <li test1="" class="selected"> <label data-option-filter=""><input type="checkbox" value="black"
-                            name="color__black" id="color__Black" class="styled-checkbox" style="borde"
-                           >
-                        Black</label></li>
-                <li test1="" class=""> <label data-option-filter=""><input type="checkbox" value="brown"
-                            name="color__brown" id="color__Brown" class="styled-checkbox" style="borde">
-                        Brown</label></li>
-                <li test1="" class="selected"> <label data-option-filter=""><input type="checkbox" value="blonde"
-                            name="color__blonde" id="color__Blonde" class="styled-checkbox" style="borde">
-                        Blonde</label></li>
-                <li test1="" class=""> <label data-option-filter=""><input type="checkbox" value="highlights"
-                            name="color__highlights" id="color__Highlights" class="styled-checkbox" style="borde">
-                        Highlights</label></li>
-                <li test1="" class="selected"> <label data-option-filter=""><input type="checkbox" value="balayage"
-                            name="color__balayage" id="color__Balayage" class="styled-checkbox" style="borde"
-                           >
-                        Balayage</label></li>
-            </div>
-        </ul>
-    </div>
+       <ul>
+        <li>11</li>
+        <li>11</li>
+        <li>11</li>
+        <li>11</li>
+        <li>11</li>
+       </ul>
+      </div>
+
+      <p  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, fugit tempore qui tenetur labore veniam eligendi laborum. Maxime, consequuntur veritatis. Beatae nam asperiores, temporibus adipisci iste aliquid sed voluptatibus error.
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, veniam molestiae. Reiciendis, repudiandae? Voluptatem iste rerum nam aliquid facilis, eos animi necessitatibus aliquam recusandae neque minus modi ipsa adipisci excepturi.
+
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit consectetur magnam nesciunt placeat quisquam sed dolores aperiam dignissimos quod laudantium aut ad, molestiae perspiciatis! Fugit est consequuntur suscipit in officiis.
+      </p>
+
+      <button id="my-button-id"> the button </button>
+
+      <script>
+
+        function hover(obj){
+            console.log('hover here ',obj);
+            console.log(this.className)           // logs the className of my_element
+            console.log(obj.currentTarget === this) // logs `true`
+            obj.target.style.color = 'red';
+        }
+        function out (obj){
+            obj.target.style.removeProperty('color');
+        }
+         
+        var target = document.querySelector('p');
+        target.addEventListener('mouseover',hover);
+        target.addEventListener('mouseout',out);
+
+
+         <!-- keep this element  -->
+
+        const Something = function (element) {
+            // |this| is a newly created object
+            this.name = 'Something Good';
+            this.onclick1 = function (event) {
+              console.log(this.name); // undefined, as |this| is the element
+            };
+          
+            this.onclick2 = function (event) {
+              console.log(this.name); // 'Something Good', as |this| is bound to newly created object
+            };
+          
+            // bind causes a fixed `this` context to be assigned to onclick2
+            this.onclick2 = this.onclick2.bind(this);
+          
+            element.addEventListener('click', this.onclick1, false);
+            element.addEventListener('click', this.onclick2, false); // Trick
+          }
+          const s = new Something(document.body);
+
+          const myButton = document.getElementById('my-button-id');
+         const someString = 'Data';
+
+        myButton.addEventListener('click', function () {
+
+        console.log(this.someString); // Expected Value: 'Data'
+        }.bind(someString));
+      </script>
+
+
+
+      
 </body>
-
 </html>

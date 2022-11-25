@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 5 </title>
+</head>
+<body>
+
+    <style>
+        body * {
+          margin: 10px;
+          border: 1px solid blue;
+        }
+      </style>
+      
+      <form>FORM
+        <div>DIV
+          <p>P</p>
+        </div>
+      </form>
+      
+
+      <div id="id2">
+
+        <div id="id1"> div 1</div>
+      </div>
+      <script>
+       
+        document.getElementById('id1').addEventListener('click', function() { console.log('id1');
+    event.stopPropagation();
+   
+    }, false);
+document.getElementById('id2').addEventListener('click', function() { console.log('id2');}, false);
+      </script>
+    
+</body>
+</html>

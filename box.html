@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box model</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            font-size: 20px;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .author {
+            width: 600px;
+        }
+
+        .blog {
+            background-color: #868e96;
+           
+        }
+
+        .author {
+           
+            top: 10px;
+            left: 10px;
+        }
+
+        section{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="author-desc">test 1</span> <span>test 2</span>
+        <span>test 3 </span>
+
+        <section>
+            <article class="blog">
+                the blog here
+                <div class="author">the author here</div>
+            </article>
+        </section>
+        
+
+        <section>
+
+            <article class="blog" id="section-blog">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos sit facere illum consequuntur veritatis libero pariatur labore nesciunt enim nihil, omnis quasi autem minus quisquam recusandae quo quia dignissimos molestiae.
+            </article>
+            <button id="btn">click me </button>
+        </section>
+        
+    </div>
+    
+    <script>
+
+
+
+        const listenOnce = (el, evt, fn) =>
+  el.addEventListener(evt, fn, { once: true });
+
+
+  var listenOneFun = (el,evt,fn)=>{
+    el.addEventListener(evt,fn,{once:true})
+  }
+  listenOneFun(
+    document.getElementById('btn'),
+    'click',
+    () => console.log('Hello world')
+  );
+
+    </script>
+</body>
+</html>

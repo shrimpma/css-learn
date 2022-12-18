@@ -2,6 +2,9 @@
     box-sizing: border-box;
 }
 
+hmtl{
+    overflow-x: hidden;
+}
 .fs-fields {
     list-style: none;
 }
@@ -48,7 +51,7 @@ body {
 
 .fs-fields .fs-radio-custom label.radio-first,
 .fs-fields .fs-radio-custom label.radio-two {
-    /* padding: 20px 0 20px 40px; */
+    padding: 20px 0 20px 40px;
     line-height: 1.7;
     text-align: left;
 }
@@ -165,6 +168,8 @@ ul {
 }
 
 
+
+
 /* length custom  */
 
 .custom-length-box {
@@ -254,7 +259,87 @@ input.density-raido {
 }
 
 
-/* hair base  */
+/* /hair desitny / */
+
+
+.fs-fields > li .fs-radio-custom span.column-one{
+    display: inline-block;
+    width: 46%;
+    max-width: 100%;
+    /* padding-left: 50px; */
+    text-align: left;
+}
+
+/* hair topper  base  */
+
+
+element.style {
+}
+.fs-fields .fs-radio-custom input[type="radio"]:checked + label .radio-check {
+    display: block;
+    z-index: 1;
+}
+.fs-fields .fs-radio-custom input[type="radio"] + label .radio-check {
+    display: none;
+}
+.uk-light, .uk-section-primary:not(.uk-preserve-color), .uk-section-secondary:not(.uk-preserve-color), .uk-tile-primary:not(.uk-preserve-color), .uk-tile-secondary:not(.uk-preserve-color), .uk-card-primary.uk-card-body, .uk-card-primary>:not([class*=uk-card-media]), .uk-card-secondary.uk-card-body, .uk-card-secondary>:not([class*=uk-card-media]), .uk-overlay-primary {
+    color: #fff;
+}
+.uk-position-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: max-content;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+[class*=uk-position-top], [class*=uk-position-bottom], [class*=uk-position-left], [class*=uk-position-right], [class*=uk-position-center] {
+    position: absolute!important;
+    max-width: 100%;
+}
+.uk-icon {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    padding: 0;
+    background-color: transparent;
+    /* display: inline-block; */
+    fill: currentcolor;
+    line-height: 0;
+}
+user agent stylesheet
+i {
+    font-style: italic;
+}
+.fs-fields .fs-radio-custom input[type="radio"]:checked + label {
+    color: #000;
+}
+.fs-fields > li .fs-radio-custom label {
+    display: block;
+    padding-top: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+user agent stylesheet
+label {
+    cursor: default;
+}
+
+
+.fs-fields > li .fs-radio-custom span {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    max-width: 200px;
+    width: 19%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 
 .fs-fields>li .fs-radio-custom-6 span {
     width: 16%;
@@ -279,14 +364,142 @@ input.density-raido {
 }
 
 .fs-fields .fs-radio-custom label.radio-base1::after,
-.fs-fields .fs-radio-custom label.radio-base2::after,
+
 .fs-fields .fs-radio-custom label.radio-base3::after,
 .fs-fields .fs-radio-custom label.radio-base4::after,
 .fs-fields .fs-radio-custom label.radio-base5::after {
     background-image: url(media/base1.jpg);
 }
 
+.fs-fields .fs-radio-custom label.radio-base2::after{
+    background-image: url(media/base18.jpg);
+}
+.fs-fields .fs-radio-custom label.radio-base15::after{
+    background-image: url(media/base15.jpg);
+}
 
+.fs-fields .fs-radio-custom label.radio-base16::after{
+    background-image: url(media/base15.jpg);
+}
+
+/* topper base  */
+
+.fs-fields .fs-radio-custom input[type="radio"] {
+    position: absolute;
+    display: block;
+    margin: 30px auto 20px;
+    margin: 0 auto 20px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.fs-fields > li .fs-radio-custom label {
+    display: block;
+    padding-top: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.fs-fields > li label {
+    position: relative;
+}
+
+.fs-fields .fs-radio-custom input[type="radio"]:checked + label .radio-check {
+    display: block;
+    z-index: 1;
+}
+
+.fs-fields .fs-radio-custom input[type="radio"] + label .radio-check {
+    display: none;
+}
+
+.uk-position-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.fs-fields > li .fs-radio-custom label {
+    display: block;
+    padding-top: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.fs-fields > li label {
+    position: relative;
+}
+
+[class*=uk-position-top], [class*=uk-position-bottom], [class*=uk-position-left], [class*=uk-position-right], [class*=uk-position-center] {
+    position: absolute!important;
+    max-width: 100%;
+}
+
+.uk-light, .uk-section-primary:not(.uk-preserve-color), .uk-section-secondary:not(.uk-preserve-color), .uk-tile-primary:not(.uk-preserve-color), .uk-tile-secondary:not(.uk-preserve-color), .uk-card-primary.uk-card-body, .uk-card-primary>:not([class*=uk-card-media]), .uk-card-secondary.uk-card-body, .uk-card-secondary>:not([class*=uk-card-media]), .uk-overlay-primary {
+    color: #fff;
+}
+
+svg {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+
+.uk-icon:not(.uk-preserve) [stroke*='#']:not(.uk-preserve) {
+    stroke: #fff;
+}
+
+/* layer  */
+
+.fs-fields .fs-radio-custom label.radio-need_lyers::after {
+    background-image: url(media/need_lyers.jpg);
+}
+
+.fs-fields .fs-radio-custom label.radio-need_lyersS::after {
+    background-image: url(media/no-bangs.jpg);
+}
+
+.fs-fields .fs-radio-custom label.radio-need_bangs::after {
+    background-image: url(media/need_bangs.jpg);
+}
+
+.fs-fields .fs-radio-custom label.radio-need_bangsS::after {
+    background-image: url(media/need_bangsS.jpg);
+}
+
+
+.fs-fields .fs-radio-custom label.radio-naturals::after {
+    background-image: url(media/natural-straights.jpg);
+}
+
+.fs-fields .fs-radio-custom label.radio-vickies::after {
+    background-image: url(media/vickie-wavys.jpg);
+}
+
+button.fs-submit, button.fs-continue, a.fs-submit {
+    padding: 1em 12em;
+    background: #d32676;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+button.fs-continue {
+    margin: 40px auto 0;
+    font-size: 1.25em;
+}
+
+.fs-fields > li .fs-radio-custom-straight span {
+    width: 11%;
+}
+
+fs-fields .fs-radio-custom-length input[type="radio"]:focus + label::after, .fs-fields .fs-radio-custom-length input[type="radio"]:checked + label::after {
+    background: #d32676;
+}
 /* Inputs */
 
 

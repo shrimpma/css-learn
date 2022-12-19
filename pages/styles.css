@@ -1,43 +1,49 @@
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-hmtl{
-    overflow-x: hidden;
+.d-done{
+    display: none;
+}
+hmtl {
+	font-size: 25px;
+	overflow-x: hidden;
 }
 .fs-fields {
-    list-style: none;
+	list-style: none;
 }
 
 img {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
+li {
+	list-style: none;
+}
 body {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 10px auto;
+	max-width: 1200px;
+	margin: 10px auto;
 }
 
-.fs-form-overview .fs-fields>li,
-.no-js .fs-form .fs-fields>li {
-    margin: 1em 0 2em;
-    padding: 0 0 2em 0;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+.fs-form-overview .fs-fields > li,
+.no-js .fs-form .fs-fields > li {
+	margin: 1em 0 2em;
+	padding: 0 0 2em 0;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-.fs-fields>li label.fs-field-label {
-    display: inline-block;
-    padding: 0 5px 15px 0;
-    font-weight: 400;
-    pointer-events: none;
-    font-size: 2.2em;
+.fs-field-label {
+	display: inline-block;
+	padding: 0 5px 15px 0;
+	font-weight: 400;
+	pointer-events: none;
+	font-size: 22px;
 }
-
 
 /* .fs-fields > li .fs-radio-custom span {
         display: inline-block;
@@ -51,457 +57,556 @@ body {
 
 .fs-fields .fs-radio-custom label.radio-first,
 .fs-fields .fs-radio-custom label.radio-two {
-    padding: 20px 0 20px 40px;
-    line-height: 1.7;
-    text-align: left;
+	padding: 20px 0 20px 40px;
+	line-height: 1.7;
+	text-align: left;
 }
 
-.fs-fields .fs-radio-custom input[type="radio"].first-radio {
-    margin: 0;
-    width: 25px;
-    height: 25px;
-    opacity: 1;
-    cursor: pointer;
-    top: 32%;
-    left: 5%;
-}
-
-.fs-fields .fs-radio-custom input[type="radio"] {
-    /* position: absolute;
+.fs-fields .fs-radio-custom input[type='radio'] {
+	/* position: absolute;
   display: block;
   margin: 30px auto 20px;
   margin: 0 auto 20px;
   width: 100%;
   height: 100%;
   opacity: 0; */
-    cursor: pointer;
+	cursor: pointer;
+}
+
+.fs-fields .fs-radio-custom input[type='radio'].first-radio {
+	margin: 0;
+	width: 25px;
+	height: 25px;
+	opacity: 1;
+	cursor: pointer;
+	top: 32%;
+	left: 5%;
 }
 
 .fs-form input {
-    /* display: block; */
-    margin: 0;
-    padding: 0 0 0.15em;
-    width: 100%;
-    color: #000;
-    text-overflow: ellipsis;
-    font-weight: bold;
-    font-size: 1.2em;
-    border-radius: 0;
-    border: 1px solid #ddd;
-    padding: 10px;
+	/* display: block; */
+	margin: 0;
+	padding: 0 0 0.15em;
+	width: 100%;
+	color: #000;
+	text-overflow: ellipsis;
+	font-weight: bold;
+	font-size: 1.2em;
+	border-radius: 0;
+	border: 1px solid #ddd;
+	padding: 10px;
 }
 
 .flex,
 .uk-flex-wrap {
-    display: flex;
+	display: flex;
 }
 
 .flex-wrap,
 .uk-flex-wrap {
-    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .flex-gap {
-    gap: 15px;
+	gap: 15px;
 }
 
 .flex-center {
-    justify-content: center;
+	justify-content: center;
 }
 
 .flex-align-items-center {
-    align-items: center;
+	align-items: center;
 }
 
 .input-label {
-    min-width: 200px;
-    cursor: pointer;
-    line-height: 3;
+	min-width: 200px;
+	cursor: pointer;
+	line-height: 3;
 }
 
 .input-container {
-    padding: 15px 15px;
-    height: 120px;
 }
 
 .flex-wrap-y {
-    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .d-none {
-    display: none;
+	display: none !important;
 }
 
 .color-group {
-    overflow-x: scroll;
+	overflow-x: scroll;
 }
 
 .flex-item {
-    width: 14%;
-    display: inline-block;
-    border: 1px solid #ced4da;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 5px;
-    flex-wrap: wrap;
-    min-width: 140px;
+	width: 14%;
+	display: inline-block;
+	/* border: 1px solid #ced4da; */
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 5px;
+	flex-wrap: wrap;
+	min-width: 140px;
 }
 
 .flex-item label {
-    display: inline-block;
-    width: 100%;
+	display: inline-block;
+	width: 100%;
 }
 
 label {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 p,
 ul {
-    margin: 20px 0;
+	margin: 20px 0;
 }
 
 .iamge-container {
-    max-width: 960px;
+	max-width: 960px;
 }
 
+/* hair color  */
 
 
 
+.fs-radio-custom .radio-tree {
+	padding: 50px 0 0;
+	line-height: 1.7;
+}
+
+.fs-fields .fs-radio-custom.fs-color input[type='radio'].first-radio {
+	display: none;
+	position: relative;
+	top: 0;
+	left: 0;
+	margin: 15px auto 0;
+}
+
+.fs-radio-custom .per-row-3 {
+	width: 33.33%;
+}
+
+.fs-fields > li .fs-radio-custom-8 span em {
+	font-size: 1rem;
+	font-weight: 400;
+	text-transform: none;
+}
+
+em {
+	color: #bb6d81;
+}
+
+.fs-fields .fs-radio-custom.fs-color label::after {
+	top: 27%;
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #333;
+	border-radius: 50%;
+}
+
+.fs-radio-custom.fs-color input[type='radio'].first-radio:checked + label:after {
+	background: #000;
+}
 /* length custom  */
 
 .custom-length-box {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .custom-length-box span {
-    width: 12%;
-    position: relative;
+	width: 12%;
+	position: relative;
 }
 
-.custom-length-box span>label {
-    display: block;
-    padding-top: 100%;
-    width: 100%;
-    cursor: pointer;
+.custom-length-box span > label {
+	display: block;
+	padding-top: 100%;
+	width: 100%;
+	cursor: pointer;
 }
 
 .length-radio {
-    position: absolute;
-    display: block;
-    margin: 30px auto 20px;
-    margin: 0 auto 20px;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
+	position: absolute;
+	display: block;
+	margin: 30px auto 20px;
+	margin: 0 auto 20px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
 }
 
 .length-label::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background-position: 50% 0%;
-    background-size: 85%;
-    background-repeat: no-repeat;
-    content: '';
-    opacity: 1;
-    -webkit-transition: opacity 0.2s;
-    transition: opacity 0.2s;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	background-position: 50% 0%;
+	background-size: 85%;
+	background-repeat: no-repeat;
+	content: '';
+	opacity: 1;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .length-label::after {
-    border-radius: 100%;
-    background: #000;
-    width: 64px;
-    height: 64px;
-    color: red;
+	border-radius: 100%;
+	background: #000;
+	width: 64px;
+	height: 64px;
+	color: red;
 }
 
 .length-label em {
-    color: #fff;
-    z-index: 1;
-    position: absolute;
-    top: 37%;
-    font-size: 1.8em;
-    font-weight: 400;
-    left: 33%;
+	color: #fff;
+	z-index: 1;
+	position: absolute;
+	top: 37%;
+	font-size: 1.8em;
+	font-weight: 400;
+	left: 33%;
 }
-
 
 /* custom hair   Hair density  */
 
-.fs-fields>li .fs-radio-custom-2 span {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 50px;
-    text-align: left;
+.fs-fields > li .fs-radio-custom-2 span {
+	width: 100%;
+	max-width: 100%;
+	padding-left: 50px;
+	text-align: left;
+	/* border:1px solid #ccc; */
 }
 
 .with-padding,
 .radio-two {
-    padding: 15px 15px;
-    width: 100%;
+	padding: 15px 15px;
+	width: 100%;
 }
 
 input.density-raido {
-    width: 25px;
-    height: auto;
+	width: 25px;
+	height: auto;
 }
 
+.fs-fields .fs-radio-custom input[type='radio'].density-radio {
+	margin: 0;
+	width: 25px;
+	height: 25px;
+	opacity: 1;
+	cursor: pointer;
+	top: 32%;
+	left: 5%;
+}
 
-/* /hair desitny / */
+/* Hair density   */
 
-
-.fs-fields > li .fs-radio-custom span.column-one{
-    display: inline-block;
-    width: 46%;
-    max-width: 100%;
-    /* padding-left: 50px; */
-    text-align: left;
+.fs-fields > li .fs-radio-custom span.column-one {
+	display: inline-block;
+	width: 100%;
+	max-width: 100%;
+	padding-left: 50px;
+	text-align: left;
 }
 
 /* hair topper  base  */
 
-
-element.style {
+.fs-fields .fs-radio-custom input[type='radio']:checked + label .radio-check {
+	display: block;
+	z-index: 1;
 }
-.fs-fields .fs-radio-custom input[type="radio"]:checked + label .radio-check {
-    display: block;
-    z-index: 1;
+.fs-fields .fs-radio-custom input[type='radio'] + label .radio-check {
+	display: none;
 }
-.fs-fields .fs-radio-custom input[type="radio"] + label .radio-check {
-    display: none;
-}
-.uk-light, .uk-section-primary:not(.uk-preserve-color), .uk-section-secondary:not(.uk-preserve-color), .uk-tile-primary:not(.uk-preserve-color), .uk-tile-secondary:not(.uk-preserve-color), .uk-card-primary.uk-card-body, .uk-card-primary>:not([class*=uk-card-media]), .uk-card-secondary.uk-card-body, .uk-card-secondary>:not([class*=uk-card-media]), .uk-overlay-primary {
-    color: #fff;
+.uk-light,
+.uk-section-primary:not(.uk-preserve-color),
+.uk-section-secondary:not(.uk-preserve-color),
+.uk-tile-primary:not(.uk-preserve-color),
+.uk-tile-secondary:not(.uk-preserve-color),
+.uk-card-primary.uk-card-body,
+.uk-card-primary > :not([class*='uk-card-media']),
+.uk-card-secondary.uk-card-body,
+.uk-card-secondary > :not([class*='uk-card-media']),
+.uk-overlay-primary {
+	color: #fff;
 }
 .uk-position-center {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: max-content;
-    max-width: 100%;
-    box-sizing: border-box;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
 }
-[class*=uk-position-top], [class*=uk-position-bottom], [class*=uk-position-left], [class*=uk-position-right], [class*=uk-position-center] {
-    position: absolute!important;
-    max-width: 100%;
+[class*='uk-position-top'],
+[class*='uk-position-bottom'],
+[class*='uk-position-left'],
+[class*='uk-position-right'],
+[class*='uk-position-center'] {
+	position: absolute !important;
+	max-width: 100%;
 }
 .uk-icon {
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    overflow: visible;
-    font: inherit;
-    color: inherit;
-    text-transform: none;
-    padding: 0;
-    background-color: transparent;
-    /* display: inline-block; */
-    fill: currentcolor;
-    line-height: 0;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	overflow: visible;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	padding: 0;
+	background-color: transparent;
+	/* display: inline-block; */
+	fill: currentcolor;
+	line-height: 0;
 }
-user agent stylesheet
-i {
-    font-style: italic;
+user agent stylesheet i {
+	font-style: italic;
 }
-.fs-fields .fs-radio-custom input[type="radio"]:checked + label {
-    color: #000;
+.fs-fields .fs-radio-custom input[type='radio']:checked + label {
+	color: #000;
 }
-.fs-fields > li .fs-radio-custom label {
-    display: block;
-    padding-top: 100%;
-    width: 100%;
-    cursor: pointer;
-}
-user agent stylesheet
-label {
-    cursor: default;
+.fs-radio-custom label {
+	display: block;
+	padding-top: 100%;
+	width: 100%;
+	cursor: pointer;
 }
 
-
-.fs-fields > li .fs-radio-custom span {
-    display: inline-block;
-    position: relative;
-    padding: 10px;
-    max-width: 200px;
-    width: 19%;
-    text-align: center;
-    text-transform: uppercase;
+.fs-radio-custom span {
+	display: inline-block;
+	position: relative;
+	padding: 10px;
+	/* max-width: 200px; */
+	width: 19%;
+	text-align: center;
+	text-transform: capitalize;
 }
 
+.fs-radio-custom-6 span {
+	width: 16%;
+	position: relative;
+}
+.sub-title {
+	font-weight: 400;
+	font-size: 18px;
+}
 
-.fs-fields>li .fs-radio-custom-6 span {
-    width: 16%;
-    position: relative;
+.uk-button {
+	margin: 0;
+	border: none;
+	overflow: visible;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	-webkit-appearance: none;
+	border-radius: 0;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 30px;
+	vertical-align: middle;
+	font-size: 0.875rem;
+	line-height: 38px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: 0.1s ease-in-out;
+}
+
+.uk-button-primary {
+	background-color: #bb6d81;
+	color: #fff;
+	border: 1px solid transparent;
+}
+.uk-margin-top {
+	margin-top: 20px;
+	text-align: center;
+}
+p {
+	margin-top: 20px;
 }
 
 .fs-fields .fs-radio-custom label::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background-position: 50% 0%;
-    background-size: 85%;
-    background-repeat: no-repeat;
-    content: '';
-    opacity: 1;
-    -webkit-transition: opacity 0.2s;
-    transition: opacity 0.2s;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	background-position: 50% 0%;
+	background-size: 85%;
+	background-repeat: no-repeat;
+	content: '';
+	opacity: 1;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .fs-fields .fs-radio-custom label.radio-base1::after,
-
 .fs-fields .fs-radio-custom label.radio-base3::after,
 .fs-fields .fs-radio-custom label.radio-base4::after,
 .fs-fields .fs-radio-custom label.radio-base5::after {
-    background-image: url(media/base1.jpg);
+	background-image: url(media/base1.jpg);
 }
 
-.fs-fields .fs-radio-custom label.radio-base2::after{
-    background-image: url(media/base18.jpg);
+.fs-fields .fs-radio-custom label.radio-base2::after {
+	background-image: url(media/base18.jpg);
 }
-.fs-fields .fs-radio-custom label.radio-base15::after{
-    background-image: url(media/base15.jpg);
+.fs-fields .fs-radio-custom label.radio-base15::after {
+	background-image: url(media/base15.jpg);
 }
 
-.fs-fields .fs-radio-custom label.radio-base16::after{
-    background-image: url(media/base15.jpg);
+.fs-fields .fs-radio-custom label.radio-base16::after {
+	background-image: url(media/base15.jpg);
 }
 
 /* topper base  */
 
-.fs-fields .fs-radio-custom input[type="radio"] {
-    position: absolute;
-    display: block;
-    margin: 30px auto 20px;
-    margin: 0 auto 20px;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
+.fs-fields .fs-radio-custom input[type='radio'] {
+	position: absolute;
+	display: block;
+	margin: 30px auto 20px;
+	margin: 0 auto 20px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
 }
 
-.fs-fields > li .fs-radio-custom label {
-    display: block;
-    padding-top: 100%;
-    width: 100%;
-    cursor: pointer;
+.fs-radio-custom label {
+	display: block;
+	padding-top: 100%;
+	width: 100%;
+	cursor: pointer;
 }
 .fs-fields > li label {
-    position: relative;
+	position: relative;
 }
 
-.fs-fields .fs-radio-custom input[type="radio"]:checked + label .radio-check {
-    display: block;
-    z-index: 1;
+.fs-fields .fs-radio-custom input[type='radio']:checked + label .radio-check {
+	display: block;
+	z-index: 1;
 }
 
-.fs-fields .fs-radio-custom input[type="radio"] + label .radio-check {
-    display: none;
+.fs-fields .fs-radio-custom input[type='radio'] + label .radio-check {
+	display: none;
 }
 
 .uk-position-center {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
 }
-
-.fs-fields > li .fs-radio-custom label {
-    display: block;
-    padding-top: 100%;
-    width: 100%;
-    cursor: pointer;
+.fs-radio-custom label {
+	display: block;
+	padding-top: 100%;
+	width: 100%;
+	cursor: pointer;
 }
 .fs-fields > li label {
-    position: relative;
+	position: relative;
 }
 
-[class*=uk-position-top], [class*=uk-position-bottom], [class*=uk-position-left], [class*=uk-position-right], [class*=uk-position-center] {
-    position: absolute!important;
-    max-width: 100%;
+[class*='uk-position-top'],
+[class*='uk-position-bottom'],
+[class*='uk-position-left'],
+[class*='uk-position-right'],
+[class*='uk-position-center'] {
+	position: absolute !important;
+	max-width: 100%;
 }
 
-.uk-light, .uk-section-primary:not(.uk-preserve-color), .uk-section-secondary:not(.uk-preserve-color), .uk-tile-primary:not(.uk-preserve-color), .uk-tile-secondary:not(.uk-preserve-color), .uk-card-primary.uk-card-body, .uk-card-primary>:not([class*=uk-card-media]), .uk-card-secondary.uk-card-body, .uk-card-secondary>:not([class*=uk-card-media]), .uk-overlay-primary {
-    color: #fff;
+.uk-light,
+.uk-section-primary:not(.uk-preserve-color),
+.uk-section-secondary:not(.uk-preserve-color),
+.uk-tile-primary:not(.uk-preserve-color),
+.uk-tile-secondary:not(.uk-preserve-color),
+.uk-card-primary.uk-card-body,
+.uk-card-primary > :not([class*='uk-card-media']),
+.uk-card-secondary.uk-card-body,
+.uk-card-secondary > :not([class*='uk-card-media']),
+.uk-overlay-primary {
+	color: #fff;
 }
 
 svg {
-    max-width: 100%;
-    height: auto;
-    box-sizing: border-box;
+	max-width: 100%;
+	height: auto;
+	box-sizing: border-box;
 }
 
-
 .uk-icon:not(.uk-preserve) [stroke*='#']:not(.uk-preserve) {
-    stroke: #fff;
+	stroke: #fff;
 }
 
 /* layer  */
 
 .fs-fields .fs-radio-custom label.radio-need_lyers::after {
-    background-image: url(media/need_lyers.jpg);
+	background-image: url(media/need_lyers.jpg);
 }
 
 .fs-fields .fs-radio-custom label.radio-need_lyersS::after {
-    background-image: url(media/no-bangs.jpg);
+	background-image: url(media/no-bangs.jpg);
 }
 
 .fs-fields .fs-radio-custom label.radio-need_bangs::after {
-    background-image: url(media/need_bangs.jpg);
+	background-image: url(media/need_bangs.jpg);
 }
 
 .fs-fields .fs-radio-custom label.radio-need_bangsS::after {
-    background-image: url(media/need_bangsS.jpg);
+	background-image: url(media/need_bangsS.jpg);
 }
 
-
 .fs-fields .fs-radio-custom label.radio-naturals::after {
-    background-image: url(media/natural-straights.jpg);
+	background-image: url(media/natural-straights.jpg);
 }
 
 .fs-fields .fs-radio-custom label.radio-vickies::after {
-    background-image: url(media/vickie-wavys.jpg);
+	background-image: url(media/vickie-wavys.jpg);
 }
 
-button.fs-submit, button.fs-continue, a.fs-submit {
-    padding: 1em 12em;
-    background: #d32676;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.1em;
+button.fs-submit,
+button.fs-continue,
+a.fs-submit {
+	padding: 1em 12em;
+	background: #d32676;
+	color: #fff;
+	font-weight: 700;
+	font-size: 1.1em;
 }
 
 button.fs-continue {
-    margin: 40px auto 0;
-    font-size: 1.25em;
+	margin: 40px auto 0;
+	font-size: 1.25em;
 }
 
 .fs-fields > li .fs-radio-custom-straight span {
-    width: 11%;
+	width: 11%;
 }
 
-fs-fields .fs-radio-custom-length input[type="radio"]:focus + label::after, .fs-fields .fs-radio-custom-length input[type="radio"]:checked + label::after {
-    background: #d32676;
+fs-fields .fs-radio-custom-length input[type='radio']:focus + label::after,
+.fs-fields .fs-radio-custom-length input[type='radio']:checked + label::after {
+	background: #d32676;
 }
+
 /* Inputs */
-
 
 /*
 .fs-form input {
@@ -634,6 +739,73 @@ fs-fields .fs-radio-custom-length input[type="radio"]:focus + label::after, .fs-
 }
 */
 
-.color-group .fs-radio-custom input[type="radio"]+label .radio-check {
-    display: none;
+.color-group .fs-radio-custom input[type='radio'] + label .radio-check {
+	display: none;
+}
+
+/* buttions  */
+
+button.fs-submit,
+button.fs-continue,
+a.fs-submit {
+	padding: 1em 12em;
+	background: #d32676;
+	color: #fff;
+	font-weight: 700;
+	font-size: 1.1em;
+	margin: 20px auto;
+	display: block;
+}
+
+button.fs-continue {
+	margin: 40px auto 0;
+	font-size: 1.25em;
+}
+
+.fs-show {
+	display: block !important;
+}
+
+.d-block {
+	display: block;
+}
+
+.fs-form .uk-margin-small-top {
+	margin-top: 10px;
+}
+
+.fs-form input:focus {
+    border:1px solid #ccc;
+	background-color: #ddd;
+}
+
+.fs-form .text-input {
+	width: 300px;
+	max-width: 100%;
+}
+.fs-radio-custom-8 span {
+	width: 12% ;
+}
+
+@media (max-width:400px) {
+
+    .flex{
+        flex-wrap: wrap;
+    }
+    
+    .fs-radio-custom .product-type{
+        width: 50%;
+    }
+
+    .fs-radio-custom .per-row-1{
+        width: 100%;
+
+    }
+
+
+    .fs-radio-custom.fs-color span,.per-row-2  span {
+        width: 50%;
+
+    }
+
 }

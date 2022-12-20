@@ -28,6 +28,7 @@ body {
 .container {
 	max-width: 1200px;
 	margin: 10px auto;
+    padding:0 10px;
 }
 
 .fs-form-overview .fs-fields > li,
@@ -433,7 +434,11 @@ user agent stylesheet i {
 }
 .uk-margin-top {
 	margin-top: 20px;
-	text-align: center;
+	
+}
+
+.center{
+text-align: center;
 }
 p {
 	margin-top: 20px;
@@ -585,7 +590,7 @@ svg {
 button.fs-submit,
 button.fs-continue,
 a.fs-submit {
-	padding: 1em 12em;
+	
 	background: #d32676;
 	color: #fff;
 	font-weight: 700;
@@ -597,7 +602,7 @@ button.fs-continue {
 	font-size: 1.25em;
 }
 
-.fs-fields > li .fs-radio-custom-straight span {
+ .custom-length-box span {
 	width: 11%;
 }
 
@@ -748,13 +753,14 @@ fs-fields .fs-radio-custom-length input[type='radio']:focus + label::after,
 button.fs-submit,
 button.fs-continue,
 a.fs-submit {
-	padding: 1em 12em;
+	padding: 1.5rem 4.5rem;
 	background: #d32676;
 	color: #fff;
 	font-weight: 700;
 	font-size: 1.1em;
 	margin: 20px auto;
 	display: block;
+    box-sizing: border-box;
 }
 
 button.fs-continue {
@@ -780,12 +786,24 @@ button.fs-continue {
 }
 
 .fs-form .text-input {
-	width: 300px;
-	max-width: 100%;
+	max-width: 300px;
 }
 .fs-radio-custom-8 span {
 	width: 12% ;
 }
+
+
+
+
+.text-input:focus { 
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+ }
+
+ p{
+    font-size: 18px;
+ }
 
 @media (max-width:400px) {
 
@@ -793,19 +811,30 @@ button.fs-continue {
         flex-wrap: wrap;
     }
     
-    .fs-radio-custom .product-type{
+    .fs-radio-custom .product-type, .per-row-2  span {
         width: 50%;
     }
 
-    .fs-radio-custom .per-row-1{
+    .fs-radio-custom .per-row-1, .per-row-1 span {
         width: 100%;
+    }
 
+    .per-row-3 span{
+        width: 33.33%;
     }
 
 
     .fs-radio-custom.fs-color span,.per-row-2  span {
         width: 50%;
 
+    }
+
+    .custom-length-box{
+        flex-wrap: wrap;
+    }
+
+    .custom-length-box > span{
+        width: 33.33%;
     }
 
 }

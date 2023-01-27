@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid template </title>
+    <style>
+        :root {
+            --color-primary: #3740ff;
+            --color-primary-dark: #272eb5;
+            --color-primary-light: #3740ff;
+            --color-primary-x-light: #e8f0fe;
+            --color-light: #ffffff;
+            --color-dark: #202124;
+            --color-off-white: #f3f4f4;
+            --color-mid: #5f6368;
+            --color-mid-dark: #3c4043;
+            --color-stroke: #dadce0;
+            --metric-gutter: 1.5rem;
+            --metric-box-spacing: 1rem;
+            --metric-radius: 3px;
+            --generic-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 2px 6px 2px rgba(60, 64, 67, 0.15);
+            --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+        }
+        
+
+        :root {
+            --var-flow: row;
+            --var-mode: horizontal-tb;
+          }
+          
+          .container {
+            margin:10px auto;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns:
+              [main-start aside-start] 1fr
+              [aside-end content-start] 2fr
+              [content-end main-end]; /* a two column layout */
+        }
+        
+        .sidebar {
+            grid-column: aside-start / aside-end;
+            /* placed between line 1 and 2*/
+        }
+        
+        footer {
+            grid-column: main-start / main-end;
+            /* right across the layout from line 1 to line 3*/
+        }
+          
+          label {
+            --flow-space: 1rem;
+            display: grid;
+            grid-template-columns: 180px min-content;
+            gap: 0.2rem;
+          }
+
+        
+            .item {
+                grid-column: auto / span 2;
+            }
+
+            .box{
+                border:1px solid #ccc;
+            }
+            .box p:nth-of-type(1){
+                margin-top: 10px;
+            }
+          
+            .box p:nth-of-type(2){
+                margin-block-start: 10px;
+            }
+
+            .my-element {
+                padding-block-start: 2em;
+                padding-block-end: 2em;
+                margin-inline-start: 2em;
+                position: relative;
+                inset-block-start: 0.2em;
+              }
+    </style>
+</head>
+<body>
+    
+
+    <main>
+        <div class="wrapper">
+          <article class="flow">
+            <h1>Grid auto flow</h1>
+            <figure class="callout">
+              <p>In this example try changes auto-flow from row to column and also change the writing mode.</p>
+            </figure>
+            <div class="controls">
+              <label>
+                Choose auto flow
+                <select id="switcher">
+                  <option value="row">row</option>
+                  <option value="column">column</option>
+                </select>
+              </label>
+              <label>
+                Choose writing mode
+                <select id="switcher2">
+                  <option value="horizontal-tb">horizontal-tb</option>
+                  <option value="vertical-rl">vertical-rl</option>
+                  <option value="vertical-lr">vertical-lr</option>
+                </select>
+              </label>
+            </div>
+            <div class="container" id="container">
+              <div class="box">Item one</div>
+              <div class="box">Item two</div>
+              <div class="box">Item three has more text </div>
+              <div class="box">Item four</div>
+              <div class="box item">Item five<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, alias provident? Corrupti quis illo amet voluptates consequatur ea soluta totam nam quisquam, asperiores illum odit corporis necessitatibus tenetur sint officia.</div>
+            </div>
+          </article>
+        </div>
+      </main>
+      
+      <div class="box">
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta aliquid, facilis dolore magni temporibus voluptas maiores est. Iusto autem neque numquam ab, facere odio in, dicta aut fugiat odit impedit.</p>
+
+        <p>lorm
+
+        </p>
+
+
+        <div class="desc my-element">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi numquam blanditiis aliquam laudantium recusandae eos sapiente voluptatum. Adipisci et quaerat, ipsam sed expedita ratione corporis quos earum! Accusantium, autem quam.  
+        </div>
+      </div>
+      
+</body>
+</html>

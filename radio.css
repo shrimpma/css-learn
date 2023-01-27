@@ -26,11 +26,11 @@
       img{
         width: 100%;
       }
-      .title{
+      /* .title{
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 16px;
-      }
+      } */
       .opt-label {
             display: block;
             box-sizing: border-box;

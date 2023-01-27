@@ -1,0 +1,32 @@
+.my-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    background: #eabdb3;
+    font: inherit;
+    text-align: center;
+  }
+  
+  /* The button will inherit this style */
+  article a {
+    color: #7c3626;
+  }
+  
+  .my-button:hover {
+    background: #e2a294;
+  }
+
+
+  /* Global color styles for paragraph in authored CSS */
+p {
+    margin-top: 2em;
+    color: goldenrod;
+  }
+  
+  /* The p needs to be reset in asides, so you can use unset */
+  aside p {
+    margin: unset;
+    color: unset;
+  }
+  
+  

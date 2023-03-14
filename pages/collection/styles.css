@@ -685,3 +685,17 @@ button, [type=submit] {
 .padding-top {
     padding-top: 30px;
 }
+
+.custom-block{
+
+  background-color: currentColor;
+}
+
+.parent {
+    color: blue;
+    border: 1px solid currentColor;
+  }
+  
+  .child {
+    color: rgb(var(--text-color));
+  }

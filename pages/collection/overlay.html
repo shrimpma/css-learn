@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>overlay </title>
     <style>
+        :root{
+            --vertical-breather: 40px;
+            --main-color:#000;
+            --main-font-size: 15px;
+        }
         main {
 
             max-width: 1200px;
@@ -19,32 +24,76 @@
 
         img,
         iframe {
-            width: 100%;
+            max-width: 100%;
             height: auto;
             border: none;
             vertical-align: top;
            
         }
-
+/*
         .image-overlay  {
             position: relative;
         }
-        .image-overlay  img {
-                position:absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                background-size: cover;
+
+        .image-overlay__image-wrapper, .image-overlay__image {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
+
+        .image-overlay__image {
+            -o-object-fit: cover;
+            object-fit: cover;
+            -o-object-position: center;
+            object-position: center;
+        }
+        .image-overlay {
+            --image-height: auto;
+            position: relative;
+            display: flex;
+            min-height: var(--image-height);
+            color: #000;
+            background:#FFF;
+        }
+
+        @media screen and (min-width: 741px){
+            .image-overlay--medium {
+                height: 550px;
+            }
+
+        }
+       
+        .container {
+
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px 0 40px;
+        }
+
+        .image-overlay__content-wrapper {
+            position: relative;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+           
+        }
+
+        .image-overlay__text-container{
+            width: 50%;
+        }
+*/
+        
     </style>
 </head>
 
 <body>
     <main>
-        <div class="shopify-section shopify-section--image-with-text-overlay">
+        <!-- <div class="shopify-section shopify-section--image-with-text-overlay">
             <section class="section section--flush hidden-pocket">
-                <div>
-                    <image-with-text-overlay class="image-overlay image-overlay--medium">
+                <div  class="image-overlay image-overlay--medium">
                         <div class="image-overlay__image-wrapper">
                             <picture>
                                 <source media="(max-width: 740px)" height="980" width="2000" alt="Curly Hair Extensions Model" srcset="
@@ -82,9 +131,7 @@
                                         <split-lines>Curly Hair Extensions</split-lines>
                                     </h1>
                                     <div class="image-overlay__text-container">
-                                        <p>
-                                            We offer the largest and most diverse collection of curly
-                                            hair extensions online. Our curly Remy human hair is
+                                        <p>We offer the largest and most diverse collection of curly  hair extensions online. Our curly Remy human hair is
                                             luscious and full of life. You can flatten or enhance
                                             these curls with ease, how creative are you? lf you're
                                             looking for naturally curly hairstyles with true
@@ -95,12 +142,86 @@
                                 </div>
                             </div>
                         </div>
-                    </image-with-text-overlay>
                 </div>
             </section>
-        </div>
+        </div> -->
 
 
+
+        <hr>
+
+        <style>
+
+            html{
+                font-size: var(--main-font-size);
+                overflow-x: hidden;
+            }
+
+            @media (min-width:1024px) {
+                html{
+                    font-size: 10px;
+                    overflow-x: hidden;
+                }  
+            }
+
+            .image-container{
+                position: relative;
+                width:100%;
+                height: auto;
+                overflow: hidden;
+                max-height: 600px;
+               
+            }
+
+            .overlay-img {
+               
+                display: block;
+                width: 100%;
+                height: auto;
+                max-height: 600px;
+              
+        }
+
+            .overlay-text{
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+         
+            .cropped-ofp {
+                width: 500px; 
+                height: 400px; 
+                object-fit: cover;
+                object-position: 50% 50%; 
+                }
+
+
+      
+        </style>
+        <div class="image-container">
+            <img class="overlay-img cropped-ofp"
+            srcset="
+                          //cdn.shopifycdn.net/s/files/1/0747/3963/files/curly-hair-extensions_4c184a71-cb8f-49a5-b442-35c9bb5c39a6_400x800_crop_center.jpg?v=1668519398   400w,
+                          //cdn.shopifycdn.net/s/files/1/0747/3963/files/curly-hair-extensions_4c184a71-cb8f-49a5-b442-35c9bb5c39a6_500x800_crop_center.jpg?v=1668519398   500w,
+                          //cdn.shopifycdn.net/s/files/1/0747/3963/files/curly-hair-extensions_4c184a71-cb8f-49a5-b442-35c9bb5c39a6_600x800_crop_center.jpg?v=1668519398   600w,
+                          //cdn.shopifycdn.net/s/files/1/0747/3963/files/curly-hair-extensions_4c184a71-cb8f-49a5-b442-35c9bb5c39a6_700x800_crop_center.jpg?v=1668519398   700w,
+                          //cdn.shopifycdn.net/s/files/1/0747/3963/files/curly-hair-extensions_4c184a71-cb8f-49a5-b442-35c9bb5c39a6_800x800_crop_center.jpg?v=1668519398   800w,
+                          //cdn.shopifycdn.net/s/files/1/0747/3963/files/curly-hair-extensions_4c184a71-cb8f-49a5-b442-35c9bb5c39a6_900x800_crop_center.jpg?v=1668519398   900w,
+                          //cdn.shopifycdn.net/s/files/1/0747/3963/files/curly-hair-extensions_4c184a71-cb8f-49a5-b442-35c9bb5c39a6_1000x800_crop_center.jpg?v=1668519398 1000w
+                        "
+            
+            alt="your-image-description">
+            <div class="overlay-text">
+              <h2>Your Title Here</h2>
+              <p>Your Description Here</p>
+            </div>
+          </div>
+
+          <hr>
+         
     </main>
 
 </body>

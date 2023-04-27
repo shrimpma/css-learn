@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image caused layout shift </title>
+    <style>
+ *{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+ }
+        .box{
+            max-width: 500px;
+            margin:0 auto;
+        }
+        /* padding-bottom value = height/widht   */
+        .product-gallery-image{
+            display: block;
+            font-size: 0;
+            line-height: 1;
+            overflow: hidden;
+            height: 0; /* core code  */
+            width: 100%;
+            padding-bottom: 133.375%; /* core code  */
+            background-color: #f5f3ef;
+        }
+
+        .product-gallery-image img{
+           width: 100%;
+            transition: opacity 200ms;
+         }
+         
+        /* 非必要 */
+     img {
+            height: auto;
+            border: 0;
+        } 
+       
+        
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div class="product-gallery-image">
+            <img src="//cdn.shopify.com/s/files/1/0066/0052/products/Luxy-Hair-Extensions_Off-Black_Before_Back_2fab8f73-1861-466a-9e19-8191b5dddeec_800x.jpg?v=1675375400" alt="20" seamless="" off="" black="" clip-ins="" luxy="" hair="" extensions="" -="" 20"="" (180g)"="" style="opacity:1">
+        </div>
+
+        <div class="content">
+
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto cum nostrum quae sed ab vel, corporis molestias quo ratione aliquid id dolorem aspernatur, officia perferendis unde minima odit labore alias.</p>
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae nostrum fuga aliquam cupiditate ducimus. Suscipit sequi soluta, quae, ex hic ratione mollitia, doloremque optio culpa consequatur odit at dignissimos esse!</p>
+        </div>
+
+
+    </div>
+</body>
+</html>

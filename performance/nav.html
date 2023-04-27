@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        html{
+            color:#000;
+        }
+
+        a {
+
+            color:#fff;
+        }
+        .container {
+            max-width: 1500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .list--unstyled {
+            list-style: none;
+        }
+        ul, ol {
+            margin: 0;
+            padding: 0;
+            list-style-position: inside;
+        }
+        @media screen and (min-width: 641px){
+            .nav-bar {
+                display: block;
+                position: relative;
+                overflow: hidden;
+                left: 0;
+                width: 100%;
+                background: #232f3e;
+            }
+
+            .nav-bar__linklist {
+                margin-left: 60px;
+                white-space: nowrap;
+                padding-bottom: 20px;
+                margin-bottom: -20px;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                -ms-scroll-snap-type: x mandatory;
+                scroll-snap-type: x mandatory;
+            }
+
+            .nav-bar__item {
+                position: relative;
+                display: inline-block;
+                margin-right: 20px;
+                padding: 6px 0;
+                color: #fff;
+                font-size: 15px;
+            }
+
+
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <nav class="nav-bar">
+        <div class="nav-bar__inner">
+          <div class="container">
+            <ul class="nav-bar__linklist list--unstyled" data-type="menu" role="list"><li class="nav-bar__item"><a href="/collections/lace-wig" class="nav-bar__link link" data-type="menuitem">Lace Wigs</a></li><li class="nav-bar__item"><a href="/collections/half-wig" class="nav-bar__link link" data-type="menuitem">Half Wigs</a></li><li class="nav-bar__item"><a href="/collections/full-wig" class="nav-bar__link link" data-type="menuitem">Full Wigs</a></li><li class="nav-bar__item"><a href="/collections/weaves" class="nav-bar__link link" data-type="menuitem">Weaves</a></li><li class="nav-bar__item"><a href="/collections/braids" class="nav-bar__link link" data-type="menuitem">Braids</a></li><li class="nav-bar__item"><a href="/collections/crochet-hair" class="nav-bar__link link" data-type="menuitem">Crochets</a></li><li class="nav-bar__item"><a href="/collections/hair-pieces" class="nav-bar__link link" data-type="menuitem">Hair Pieces</a></li><li class="nav-bar__item"><a href="/collections/hair-tools" class="nav-bar__link link" data-type="menuitem">Hair Tools</a></li><li class="nav-bar__item"><a href="/collections/hair-care" class="nav-bar__link link" data-type="menuitem">Hair Care</a></li><li class="nav-bar__item"><a href="/collections/bestsellers" class="nav-bar__link link" data-type="menuitem">Bestsellers</a></li><li class="nav-bar__item"><a href="/collections/cosmetics" class="nav-bar__link link" data-type="menuitem">Cosmetics</a></li><li class="nav-bar__item"><a href="/collections/top-deal" class="nav-bar__link link" data-type="menuitem">Top Deal</a></li><li class="nav-bar__item"><a href="/pages/customer-service" class="nav-bar__link link" data-type="menuitem">Customer Service</a></li><li class="nav-bar__item"><a href="/collections/new-arrivals" class="nav-bar__link link" data-type="menuitem">New Arrivals</a></li><li class="nav-bar__item"><a href="/pages/about-us" class="nav-bar__link link" data-type="menuitem">About Us</a></li></ul>
+          </div>
+        </div>
+      </nav>
+</body>
+</html>

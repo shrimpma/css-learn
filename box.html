@@ -5,111 +5,148 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>box model</title>
+    <title>form demo </title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/css/uikit.min.css" />
+  
     <style>
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-
-        .container {
-            font-size: 20px;
+        .container{
             max-width: 1200px;
-            margin: 50px auto;
+            margin:50px auto;
+        }
+        .container form {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
         }
 
-        .author {
-            width: 600px;
+       .uk-open{
+            opacity: 1;
         }
-
-        .blog {
-            background-color: #868e96;
-           
-        }
-
-        .author {
-           
-            top: 10px;
-            left: 10px;
-        }
-
-        section{
-            margin-bottom: 20px;
-        }
-
-        .box{
-            max-width: 1200px;
-            margin:30px auto;
+        .text-center {
             text-align: center;
         }
-        .submit-btn{
-            background-color:#ff8787 ;
-            color:#fff;
-            font-size: 18px;
-            max-width: 400px;
-            padding: 15px 15px;
-            border:none;
-          
+
+        .uk-open>.uk-modal-dialog {
+            opacity: 1;
+            transform: translateY(0);
         }
-        
-        .text p {
-            line-height: 1.6;
+        .uk-list label {display:inline-block;}
+        #countdown-desktop {
+            margin:0;
         }
     </style>
-    
+
 </head>
 
 <body>
+     <main>
 
-    <div class="text">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sint laboriosam placeat doloribus cumque aperiam at temporibus ad eum magnam quibusdam velit, excepturi et magni eaque. Vitae tempora nihil dolor.</p>
+   
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo hic error sequi tempora. Perspiciatis, quos sint repellendus dolores assumenda reiciendis at dignissimos illo, rerum rem suscipit cupiditate consequuntur error corporis!</p>
+   <div class="container">
+    <h1> the main content </h1>
+
+    <button class="signup"> sign up now1 </button>
+    <button  class="signup"> sign up now2 </button>
+    <button class="signup"> sign up now 3</button>
+
+    <div id="salonform" uk-modal="" class="uk-modal"  tabindex="-1">
+        <div class="uk-modal-dialog uk-modal-body">
+            <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+            <form class="uk-margin-top uk-form uk-form-stacked" action="/admin-dev/salon_form1.php" method="post" autocomplete="off">
+                
+                <div class="form-group uk-form-row uk-margin">
+                    <label class="uk-form-label" for="companyName">Company Name</label>
+                    <div class="uk-form-controls">
+                        <input class="form-control uk-input" type="text" id="companyName" name="contact[companyName]" value="">
+                    </div>
+                </div>
+                <div class="form-group uk-form-row uk-margin" style="margin-top:0">
+                    <label class="uk-form-label" for="contactName"><sup>*</sup> Contact Name</label>
+                    <div class="uk-form-controls">
+                        <input class="is_required form-control uk-input" type="text" id="contactName" name="contact[contactName]" value="" required="">
+                    </div>
+                </div>
+
+                <div  class="form-group uk-form-row uk-margin">
+                    <label class="uk-form-label" for="email"><sup>*</sup> Email</label>
+                    <div class="uk-form-controls">
+                        <input class="is_required form-control uk-input" type="email" id="email" name="contact[email]" onblur="if (!window.__cfRLUnblockHandlers) return false; isEmail(this.value)" value="" required="">
+                    </div>
+                </div>
+                <div class="form-group uk-form-row uk-margin">
+                    <label class="uk-form-label" for="phone"><sup>*</sup> Phone number / WhatsApp</label>
+                    <div class="uk-form-controls">
+                        <input class="is_required form-control uk-input" type="text" id="phone" name="contact[phone]" value="" required="">
+                    </div>
+                </div>
+
+                <div class="form-group uk-form-row uk-margin">
+                    <label class="uk-form-label" for="id_country">Country</label>
+                    <div class="uk-form-controls">
+                        <select id="id_country" class="form-control not_uniform uk-select" name="contact[id_country]">
+                            <option value="United States" selected="">United States</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <p><span id="id_country_error" class="text-primary"></span></p>
+                    </div>
+                </div>
+                
+               
+
+                <div class="form-group uk-form-row uk-margin">
+                    <label class="uk-form-label" for="instagram">Instagram</label>
+                    <div class="uk-form-controls">
+                        <input class="is_required form-control uk-input" type="text" id="instagram" name="contact[instagram]" value="">
+                    </div>
+                </div>
+                <h4 class="text-center uk-margin-top">HELP US TO KNOW YOU MORE!</h4>
+                <div class="surveyform">
+                    <h4>1. How were you referred to AmazingBeautyHair?</h4>
+                    <ul class="uk-list uk-margin-small-top">
+                        <li>
+                            <input id="a1a" name="contact[survey-a1]" type="checkbox" value="Instagram">
+                            <label for="a1a">Instagram</label>
+                        </li>
+                        <li>
+                            <input id="a1b" name="contact[survey-a12]" type="checkbox" value="Facebook">
+                            <label for="a1b">Facebook</label>
+                        </li>
+                        <li>
+                            <input id="a1c" name="contact[survey-a13]" type="checkbox" value="YouTube">
+                            <label for="a1c">YouTube</label>
+                        </li>
+                        <li>
+                            <input id="a1d" name="contact[survey-a14]" type="checkbox" value="Google search">
+                            <label for="a1d">Google search</label>
+                        </li>
+                        <li>
+                            <input id="a1e" name="contact[survey-a15]" type="checkbox" value="Friends">
+                            <label for="a1e">Friends</label>
+                        </li>
+                        <li>
+                            <input id="a1f" name="contact[survey-a16]" type="checkbox" value="Other">
+                            <label for="a1e">Other</label>
+                        </li>
+                    </ul>
+                </div>
+              
+             
+                
+                <div class="submit-box text-center uk-margin-top">
+                    <button class="salon-submit uk-button uk-button-secondary" type="submit">SUBMIT</button>
+                </div>
+            </form>
+        </div>
     </div>
 
-    <div class="box">
-        <button type="submit" class="submit-btn">submit </button>
-    </div>
-    <div class="container">
-        <span class="author-desc">test 1</span> <span>test 2</span>
-        <span>test 3 </span>
 
-        <section>
-            <article class="blog">
-                the blog here
-                <div class="author">the author here</div>
-            </article>
-        </section>
-        
-
-        <section>
-
-            <article class="blog" id="section-blog">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos sit facere illum consequuntur veritatis libero pariatur labore nesciunt enim nihil, omnis quasi autem minus quisquam recusandae quo quia dignissimos molestiae.
-            </article>
-            <button id="btn">click me </button>
-        </section>
-        
-    </div>
+   <input type="radio" name="name" id=""> the radios 
     
-    <script>
+</main>
 
-
-
-        const listenOnce = (el, evt, fn) =>
-  el.addEventListener(evt, fn, { once: true });
-
-
-  var listenOneFun = (el,evt,fn)=>{
-    el.addEventListener(evt,fn,{once:true})
-  }
-  listenOneFun(
-    document.getElementById('btn'),
-    'click',
-    () => console.log('Hello world')
-  );
-
-    </script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
+<script src="form.js"></script>
 </body>
 </html>

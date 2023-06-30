@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox</title>
+    <style>
+
+    .checkbox::after::after {
+            border-color: #000;
+            background-color: #000;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgM0w0IDZMOS4wMDE0NiAxIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIvPjwvc3ZnPg==);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    .checkbox::after {
+            position: absolute;
+            flex: none;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #000;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: background-color .2s ease-in-out,border .2s ease-in-out;
+            cursor: pointer;
+        
+        }
+        .item-box {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    
+    <label class="item-box checkbox" for="item">
+          
+        <input id="item" class=""   type="checkbox" value="1" >
+    </label>
+</body>
+</html>

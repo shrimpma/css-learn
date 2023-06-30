@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+.scrolling-menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scrolling-menu li {
+    display: inline-block;
+}
+
+.scrolling-menu li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.scrolling-menu li a:hover {
+    background-color: #555;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add to cart </title>
+    <style>
+        .single-option-selector,#ProductSelect-product-template-multi{
+            display: none;
+        }
+
+        .product-form__error-message-wrapper--hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <form method="post" action="/cart/add" id="product_form_4039802028096" accept-charset="UTF-8"
+        class="product-form product-form-product-template-multi" enctype="multipart/form-data" novalidate="novalidate" data-product-form="">
+        <input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
+
+        <div class="selector-wrapper js product-form__item">
+            <label for="SingleOptionSelector-0"> Size </label>
+            <select class="single-option-selector single-option-selector-product-template-multi product-form__input" id="SingleOptionSelector-0"
+                data-index="option1">
+                <option value="XL" selected="selected">XL</option>
+
+                <option value="2XL">2XL</option>
+
+                <option value="3XL">3XL</option>
+            </select>
+        </div>
+
+        
+
+        <div class="input">
+            <input type="number" data-properties="test" data-varient="29782870491200" value="1" min="1"
+                class="varients_ids quantity-selector quantity-input" />
+            <span> 26.95 </span>
+            <span> XL </span>
+        </div>
+
+        <div class="input">
+            <input type="number" data-properties="sdsgh" data-varient="29782870523968" value="1" min="1"
+                class="varients_ids quantity-selector quantity-input" />
+            <span> 39.95 </span>
+            <span> 2XL </span>
+        </div>
+
+        <div class="input">
+            <input type="number" data-properties="tyur" data-varient="29782870556736" value="1" min="1"
+                class="varients_ids quantity-selector quantity-input" />
+            <span> 46.95 </span>
+            <span> 3XL </span>
+        </div>
+
+        <div class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden" data-error-message-wrapper="" role="alert">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-error" viewBox="0 0 14 14">
+                <g fill="none" fill-rule="evenodd">
+                    <path d="M7 0a7 7 0 0 1 7 7 7 7 0 1 1-7-7z"></path>
+                    <path class="icon-error__symbol"
+                        d="M6.328 8.396l-.252-5.4h1.836l-.24 5.4H6.328zM6.04 10.16c0-.528.432-.972.96-.972s.972.444.972.972c0 .516-.444.96-.972.96a.97.97 0 0 1-.96-.96z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <span class="product-form__error-message" data-error-message="">Quantity must be 1 or more</span>
+        </div>
+
+        <select id="product-select-10666406084productproduct-template" name="id" class="multi_select" style="/* display: none; */"> <option value="39926379652" data-sku="CP-JC-10">10inch / Natural Black</option> <option value="39926379780" data-sku="CP-JC-12">12inch / Natural Black</option> <option selected="selected" value="39926379844" data-sku="CP-JC-14">14inch / Natural Black</option> <option value="39926379908" data-sku="CP-JC-16">16inch / Natural Black</option> <option value="39926380036" data-sku="CP-JC-18">18inch / Natural Black</option> <option value="39926380100" data-sku="CP-JC-20">20inch / Natural Black</option> <option value="39926380228" data-sku="CP-JC-22">22inch / Natural Black</option></select>
+        <input type="number" min="1" size="2" class="quantity" name="quantity" id="quantity" value="1">
+        <input class="buy-with-item" type="checkbox" id="r-7357065461794" data-quantity="1" data-variant-id="611278356514" value="611278356514" checked>
+
+        <input class="buy-with-item" type="checkbox" id="r-7357065461795" data-quantity="1" data-variant-id="611278356515" value="611278356515" checked>
+
+        <input class="buy-with-item" type="checkbox" id="r-7357065461796" data-quantity="1" data-variant-id="611278356516" value="611278356516">
+    </form>
+    <button type="button" class="custom-add btn product-form__cart-submit">Add to cart </button>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c="
+        crossorigin="anonymous"></script>
+    <script src="./add.js"></script>
+
+    <div class="show_inlay">
+        <iframe src="about:blank" data-oit-mode="overlay-br-min" data-oit-status="loaded" data-oit-type="inlay-oracle-chat-embedded" id="chatInlay" title="Live Chat" style="height: 60px; width: 67px; visibility: visible; right: 0px;" data-oit-height="auto"></iframe>
+      </div>
+</body>
+
+</html>

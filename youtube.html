@@ -1,211 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>daynmic youtube video </title>
-
-</head>
-<body>
-   
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>daynmic youtube video</title>
+  </head>
+  <body>
     <main>
+      <style>
+        html {
+          box-sizing: border-box;
+          -ms-overflow-style: scrollbar;
+        }
+        *,
+        ::after,
+        ::after {
+          box-sizing: inherit;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          border: 0;
+        }
+
+        .video-block {
+          margin: 50px auto;
+          max-width: 640px;
+        }
+        .youtube {
+          position: relative;
+          max-width: 100%;
+          padding: 0 15px;
+          max-width: 640px;
+        }
+        .youtube {
+          background-color: #9e9e9e;
+          margin-bottom: 30px;
+          position: relative;
+          padding-top: 56.25%;
+          overflow: hidden;
+          cursor: pointer;
+        }
+
+        .youtube .play-button,
+        .youtube .play-button::before {
+          top: 50%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0);
+        }
+
+        .play-button {
+          position: absolute;
+        }
+
+        .youtube img,
+        .youtube iframe,
+        .youtube .play-button,
+        .youtube .play-button:before {
+          position: absolute;
+        }
+        .youtube .play-button {
+          width: 90px;
+          height: 60px;
+          background-color: #333;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+          z-index: 1;
+          opacity: 0.8;
+          border-radius: 6px;
+        }
+
+        img,
+        iframe {
+          max-width: 100%;
+        }
+
+        .youtube img {
+          width: 100%;
+          top: -16.82%;
+          left: 0;
+          opacity: 0.7;
+        }
+        .youtube .play-button:before {
+          content: "";
+          border-style: solid;
+          border-width: 15px 0 15px 26px;
+          border-color: transparent transparent transparent #fff;
+        }
+
+        .youtube iframe {
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+        }
+
+        .play-btn {
+          display: none;
+          position: relative;
+          width: 90px;
+          height: 60px;
+          background-color: #333;
+        }
+        .play-btn::before {
+          position: absolute;
+          content: "";
+          border-style: solid;
+          border-width: 15px 0 15px 26px;
+          border-color: transparent transparent transparent #fff;
+
+          top: 50%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0);
+        }
+      </style>
+      <div class="video-block">
+        <h2>video desc title</h2>
+        <div class="youtube" data-embed="HLEDMlK9qRY">
+          <div class="play-button"></div>
+        </div>
+        <p>
+          refer :
+          <a
+            href="https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html"
+          >
+            https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html</a
+          >
+        </p>
+      </div>
+
       
+     
+    </main>
+    <script>
+      // <![CDATA[
+      (function () {
+        var youtube = document.querySelectorAll(".youtube");
 
+        for (var i = 0; i < youtube.length; i++) {
+          var source =
+            "https://img.youtube.com/vi/" +
+            youtube[i].dataset.embed +
+            "/sddefault.jpg";
 
-        <style>
+          var image = new Image();
+          image.src = source;
+          image.addEventListener(
+            "load",
+            (function () {
+              youtube[i].appendChild(image);
+            })(i)
+          );
 
-            html {
-                box-sizing: border-box;
-                -ms-overflow-style: scrollbar
-            }
-            *,::after,::after{
-
-                box-sizing: inherit;
-            }
-
-            img {
-                max-width: 100%;
-                height: auto;
-                border: 0;
-            }
-      
-
-            .video-block{
-                margin:50px auto;
-                max-width: 640px;
-            }
-            .youtube{
-                position:relative;
-                max-width: 100%;
-                padding: 0 15px;
-                max-width: 640px;
-            }
-            .youtube {
-                background-color: #9e9e9e;
-                margin-bottom: 30px;
-                position: relative;
-                padding-top: 56.25%;
-                overflow: hidden;
-                cursor: pointer;
-            }
-
-            .youtube .play-button, .youtube .play-button::before {
-                top: 50%;
-                left: 50%;
-                transform: translate3d( -50%, -50%, 0 );
-            }
-
-
-           .play-button{
-                position: absolute;
-            }
-
-           
-          
-          
-
-            .youtube img, .youtube iframe, .youtube .play-button, .youtube .play-button:before {
-                position: absolute;
-            }
-            .youtube .play-button {
-                width: 90px;
-                height: 60px;
-                background-color: #333;
-                box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
-                z-index: 1;
-                opacity: 0.8;
-                border-radius: 6px;
-            }
-
-            img,iframe  {
-                max-width: 100%;
-            }
-
-            .youtube img {
-                width: 100%;
-                top: -16.82%;
-                left: 0;
-                opacity: 0.7;
-            }
-            .youtube .play-button:before {
-                content: "";
-                border-style: solid;
-                border-width: 15px 0 15px 26px;
-                border-color: transparent transparent transparent #fff;
-            }
-
-            .youtube iframe {
-                height: 100%;
-                width: 100%;
-                top: 0;
-                left: 0;
-            }
-
-            .play-btn{
-                display: none;
-                position: relative;
-                width: 90px;
-                height: 60px;
-                background-color: #333;
-            }
-            .play-btn::before {
-
-                position: absolute;
-                content: "";
-                border-style: solid;
-                border-width: 15px 0 15px 26px;
-                border-color: transparent transparent transparent #fff;
-
-                top:50%;
-                left:50%;
-                transform: translate3d( -50%, -50%, 0 );
-            }
-            
-           
-        </style>
-            
-        <div class="video-block">
-            <h2> video desc title  </h2>
-            <div class="youtube" data-embed="HLEDMlK9qRY">
-                <div class="play-button"></div>  
-            </div>
-            <p>refer : <a href="https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html"> https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html</a> </p>
-        </div>
-
-        <div class="video-block">
-            <h2> video desc title  </h2>
-            <div class="youtube" data-embed="HLEDMlK9qRY">
-                <div class="play-button"></div>  
-            </div>
-            <p>refer : <a href="https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html"> https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html</a> </p>
-        </div>
-
-
-        <div class="video-block">
-            <h2> video desc title  </h2>
-            <div class="youtube" data-embed="HLEDMlK9qRY">
-                <div class="play-button"></div>  
-            </div>
-            <p>refer : <a href="https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html"> https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html</a> </p>
-        </div>
-
-
-        <div class="video-block">
-            <h2> video desc title  </h2>
-            <div class="youtube" data-embed="HLEDMlK9qRY">
-                <div class="play-button"></div>  
-            </div>
-            <p>refer : <a href="https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html"> https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html</a> </p>
-        </div>
-
-        <div class="video-block">
-            <h2> video desc title  </h2>
-            <div class="youtube" data-embed="HLEDMlK9qRY">
-                <div class="play-button"></div>  
-            </div>
-            <p>refer : <a href="https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html"> https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html</a> </p>
-        </div>
-
-        <div class="video-block">
-            <h2> video desc title  </h2>
-            <div class="youtube" data-embed="HLEDMlK9qRY">
-                <div class="play-button"></div>  
-            </div>
-            <p>refer : <a href="https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html"> https://usahair.com/clip-in-hair-extensions-remy-hair/highlighted-clip-in-hair-extension.html</a> </p>
-        </div>
-            
-      </main>
-      <script>
-        // <![CDATA[
-( function() {
-
-    var youtube = document.querySelectorAll( ".youtube" );
-    
-    for (var i = 0; i < youtube.length; i++) {
-        
-        var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
-        
-        var image = new Image();
-                image.src = source;
-                image.addEventListener( "load", function() {
-                    youtube[ i ].appendChild( image );
-                }( i ) );
-        
-                youtube[i].addEventListener( "click", function() {
-
-                    var iframe = document.createElement( "iframe" );
-
-                            iframe.setAttribute( "frameborder", "0" );
-                            iframe.setAttribute( "allowfullscreen", "" );
-                            iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
-
-                            this.innerHTML = "";
-                            this.appendChild( iframe );
-                } );    
-    };
-    
-} )();
-// ]]></script>
-</body>
+          youtube[i].addEventListener("click", function () {
+            var iframe = document.createElement("iframe");
+            iframe.setAttribute("frameborder", "0");
+            iframe.setAttribute("allowfullscreen", "");
+            iframe.setAttribute(
+              "src",
+              "https://www.youtube.com/embed/" +
+                this.dataset.embed +
+                "?rel=0&showinfo=0&autoplay=1"
+            );
+            this.innerHTML = "";
+            this.appendChild(iframe);
+          });
+        }
+      })();
+      // ]]>
+    </script>
+  </body>
 </html>
